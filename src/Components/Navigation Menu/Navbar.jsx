@@ -278,7 +278,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 bg-white  z-50 max-w-80 transform transition-all duration-300 ${
+          className={`fixed inset-0 bg-white  z-50 w-full md:max-w-80 transform transition-all duration-300 ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full "
           }`}
         >
