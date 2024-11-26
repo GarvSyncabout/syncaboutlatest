@@ -1,0 +1,35 @@
+.mailid,
+.privacy .terms {
+  position: relative;
+}
+
+.mailid:after {
+  content: "/";
+  position: absolute;
+  margin-left: 3px;
+  color: #787878;
+}
+
+.privacy:after {
+  content: "|";
+  position: absolute;
+  margin-left: 5px;
+  color: #787878;
+}
+
+.terms:after {
+  content: "|";
+  position: absolute;
+  margin-left: 5px;
+  color: #787878;
+}
+
+.dropdown-menu {
+  position: relative;
+}
+
+.dropdown-menu:after {
+  content: "\25be";
+  position: absolute;
+  color: black;
+}

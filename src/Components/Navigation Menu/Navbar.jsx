@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "../Navigation Menu/navbar.css";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,21 +37,27 @@ const Navbar = () => {
     <header>
       <div
         id="top-bar"
-        className="flex bg-[#fafafa] justify-between items-center px-5 py-3"
+        className="flex bg-[#fafafa] justify-between gap-2  items-center px-5 py-3   flex-col md:flex-row"
       >
-        <div className="flex justify-center items-center gap-3">
-          <span className="font-Jost text-base font-normal leading-[20px] text-[#787878] hover:text-[#ef7f1a]">
-            xyz@gmail.com
-          </span>
-          <span className="font-Jost text-base font-normal leading-[20px] text-[#ef7f1a]">
-            +1 (123) 456-7890
-          </span>
+        <div className="flex justify-center items-center flex-col gap-3 md:flex-row">
+          <Link
+            to={"mailto:connect@Syncaboutconsultancy.com"}
+            className="mailid font-Jost text-base font-normal leading-[20px] text-[#787878] hover:text-[#ef7f1a]"
+          >
+            connect@Syncaboutconsultancy.com
+          </Link>
+          <Link
+            to={"tel:9316016153"}
+            className="font-Jost text-base font-normal leading-[20px] text-[#ef7f1a]"
+          >
+            +91 9316016153
+          </Link>
         </div>
         <div className="flex justify-center items-center gap-3">
-          <span className="font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+          <span className="terms font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
             Terms & Condition
           </span>
-          <span className="font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+          <span className="privacy font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
             Privacy Policy
           </span>
           <span className="font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
@@ -62,11 +69,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div>
-            <img
-              src="./Company Logo/syncaboutlogo.png"
-              alt="Company Logo"
-              className="h-12"
-            />
+            <Link to={"/"}>
+              <img
+                src="./Company Logo/syncaboutlogo.png"
+                alt="Company Logo"
+                className="h-12"
+              />
+            </Link>
           </div>
 
           {/* Desktop Menu */}
@@ -84,7 +93,7 @@ const Navbar = () => {
               onMouseEnter={() => handleMouseEnter("company")}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
+              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
                 Company
               </button>
               {activeDropdown === "company" && (
@@ -131,7 +140,7 @@ const Navbar = () => {
               onMouseEnter={() => handleMouseEnter("services")}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
+              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
                 Services
               </button>
               {activeDropdown === "services" && (
@@ -182,7 +191,7 @@ const Navbar = () => {
               onMouseEnter={() => handleMouseEnter("cloudServices")}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
+              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
                 Cloud Services
               </button>
               {activeDropdown === "cloudServices" && (
@@ -203,7 +212,7 @@ const Navbar = () => {
               onMouseEnter={() => handleMouseEnter("portfolio")}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
+              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
                 Portfolio
               </button>
               {activeDropdown === "portfolio" && (
@@ -269,7 +278,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 max-w-80 transform transition-all duration-300 ${
+          className={`fixed inset-0 bg-white  z-50 max-w-80 transform transition-all duration-300 ${
             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full "
           }`}
         >
@@ -278,67 +287,67 @@ const Navbar = () => {
               ×
             </button>
           </div>
-          <div className="flex flex-col items-start px-3 text-white space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
+          <div className="flex flex-col items-start px-3 text-black space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
             {/* Mobile Dropdowns */}
             <div className="relative w-full">
-              <a className="text-lg hover:text-gray-400 w-full text-start">
+              <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
                 Home
               </a>
             </div>
             <div className="relative w-full">
               <button
                 onClick={() => toggleDropdown("company")}
-                className="text-lg hover:text-gray-400 w-full text-start"
+                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
               >
                 Company
               </button>
               {isDropdownOpen.company && (
-                <div className="bg-white text-black p-4 rounded shadow-lg w-full">
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a] ">
                     About Us
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Why Choose Us
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     How We Work
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Life At Syncabout
                   </a>
                 </div>
               )}
             </div>
             <div className="relative w-full">
-              <a className="text-lg hover:text-gray-400 w-full text-start">
+              <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
                 SAP Services
               </a>
             </div>
             <div className="relative w-full">
               <button
                 onClick={() => toggleDropdown("services")}
-                className="text-lg hover:text-gray-400 w-full text-start"
+                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
               >
                 Services
               </button>
               {isDropdownOpen.services && (
-                <div className="bg-white text-black p-4 rounded shadow-lg w-full">
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Web Development
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Software Development
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Mobile App Development
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Custom ERP Development
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     SEO Services
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Social Media Marketing
                   </a>
                 </div>
@@ -348,13 +357,13 @@ const Navbar = () => {
             <div className="relative w-full">
               <button
                 onClick={() => toggleDropdown("cloudServices")}
-                className="text-lg hover:text-gray-400 w-full text-start"
+                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
               >
                 Cloud Services
               </button>
               {isDropdownOpen.cloudServices && (
-                <div className="bg-white text-black p-4 rounded shadow-lg w-full">
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     AWS
                   </a>
                 </div>
@@ -364,23 +373,23 @@ const Navbar = () => {
             <div className="relative w-full">
               <button
                 onClick={() => toggleDropdown("portfolio")}
-                className="text-lg hover:text-gray-400 w-full text-start"
+                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
               >
                 Portfolio
               </button>
               {isDropdownOpen.portfolio && (
-                <div className="bg-white text-black p-4 rounded shadow-lg w-full">
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Graphics Portfolios
                   </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     UI/UX Portfolios
                   </a>
                 </div>
               )}
             </div>
             <div className="relative w-full">
-              <a className="text-lg hover:text-gray-400 w-full text-start">
+              <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
                 Blogs
               </a>
             </div>
@@ -393,7 +402,7 @@ const Navbar = () => {
               target="_blank"
               className="text-lg"
             >
-              <FaLinkedin />
+              <FaLinkedin size={30} />
             </Link>
           </div>
         </div>
