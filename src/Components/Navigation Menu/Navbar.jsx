@@ -65,7 +65,7 @@ const Navbar = () => {
           </span>
         </div>
       </div>
-      <nav className="white p-4 shadow-sm">
+      <nav className=" white p-4 shadow-sm">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div>
@@ -79,7 +79,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex space-x-8">
+          <div className="hidden lg:flex z-50  space-x-8">
             <a
               href="#"
               className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]"

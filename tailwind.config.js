@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         Manrope: ["Manrope", ...defaultTheme.fontFamily.sans],
         Jost: ["Jost", ...defaultTheme.fontFamily.sans],
+        Poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
     },
   },
