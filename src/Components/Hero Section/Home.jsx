@@ -103,7 +103,7 @@ const Home = () => {
                       </div>
                       <Popup
                         trigger={
-                          <div className="play-button   p-[22px] rounded-full">
+                          <div className="play-button p-[22px] rounded-full">
                             <IoIosPlay
                               cursor={"pointer"}
                               onClick={popupHandler}
