@@ -150,6 +150,7 @@
 .popup-content {
   background: transparent;
   border: none;
+  width: 60%;
 }
 
 .close {
