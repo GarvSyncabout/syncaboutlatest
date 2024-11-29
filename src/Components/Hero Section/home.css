@@ -27,6 +27,10 @@
     height: 100% !important;
     object-fit: cover;
   }
+
+  .popup-content {
+    width: 80%;
+  }
   .close {
     content: "";
     position: absolute;
@@ -44,13 +48,17 @@
 @media screen and (max-width: 600px) {
   .swiper {
     width: 100%;
-    height: 80vh !important;
+    height: 75vh !important;
   }
 
   .swiper-slide img {
     width: 100%;
-    height: 80vh !important;
+    height: 75vh !important;
     object-fit: cover;
+  }
+
+  .popup-content {
+    width: 99%;
   }
   .close {
     content: "";
