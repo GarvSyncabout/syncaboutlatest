@@ -18,8 +18,8 @@
 
 @media screen and (max-width: 992px) {
   .swiper {
-    width: 100% ;
-    height: 100dvh !important;
+    width: 100%;
+    height: 100vh !important;
   }
 
   .swiper-slide img {
@@ -27,18 +27,42 @@
     height: 100% !important;
     object-fit: cover;
   }
+  .close {
+    content: "";
+    position: absolute;
+    color: white !important;
+    border: none;
+    font-size: 15px;
+    background-color: transparent !important;
+    border-radius: 0% !important;
+    padding: 0px 0px !important;
+    top: -16px !important;
+    right: 10px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .swiper {
     width: 100%;
-    height: 100dvh !important;
+    height: 100vh !important;
   }
 
   .swiper-slide img {
     width: 100%;
-    height: 100dvh !important;
+    height: 100vh !important;
     object-fit: cover;
+  }
+  .close {
+    content: "";
+    position: absolute;
+    color: white !important;
+    border: none;
+    font-size: 15px;
+    background-color: transparent !important;
+    border-radius: 0% !important;
+    padding: 0px 0px !important;
+    top: -16px !important;
+    right: 10px;
   }
 }
 
@@ -47,6 +71,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .swiper-slide img {
@@ -62,6 +87,7 @@
 
 .image-container {
   position: relative;
+  width: 100%;
 }
 
 .image-one-content {
@@ -70,6 +96,7 @@
   color: white;
   top: 50%;
   left: 50%;
+  width: 70%;
   transform: translate(-50%, -50%);
 }
 
@@ -79,7 +106,7 @@
   -webkit-text-stroke: 1px #fff;
   color: transparent;
   bottom: 0;
-  right: 2%;
+  right: 1%;
 }
 
 .swiper-button {
@@ -90,7 +117,7 @@
   cursor: pointer;
   background-color: #ef7f1a;
   border-radius: 20px;
-  padding: 5px;
+  padding: 10px;
   color: white;
 }
 .swiper-button:hover {
@@ -130,7 +157,53 @@
   right: 10px;
 }
 
+.close:focus {
+  outline: none;
+}
+
 .close:hover {
   background-color: #ef7f1a;
   color: white;
+}
+
+.play-button {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.play-button:before {
+  animation: ripple 2s ease-out infinite;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  bottom: 0;
+  box-sizing: border-box;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.play-button:after {
+  animation: ripple 2s 1s ease-out infinite;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  bottom: 0;
+  box-sizing: border-box;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.25;
+  }
+  100% {
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(2);
+  }
 }

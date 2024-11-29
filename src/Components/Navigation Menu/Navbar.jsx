@@ -35,37 +35,33 @@ const Navbar = () => {
 
   return (
     <header>
-      <div
-        id="top-bar"
-        className="flex bg-[#fafafa] justify-between gap-2  items-center px-5 py-3   flex-col md:flex-row"
-      >
-        <div className="flex justify-center items-center flex-col gap-3 md:flex-row">
-          <Link
-            to={"mailto:connect@Syncaboutconsultancy.com"}
-            className="mailid font-Jost text-base font-normal leading-[20px] text-[#787878] hover:text-[#ef7f1a]"
-          >
-            connect@Syncaboutconsultancy.com
-          </Link>
-          <Link
-            to={"tel:9316016153"}
-            className="font-Jost text-base font-normal leading-[20px] text-[#ef7f1a]"
-          >
-            +91 9316016153
-          </Link>
-        </div>
-        <div className="flex justify-center items-center gap-3">
-          <span className="terms font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
-            Terms & Condition
-          </span>
-          <span className="privacy font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
-            Privacy Policy
-          </span>
-          <span className="font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
-            Contact Us
-          </span>
+      <div className="bg-[#fafafa]">
+        <div
+          id="top-bar"
+          className="max-w-7xl m-auto  flex justify-between gap-2  items-center px-5 py-3   flex-col md:flex-row"
+        >
+          <div className="flex justify-center items-center flex-col gap-3 md:flex-row">
+            <Link
+              to={"mailto:connect@Syncaboutconsultancy.com"}
+              className="mailid font-Jost text-base font-normal leading-[20px] text-[#787878] hover:text-[#ef7f1a]"
+            >
+              connect@syncaboutconsultancy.com
+            </Link>
+          </div>
+          <div className="flex justify-center items-center gap-3 ">
+            <span className="terms font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+              Terms & Condition
+            </span>
+            <span className="privacy font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+              Privacy Policy
+            </span>
+            <span className="font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+              Contact Us
+            </span>
+          </div>
         </div>
       </div>
-      <nav className=" white p-4 shadow-sm">
+      <nav className="max-w-7xl m-auto p-4 shadow-sm bg-[#ffffff]">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div>
@@ -79,10 +75,10 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex z-50  space-x-8">
+          <div className="hidden lg:flex justify-center items-center z-50   gap-5">
             <a
               href="#"
-              className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]"
+              className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
               Home
             </a>
@@ -180,27 +176,6 @@ const Navbar = () => {
                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                   >
                     Social Media Marketing
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {/* Cloud Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("cloudServices")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
-                Cloud Services
-              </button>
-              {activeDropdown === "cloudServices" && (
-                <div className="w-40 absolute left-0 mt-0 space-y-2 bg-white text-black p-4 rounded shadow-lg">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    AWS
                   </a>
                 </div>
               )}
@@ -349,22 +324,6 @@ const Navbar = () => {
                   </a>
                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
                     Social Media Marketing
-                  </a>
-                </div>
-              )}
-            </div>
-
-            <div className="relative w-full">
-              <button
-                onClick={() => toggleDropdown("cloudServices")}
-                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
-              >
-                Cloud Services
-              </button>
-              {isDropdownOpen.cloudServices && (
-                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    AWS
                   </a>
                 </div>
               )}

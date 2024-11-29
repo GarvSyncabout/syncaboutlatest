@@ -18,7 +18,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <main className="m-auto w-full max-w-7xl">
+    <main>
       <RouterProvider router={router}></RouterProvider>
     </main>
   );
