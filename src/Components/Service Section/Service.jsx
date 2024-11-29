@@ -50,8 +50,8 @@ const Service = () => {
     },
   ];
   return (
-    <section className="m-auto w-full max-w-7xl bg-[#fafafa]">
-      <div className="flex justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
+    <section className=" bg-[#fafafa]">
+      <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
         <div className="flex justify-center items-center gap-3 flex-col mb-[60px] text-wrap max-w-[750px] ">
           <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
             Our Services
