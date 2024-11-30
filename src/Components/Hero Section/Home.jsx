@@ -52,11 +52,11 @@ const Home = () => {
           effect={"fade"}
           slidesPerView={1}
           spaceBetween={50}
-          loop={true}
-          autoplay={{
-            delay: 5500,
-            disableOnInteraction: false,
-          }}
+          // loop={true}
+          // autoplay={{
+          //   delay: 5500,
+          //   disableOnInteraction: false,
+          // }}
           navigation={
             (true,
             {
@@ -84,7 +84,7 @@ const Home = () => {
                       <span className="font-Jost text-sm text-center  lg:text-lg lg:leading-7 font-normal tracking-[5px] ">
                         {item.title}
                       </span>
-                      <h2 className="font-Manrope text-xl text-wrap md:text-4xl   lg:text-[64px] mb-5 text-center lg:text-start lg:text-balance lg:leading-[83px] font-extrabold">
+                      <h2 className="font-Manrope text-xl text-wrap md:text-4xl lg:text-[64px] mb-5 text-center lg:text-start lg:text-balance lg:leading-[83px] font-extrabold">
                         {item.heading}
                       </h2>
                       <p className="font-Jost text-base lg:text-lg lg:leading-7 text-center lg:text-start font-normal text-wrap">
