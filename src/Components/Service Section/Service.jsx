@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Service Section/service.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Service = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const cards = [
     {
       id: "1",
@@ -62,7 +68,12 @@ const Service = () => {
             business. Explore Our Customized Services for a Seamless Experience.
           </h2>
         </div>
-        <div className="animate__animated animate__fadeInDown animate__delay-1s grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8">
+        <div
+          data-aos="fade-down"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          className=" grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8"
+        >
           {cards.map((card) => {
             return (
               <div
@@ -76,7 +87,7 @@ const Service = () => {
                   </div>
                 </div>
                 <div id="content-div">
-                  <h4 className="font-Manrope text-[24px] text-base leading-[31px] text-[#202122] text-wrap font-bold mb-[14px]">
+                  <h4 className="font-Manrope text-[24px] leading-[31.2px] text-[#202122] text-wrap font-bold mb-[14px]">
                     {card.title}
                   </h4>
                   <p className="font-Jost text-sm leading-[26px] font-normal text-[#666666] mb-[45px]">
