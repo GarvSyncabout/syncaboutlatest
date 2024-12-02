@@ -21,7 +21,7 @@ const Work = () => {
 
           {/* image 2 */}
           <div className="flex justify-between items-center flex-col  md:gap-6">
-            <div className=" play-button p-[15px] md:p-[22px] rounded-full">
+            <div className=" play-button-two p-[15px] md:p-[22px] rounded-full">
               <IoIosPlay cursor={"pointer"} color="white" />
             </div>
 
