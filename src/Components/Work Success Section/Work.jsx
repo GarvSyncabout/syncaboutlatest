@@ -11,7 +11,7 @@ const Work = () => {
       >
         <div
           id="img-div"
-          className="work-container flex justify-center gap-2 items-end "
+          className="flex-col-reverse gap-5   md:flex-row work-container flex justify-center items-center  md:items-end "
         >
           {/* style shape img */}
 
@@ -20,12 +20,12 @@ const Work = () => {
           </div>
 
           {/* image 2 */}
-          <div className="flex justify-between items-center flex-col gap-3 md:gap-6">
-            <div className=" play-button p-[4px] md:p-[22px] rounded-full">
+          <div className="flex justify-between items-center flex-col  md:gap-6">
+            <div className=" play-button p-[15px] md:p-[22px] rounded-full">
               <IoIosPlay cursor={"pointer"} color="white" />
             </div>
 
-            <div className="h-[100px] w-[20px] md:h-[360px] md:w-[70px] rounded-xl">
+            <div className="hidden md:block md:h-[360px] md:w-[70px] rounded-xl">
               <img
                 src="./Work Success Section/digitalsolutions.jpg"
                 className="object-cover h-full rounded-xl "
@@ -35,14 +35,17 @@ const Work = () => {
 
           {/* imag 2 */}
 
-          <div className=" h-auto w-[190px]  md:h-[500px] md:w-[391px] rounded-xl ">
+          <div className=" p-2 md:h-[500px] md:w-[391px] rounded-xl ">
             <img
               src="./Work Success Section/digitalsolutions.jpg"
               className="object-cover h-full  rounded-xl "
             />
           </div>
         </div>
-        <div id="content-div" className="flex justify-center items-center">
+        <div
+          id="content-div"
+          className="p-2 md:p-0 flex justify-center items-center"
+        >
           <div
             id="content-wrapper"
             className="flex justify-center text-center items-center lg:items-start  lg:text-start flex-col"
