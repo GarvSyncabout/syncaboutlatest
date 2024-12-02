@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="bg-[#291f3a]">
         <div className="grid lg:grid-cols-2 gap-5 place-content-center place-items-center m-auto max-w-7xl w-full py-[50px] lg:py-[110px]">
           <div id="div-content">
-            <h2 className="font-Manrope text-2xl lg:text-6xl text-center leading-[78px] font-extrabold text-[#ffffff]">
+            <h2 className="font-Manrope text-2xl lg:text-6xl text-center lg:leading-[78px] font-extrabold text-[#ffffff]">
               You too join my communities.
             </h2>
           </div>

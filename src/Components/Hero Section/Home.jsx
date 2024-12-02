@@ -14,6 +14,7 @@ import "../Hero Section/home.css";
 import { Autoplay, Navigation, EffectFade, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import Service from "../Service Section/Service";
+import Work from "../Work Success Section/Work";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -154,10 +155,10 @@ const Home = () => {
       </section>
 
       {/* Our Service Section  */}
+      <Service />
 
-      <section>
-        <Service />
-      </section>
+      {/* Work Success Section */}
+      <Work />
     </>
   );
 };

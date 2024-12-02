@@ -1,0 +1,54 @@
+.work-container {
+  position: relative;
+}
+
+.img-png {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -13%;
+}
+
+.play-button {
+  position: relative;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.play-button:before {
+  animation: ripple 2s ease-out infinite;
+  border: solid 1px black;
+  border-radius: 50%;
+  bottom: 0;
+  box-sizing: border-box;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.play-button:after {
+  animation: ripple 2s 1s ease-out infinite;
+  border: solid 1px black;
+  border-radius: 50%;
+  bottom: 0;
+
+  box-sizing: border-box;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.25;
+  }
+  100% {
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(2);
+  }
+}
