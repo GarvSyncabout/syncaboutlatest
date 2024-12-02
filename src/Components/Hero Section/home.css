@@ -24,7 +24,7 @@
 
   .swiper-slide img {
     width: 100%;
-    height: 100% !important;
+    height: 100vh !important;
     object-fit: cover;
   }
 
@@ -48,12 +48,12 @@
 @media screen and (max-width: 600px) {
   .swiper {
     width: 100%;
-    height: 75vh !important;
+    height: 80vh !important;
   }
 
   .swiper-slide img {
     width: 100%;
-    height: 75vh !important;
+    height: 80vh !important;
     object-fit: cover;
   }
 

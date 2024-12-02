@@ -2,6 +2,7 @@ import React from "react";
 import "../Service Section/service.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 const Service = () => {
   const cards = [
@@ -61,21 +62,21 @@ const Service = () => {
             business. Explore Our Customized Services for a Seamless Experience.
           </h2>
         </div>
-        <div className="grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8">
+        <div className="animate__animated animate__fadeInDown animate__delay-1s grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8">
           {cards.map((card) => {
             return (
               <div
                 id="card-wrapper"
-                className="flex justify-center items-center hover:bg-[#F1F1F1] flex-col gap-2 p-3 min-h-[500px]"
+                className="card-wrapper flex justify-center items-center flex-col gap-2 p-3 min-h-[500px]"
                 key={card.id}
               >
-                <div id="img-div" className="mb-[30px]">
-                  <div className="card-image bg-white w-[170px] h-[170px] rounded-[50%] flex justify-center items-center">
+                <div id="img-div" className="img-div an mb-[30px]">
+                  <div className="card-image  bg-white w-[170px] h-[170px] rounded-[50%] flex justify-center items-center">
                     <img src={card.imageUrl} width={64} height={64} />
                   </div>
                 </div>
                 <div id="content-div">
-                  <h4 className="font-Manrope text-base leading-[23px] text-[#202122] text-wrap font-bold mb-[14px]">
+                  <h4 className="font-Manrope text-[24px] text-base leading-[31px] text-[#202122] text-wrap font-bold mb-[14px]">
                     {card.title}
                   </h4>
                   <p className="font-Jost text-sm leading-[26px] font-normal text-[#666666] mb-[45px]">

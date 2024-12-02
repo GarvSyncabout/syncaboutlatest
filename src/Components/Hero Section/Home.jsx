@@ -4,7 +4,7 @@ import Popup from "reactjs-popup";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IoIosArrowBack, IoIosArrowForward, IoIosPlay } from "react-icons/io";
 import "reactjs-popup/dist/index.css";
-
+import "animate.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -52,11 +52,11 @@ const Home = () => {
           effect={"fade"}
           slidesPerView={1}
           spaceBetween={50}
-          // loop={true}
-          // autoplay={{
-          //   delay: 5500,
-          //   disableOnInteraction: false,
-          // }}
+          loop={true}
+          autoplay={{
+            delay: 5500,
+            disableOnInteraction: false,
+          }}
           navigation={
             (true,
             {
@@ -81,19 +81,19 @@ const Home = () => {
                   <img src={item.imgUrl} alt="Carousel Image" />
                   <div className="image-one-content flex justify-center items-center  lg:items-start w-full  max-w-7xl  gap-4 lg:gap-10 flex-col">
                     <div className="flex gap-2 justify-center items-center lg:items-start flex-col">
-                      <span className="font-Jost text-sm text-center  lg:text-lg lg:leading-7 font-normal tracking-[5px] ">
+                      <span className="font-Jost animate__animated animate__fadeInUp text-sm text-center  lg:text-lg lg:leading-7 font-normal tracking-[5px] ">
                         {item.title}
                       </span>
-                      <h2 className="font-Manrope text-xl text-wrap md:text-4xl lg:text-[64px] mb-5 text-center lg:text-start lg:text-balance lg:leading-[83px] font-extrabold">
+                      <h2 className="animate__animated animate__fadeInUp font-Manrope text-xl text-wrap md:text-4xl lg:text-[64px] mb-5 text-center lg:text-start lg:text-balance lg:leading-[83px] font-extrabold">
                         {item.heading}
                       </h2>
-                      <p className="font-Jost text-base lg:text-lg lg:leading-7 text-center lg:text-start font-normal text-wrap">
+                      <p className="animate__animated animate__fadeInUp font-Jost text-base lg:text-lg lg:leading-7 text-center lg:text-start font-normal text-wrap">
                         {item.description}
                       </p>
                     </div>
                     <div className="flex justify-center items-center gap-7">
-                      <div className="bg-[#ef7f1a] rounded-full hover:bg-white hover:text-black  py-1 px-2 lg:py-4 lg:px-8 ">
-                        <Link className="hover:bg-white hover:text-black font-Jost text-xs  md:text-sx lg:text-sm leading-[26px] font-normal">
+                      <div className="animate__animated animate__fadeInUp bg-[#ef7f1a] rounded-full hover:bg-white hover:text-black  py-1 px-2 lg:py-4 lg:px-8 ">
+                        <Link className=" hover:bg-white hover:text-black font-Jost text-xs  md:text-sx lg:text-sm leading-[26px] font-normal">
                           <span className=" text-xs md:text-xs lg:text-lg">
                             &#8594;
                           </span>
@@ -103,7 +103,7 @@ const Home = () => {
                       </div>
                       <Popup
                         trigger={
-                          <div className="play-button p-[22px] rounded-full">
+                          <div className="animate__animated animate__fadeInUp play-button p-[22px] rounded-full">
                             <IoIosPlay
                               cursor={"pointer"}
                               onClick={popupHandler}
