@@ -6,7 +6,7 @@ import "reactjs-popup/dist/index.css";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../Why Choose Section/Chooseus.css";
+import "../Why Choose Section/chooseus.css";
 
 const Chooseus = () => {
   useEffect(() => {
@@ -74,7 +74,7 @@ const Chooseus = () => {
   const videoContentData = [
     {
       id: "1",
-      heading: "We are top IT Solutions Vedio and histor",
+      heading: "We are top IT Solutions Vedio and history",
     },
   ];
   return (
