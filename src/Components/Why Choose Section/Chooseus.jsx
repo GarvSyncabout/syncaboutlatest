@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
-import "../Service Section/service.css";
-import { FaLongArrowAltRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+// import "../Service Section/service.css";
+import { IoIosPlay } from "react-icons/io";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -12,6 +13,10 @@ const Chooseus = () => {
     AOS.init();
     AOS.refresh();
   }, []);
+
+  const videoRef = useRef(null);
+  const video =
+    "https://syncaboutsolutions.com/wp-content/uploads/2024/04/Sync_Video.mp4";
 
   const cards = [
     {
@@ -57,49 +62,125 @@ const Chooseus = () => {
       imgUrl: "./WhyChooseUsSection/adaptability.svg",
     },
   ];
+
+  const contentData = [
+    {
+      id: "1",
+      heading: "Why Choose Us",
+      subHeading: "We give our best to make you happy!",
+    },
+  ];
+
+  const videoContentData = [
+    {
+      id: "1",
+      heading: "We are top IT Solutions Vedio and history",
+    },
+  ];
   return (
-    <section className="bg-[url('./WhyChooseUsSection/whychooseus.jpg')] bg-no-repeat bg-cover">
-      <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
-        <div className="flex justify-center items-center gap-3 flex-col mb-[60px] text-wrap max-w-[750px] ">
-          <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
-            Why Choose Us
-          </span>
-          <h2 className="font-Manrope text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
-            We give our best to make you happy!
-          </h2>
-        </div>
-        <div
-          data-aos="fade-down"
-          data-aos-delay="50"
-          data-aos-duration="1000"
-          className="grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8"
-        >
-          {cards.map((card) => {
+    <>
+      <section className="bg-[url('./WhyChooseUsSection/whychooseus.jpg')] bg-no-repeat bg-cover ">
+        <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
+          {contentData.map((data) => {
             return (
-              <div key={card.id} className="bg-[#ffffff]">
-                <div className="card-content-wrapper flex justify-center items-start text-start bg-[#ffffff]  flex-col p-10">
-                  <div className="mb-[30px]">
-                    <img
-                      src={card.imgUrl}
-                      alt="card-image"
-                      className="card-image h-[64px] w-[64px]"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="mb-[14px] font-Manrope text-[#000000]  text-2xl font-bold">
-                      {card.title}
-                    </h4>
-                    <p className="font-Jost text-[#666666]  text-sm leading-[26px] font-normal">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
+              <div
+                key={data.id}
+                className="flex justify-center items-center gap-3 flex-col mb-[60px] text-wrap max-w-[750px] "
+              >
+                <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
+                  {data.heading}
+                </span>
+                <h2 className="font-Manrope mb-[50px] text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
+                  {data.subHeading}
+                </h2>
               </div>
             );
           })}
+          <div
+            data-aos="fade-down"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            className="grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8"
+          >
+            {cards.map((card) => {
+              return (
+                <div key={card.id} className="bg-[#ffffff]">
+                  <div className="card-content-wrapper flex justify-center items-start text-start bg-[#ffffff]  flex-col p-[50px]">
+                    <div className="mb-[30px]">
+                      <img
+                        src={card.imgUrl}
+                        alt="card-image"
+                        className="card-image h-[64px] w-[64px]"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="mb-[14px] font-Manrope text-[#000000]  text-2xl font-bold">
+                        {card.title}
+                      </h4>
+                      <p className="font-Jost text-[#666666]  text-sm leading-[26px] font-normal">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="video-section py-[190px]   bg-[url('./WhyChooseUsSection/chooseusvideosection.jpg')]  bg-no-repeat bg-cover  ">
+        <div className="wrapper"> </div>
+
+        <div
+          id="video-wrapper"
+          className=" relative z-50 flex justify-center gap-14 items-center text-center flex-col m-auto w-full  max-w-7xl"
+        >
+          {videoContentData.map((videoData) => {
+            return (
+              <div key={videoData.id}>
+                <h2 className="font-Manrope text-[25px] md:text-[40px] md:leading-[52px] lg:text-[80px] lg:leading-[104px] font-extrabold text-[#ffffff]">
+                  {videoData.heading}
+                </h2>
+              </div>
+            );
+          })}
+          <Popup
+            trigger={
+              <div className="play-button-three cursor-pointer p-[15px] md:p-[50px] rounded-full">
+                <IoIosPlay cursor={"pointer"} color="#ef7f1a" size={"2rem"} />
+              </div>
+            }
+            modal
+            lockScroll
+            position="right center"
+          >
+            {(close) => (
+              <div className="modal">
+                <button className="close" onClick={() => close()}>
+                  &times;
+                </button>
+
+                <div className="content">
+                  <video
+                    src={video}
+                    onClick={() => {
+                      videoRef.current.play();
+                    }}
+                    ref={videoRef}
+                    controls="controls"
+                    autoplay="true"
+                    loop="true"
+                    style={{
+                      width: "100%",
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+          </Popup>
+        </div>
+      </section>
+    </>
   );
 };
 

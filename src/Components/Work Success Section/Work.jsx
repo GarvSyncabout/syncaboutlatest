@@ -15,6 +15,18 @@ const Work = () => {
     { id: "4", title: "Team Advisors", total: 20 },
   ];
 
+  const contentData = [
+    {
+      id: "1",
+      heading: "Let’s Design, Develop & Launch Your brand Online Together",
+      descriptionOne:
+        "At Syncabout Solutions, we specialize in comprehensive web design and development services. Join us as we design, develop, and launch your brand online, creating a digital footprint that stands out. Let’s embark on this exciting journey together.",
+      descriptionTwo:
+        "With a dedicated team of professionals, We bring your vision to life, ensuring not just a website but digital But a digital experience that engages and converts. Enhance Your Online Presence with Syncabout – Where innovation meets design.",
+      buttonTitle: "Let's Discuss Your Idea",
+    },
+  ];
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -50,7 +62,7 @@ const Work = () => {
             <div className="p-2 flex justify-between items-center flex-col  md:gap-6">
               <Popup
                 trigger={
-                  <div className="play-button-two p-[15px] md:p-[22px] rounded-full">
+                  <div className="play-button-two cursor-pointer p-[15px] md:p-[22px] rounded-full">
                     <IoIosPlay cursor={"pointer"} color="white" />
                   </div>
                 }
@@ -104,34 +116,33 @@ const Work = () => {
             id="content-div"
             className="p-2 md:p-0 flex justify-center items-center"
           >
-            <div
-              id="content-wrapper"
-              className="flex justify-center text-center items-center lg:items-start  lg:text-start flex-col"
-            >
-              <h2 className="text-[#000000] font-Manrope text-2xl md:text-4xl lg:text-6xl lg:leading-[78px] mb-[15px] font-extrabold">
-                Let’s Design, Develop & Launch Your brand Online Together
-              </h2>
-              <p className="text-[#666666] font-Jost text-sm leading-[26px] mb-[1rem] font-normal ">
-                At Syncabout Solutions, we specialize in comprehensive web
-                design and development services. Join us as we design, develop,
-                and launch your brand online, creating a digital footprint that
-                stands out. Let’s embark on this exciting journey together.
-              </p>
-              <p className="text-[#666666] font-Jost text-sm leading-[26px] mb-[1rem] font-normal ">
-                With a dedicated team of professionals, We bring your vision to
-                life, ensuring not just a website but digital But a digital
-                experience that engages and converts. Enhance Your Online
-                Presence with Syncabout – Where innovation meets design.
-              </p>
-              <div>
-                <button
-                  className="bg-[#ef7f1a] rounded-md p-3 text-white text-sm font-Jost hover:!bg-[#000000]  hover:text-[#white]"
-                  href="#"
+            {contentData.map((content) => {
+              return (
+                <div
+                  key={content.id}
+                  id="content-wrapper"
+                  className="flex justify-center text-center items-center lg:items-start  lg:text-start flex-col"
                 >
-                  Let's Discuss Your Idea
-                </button>
-              </div>
-            </div>
+                  <h2 className="text-[#000000] font-Manrope text-2xl md:text-4xl lg:text-6xl lg:leading-[78px] mb-[15px] font-extrabold">
+                    {content.heading}
+                  </h2>
+                  <p className="text-[#666666] font-Jost text-sm leading-[26px] mb-[1rem] font-normal ">
+                    {content.descriptionOne}
+                  </p>
+                  <p className="text-[#666666] font-Jost text-sm leading-[26px] mb-[1rem] font-normal ">
+                    {content.descriptionTwo}
+                  </p>
+                  <div>
+                    <button
+                      className="bg-[#ef7f1a] rounded-md p-3 text-white text-sm font-Jost hover:!bg-[#000000]  hover:text-[#white]"
+                      href="#"
+                    >
+                      {content.buttonTitle}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div

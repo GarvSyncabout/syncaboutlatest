@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Aos from "aos";
 
 const Service = () => {
   useEffect(() => {
@@ -58,18 +57,34 @@ const Service = () => {
       imageUrl: "./OurService/socialmedia.svg",
     },
   ];
+
+  const contentData = [
+    {
+      id: "1",
+      heading: "Our Service",
+      subHeading:
+        "Custom Solutions to Meet Your Unique Requirements to enhance your business. Explore Our Customized Services for a Seamless Experience.",
+    },
+  ];
+
   return (
     <section className=" bg-[#fafafa]">
       <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
-        <div className="flex justify-center items-center gap-3 flex-col mb-[60px] text-wrap max-w-[750px] ">
-          <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
-            Our Services
-          </span>
-          <h2 className="font-Manrope text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
-            Custom Solutions to Meet Your Unique Requirements to enhance your
-            business. Explore Our Customized Services for a Seamless Experience.
-          </h2>
-        </div>
+        {contentData.map((data) => {
+          return (
+            <div
+              key={data.id}
+              className="flex justify-center items-center gap-3 flex-col mb-[60px] text-wrap max-w-[750px] "
+            >
+              <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
+                {data.heading}
+              </span>
+              <h2 className="font-Manrope text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
+                {data.subHeading}
+              </h2>
+            </div>
+          );
+        })}
         <div
           data-aos="fade-down"
           data-aos-delay="50"
@@ -110,9 +125,7 @@ const Service = () => {
           })}
         </div>
 
-        <div>
-          
-        </div>
+        <div></div>
       </div>
     </section>
   );

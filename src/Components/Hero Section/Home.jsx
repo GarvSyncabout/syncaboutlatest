@@ -101,7 +101,7 @@ const Home = () => {
                       </div>
                       <Popup
                         trigger={
-                          <div className="animate__animated animate__fadeInUp play-button p-[22px] rounded-full">
+                          <div className="animate__animated animate__fadeInUp cursor-pointer play-button p-[22px] rounded-full">
                             <IoIosPlay cursor={"pointer"} color="white" />
                           </div>
                         }
