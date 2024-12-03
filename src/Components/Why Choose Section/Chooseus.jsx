@@ -79,7 +79,7 @@ const Chooseus = () => {
   ];
   return (
     <>
-      <section className="bg-[url('./WhyChooseUsSection/whychooseus.jpg')] bg-no-repeat bg-cover ">
+      <section className="bg-[url('/WhyChooseUsSection/whychooseus.jpg')] bg-no-repeat bg-cover ">
         <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
           {contentData.map((data) => {
             return (
@@ -128,7 +128,7 @@ const Chooseus = () => {
           </div>
         </div>
       </section>
-      <section className="video-section py-[190px]   bg-[url('./WhyChooseUsSection/chooseusvideosection.jpg')]  bg-no-repeat bg-cover  ">
+      <section className="video-section py-[190px]   bg-[url('/WhyChooseUsSection/chooseusvideosection.jpg')]  bg-no-repeat bg-cover  ">
         <div className="wrapper"> </div>
 
         <div
