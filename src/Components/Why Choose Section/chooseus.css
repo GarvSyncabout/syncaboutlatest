@@ -1,0 +1,16 @@
+.card-content-wrapper:hover {
+  background-color: #ef7f1a;
+  -ms-transform: scale(0.8); /* IE 9 */
+  -webkit-transform: scale(0.8); /* Safari 3-8 */
+  transform: scale(0.8);
+  transition: transform 0.5s;
+}
+
+.card-content-wrapper:hover h4,
+.card-content-wrapper:hover p {
+  color: #ffffff;
+}
+
+.card-content-wrapper:hover img {
+  filter: brightness(0) invert(1);
+}

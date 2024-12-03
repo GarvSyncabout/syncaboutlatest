@@ -1,26 +1,23 @@
 import React, { useRef } from "react";
 import Popup from "reactjs-popup";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IoIosArrowBack, IoIosArrowForward, IoIosPlay } from "react-icons/io";
 import "reactjs-popup/dist/index.css";
 import "animate.css";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "../Hero Section/home.css";
-
 import { Autoplay, Navigation, EffectFade, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import Service from "../Service Section/Service";
 import Work from "../Work Success Section/Work";
+import Chooseus from "../Why Choose Section/Chooseus";
 
 const Home = () => {
   const videoRef = useRef(null);
   const video =
     "https://syncaboutsolutions.com/wp-content/uploads/2024/04/Sync_Video.mp4";
-  const popupHandler = () => {};
 
   const swiperData = [
     {
@@ -105,11 +102,7 @@ const Home = () => {
                       <Popup
                         trigger={
                           <div className="animate__animated animate__fadeInUp play-button p-[22px] rounded-full">
-                            <IoIosPlay
-                              cursor={"pointer"}
-                              onClick={popupHandler}
-                              color="white"
-                            />
+                            <IoIosPlay cursor={"pointer"} color="white" />
                           </div>
                         }
                         modal
@@ -159,6 +152,9 @@ const Home = () => {
 
       {/* Work Success Section */}
       <Work />
+      {/* Why Choose Us Section  */}
+
+      <Chooseus />
     </>
   );
 };

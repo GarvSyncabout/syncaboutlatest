@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Aos from "aos";
 
 const Service = () => {
   useEffect(() => {
     AOS.init();
+    AOS.refresh();
   }, []);
 
   const cards = [
@@ -106,6 +108,10 @@ const Service = () => {
               </div>
             );
           })}
+        </div>
+
+        <div>
+          
         </div>
       </div>
     </section>
