@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="bg-[#291f3a]">
-        <div className="grid lg:grid-cols-2 gap-5 place-content-center place-items-center m-auto max-w-7xl w-full py-[50px] lg:py-[110px]">
+        <div className="grid lg:grid-cols-2 gap-5 place-content-center  place-items-center m-auto max-w-7xl w-full py-[50px] lg:py-[110px]">
           {footerContent.map((footerContentData) => {
             return (
               <div key={footerContentData.id} id="div-content">
