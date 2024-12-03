@@ -146,7 +146,7 @@ const Chooseus = () => {
           })}
           <Popup
             trigger={
-              <div className="play-button-three cursor-pointer p-[15px] md:p-[50px] rounded-full">
+              <div className="play-button-three cursor-pointer p-[50px] rounded-full">
                 <IoIosPlay cursor={"pointer"} color="#ef7f1a" size={"2rem"} />
               </div>
             }
