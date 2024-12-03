@@ -74,7 +74,7 @@ const Chooseus = () => {
   const videoContentData = [
     {
       id: "1",
-      heading: "We are top IT Solutions Vedio and history",
+      heading: "We are top IT Solutions Vedio and histor",
     },
   ];
   return (
