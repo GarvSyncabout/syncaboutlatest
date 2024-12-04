@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
-// import "../Service Section/service.css";
 import { IoIosPlay } from "react-icons/io";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Why Choose Section/chooseus.css";
@@ -104,7 +102,7 @@ const Chooseus = () => {
           >
             {cards.map((card) => {
               return (
-                <div key={card.id} className="bg-[#ffffff]">
+                <div key={card.id} className="bg-[#ffffff] shadow-md">
                   <div className="card-content-wrapper flex justify-center items-start text-start bg-[#ffffff]  flex-col p-[50px]">
                     <div className="mb-[30px]">
                       <img

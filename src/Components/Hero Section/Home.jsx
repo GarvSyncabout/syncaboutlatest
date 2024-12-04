@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 import Service from "../Service Section/Service";
 import Work from "../Work Success Section/Work";
 import Chooseus from "../Why Choose Section/Chooseus";
+import Digitalswiper from "../Company Logo Swiper/Digitalswiper";
+import Blogs from "../Blogs Section/Blogs";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -153,8 +155,12 @@ const Home = () => {
       {/* Work Success Section */}
       <Work />
       {/* Why Choose Us Section  */}
-
       <Chooseus />
+      {/* Company Logo Slider */}
+      <Digitalswiper />
+
+      {/* Blogs Section */}
+      <Blogs />
     </>
   );
 };

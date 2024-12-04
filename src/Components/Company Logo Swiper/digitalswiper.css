@@ -1,0 +1,13 @@
+.slick-slide {
+  height: 130px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.slick-slide img {
+  object-fit: contain !important;
+  height: 100px !important;
+  width: 200px !important;
+  aspect-ratio: 3 / 2 !important;
+}
