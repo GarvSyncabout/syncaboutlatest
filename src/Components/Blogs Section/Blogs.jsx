@@ -86,7 +86,7 @@ const Blogs = () => {
             return (
               <div
                 key={data.id}
-                className="flex justify-center items-center gap-3 flex-col mb-[60px] text-wrap max-w-[750px] "
+                className="flex justify-center items-center gap-3 flex-col md:mb-[60px] text-wrap max-w-[750px] "
               >
                 <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
                   {data.heading}
@@ -128,12 +128,16 @@ const Blogs = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className=" gap-3 grid bg-slate-500  grid-rows-[auto] place-content-center place-items-start">
+                  <div className="grid bg-white rounded grid-rows-[1fr_180px_auto] place-content-center place-items-start">
                     <div id="card-image">
-                      <img src={item.imgUrl} alt="blog img" />
+                      <img
+                        src={item.imgUrl}
+                        alt="blog img"
+                        className="rounded-tl rounded-tr"
+                      />
                     </div>
-                    <div id="card-content">
-                      <div className="flex justify-start gap-2 items-center">
+                    <div id="card-content" className="px-2 pt-7">
+                      <div className="flex justify-start gap-2 mb-[10px] items-center">
                         <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666]">
                           {item.date}
                         </h5>
@@ -141,16 +145,16 @@ const Blogs = () => {
                           {item.comments}
                         </h5>
                       </div>
-                      <div className="flex justify-center items-center">
-                        <h2 className="text-[#202122] text-start mb-5 font-Manrope text-2xl leading-[32px] font-semibold">
+                      <div className="flex justify-center  items-center">
+                        <h4 className="text-[#202122] text-balance text-start mb-5 font-Manrope text-2xl leading-[32px] font-semibold">
                           {item.heading}
-                        </h2>
+                        </h4>
                       </div>
                     </div>
 
                     <Link
                       to={"/"}
-                      className=" bg-[#ffffff] text-[#666666] rounded-full text-sm leading-5 font-medium hover:bg-[#ef7f1a] hover:text-[#ffffff] p-3"
+                      className=" bg-[#fafafa] text-[#666666] rounded-full text-sm leading-5 font-medium hover:bg-[#ef7f1a] hover:text-[#ffffff] p-3"
                     >
                       &#8594;&nbsp;{item.buttonTitle}
                     </Link>
