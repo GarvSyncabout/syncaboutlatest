@@ -6,6 +6,14 @@
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  outline: solid 0px #fff;
+  transition: all 0.5s cubic-bezier(1, -0.99, 0.14, 1.8) !important;
+}
+
+.blog-swiper .swiper .swiper-slide img:hover {
+  outline: solid 30px #fff;
+  outline-offset: -30px;
+  transition: all 0.5s cubic-bezier(1, -0.99, 0.14, 1.8) !important;
 }
 
 .blog-swiper .swiper-pagination-bullet-active {
@@ -33,14 +41,17 @@
   padding-bottom: 60px;
 }
 
-@media screen (min-width: 500px) {
-  .blog-swiper .swiper .swiper-pagination {
-    content: "";
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.calnder-div {
+  position: relative;
+}
+
+.calnder-div:after {
+  content: ".";
+  position: absolute;
+  top: 28%;
+  /* right: 50%; */
+  transform: translate(-50%, -50%);
+  right: -8px;
+  color: #ef7f1a;
+  font-size: 20px;
 }

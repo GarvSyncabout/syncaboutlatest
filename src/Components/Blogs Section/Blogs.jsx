@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
+import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -8,6 +9,8 @@ import "swiper/css/pagination";
 import { Link } from "react-router-dom";
 import "reactjs-popup/dist/index.css";
 import "../Blogs Section/blogs.css";
+import { HiMiniCalendarDateRange } from "react-icons/hi2";
+import { FaComments } from "react-icons/fa";
 
 const Blogs = () => {
   useEffect(() => {
@@ -80,7 +83,12 @@ const Blogs = () => {
 
   return (
     <section className="bg-[url('/WhyChooseUsSection/whychooseus.jpg')] h-full bg-no-repeat bg-cover">
-      <div className=" m-auto w-full max-w-7xl text-center gap-5 h-full p-5 pt-[110px] pb-[80px] ">
+      <div
+        data-aos="fade-down"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        className=" m-auto w-full max-w-7xl text-center gap-5 h-full p-5 pt-[110px] pb-[80px] "
+      >
         <div className="flex justify-center items-center">
           {contentData.map((data) => {
             return (
@@ -133,22 +141,32 @@ const Blogs = () => {
                       <img
                         src={item.imgUrl}
                         alt="blog img"
-                        className="rounded-tl rounded-tr"
+                        className=" rounded-tl rounded-tr"
                       />
                     </div>
                     <div id="card-content" className="px-2 pt-7">
-                      <div className="flex justify-start gap-2 mb-[10px] items-center">
-                        <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666]">
-                          {item.date}
-                        </h5>
-                        <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666]">
-                          {item.comments}
-                        </h5>
+                      <div className="flex justify-start gap-3 mb-[10px] items-center">
+                        <div className="calnder-div flex justify-center gap-1 items-center">
+                          {" "}
+                          <HiMiniCalendarDateRange />
+                          <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666] hover:text-[#ef7f1a]">
+                            {item.date}
+                          </h5>
+                        </div>
+                        <div className="flex justify-center gap-1 items-center">
+                          {" "}
+                          <FaComments />
+                          <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666] hover:text-[#ef7f1a]">
+                            {item.comments}
+                          </h5>
+                        </div>
                       </div>
                       <div className="flex justify-center  items-center">
-                        <h4 className="text-[#202122] text-balance text-start mb-5 font-Manrope text-2xl leading-[32px] font-semibold">
-                          {item.heading}
-                        </h4>
+                        <Link to={"/"}>
+                          <h4 className="text-[#202122] hover:text-[#ef7f1a] text-balance text-start mb-5 font-Manrope text-2xl leading-[32px] font-semibold">
+                            {item.heading}
+                          </h4>
+                        </Link>
                       </div>
                     </div>
 
