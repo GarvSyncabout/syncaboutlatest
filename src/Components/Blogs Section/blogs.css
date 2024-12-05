@@ -19,11 +19,16 @@
   height: 0.5rem;
 }
 
+.blog-swiper .swiper .swiper-wrapper {
+  padding-bottom: 60px;
+}
+
 .blog-swiper .swiper .swiper-pagination {
+  content: "";
   position: absolute;
-  bottom: 10px;
-  left: 0;
+  bottom: 0%;
+  left: 50%;
   width: 100%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 9999999;
 }
