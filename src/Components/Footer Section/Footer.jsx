@@ -175,6 +175,7 @@ const Footer = () => {
                 <div className="flex justify-center items-center gap-2">
                   <IoLocation color="#ef7f07" />
                   <Link
+                    target="_blank"
                     className="text-[#FFFFFF80] font-Jost text-sm font-normal"
                     to={
                       "https://www.google.com/maps/place/Sun+Gravitas/@23.0108181,72.528337,17z/data=!4m6!3m5!1s0x395e85e9f2477ef1:0xd22e247bd25f9357!8m2!3d23.0108181!4d72.5309173!16s%2Fg%2F11kjpcrqsw?entry=ttu&g_ep=EgoyMDI0MTIwMi4wIKXMDSoASAFQAw%3D%3D"
@@ -231,7 +232,6 @@ const Footer = () => {
                         <li className="mb-1">
                           <Link
                             to={usefulllink.href}
-                            target="_blank"
                             className="text-[#ffffff80] font-Jost text-sm font-normal hover:text-[#ef7f1a]"
                           >
                             {usefulllink.title}
