@@ -128,15 +128,11 @@ const Blogs = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="grid shadow-md grid-rows-2 grid-cols-1 bg-white w-auto ">
-                    <div id="image-wraper">
-                      <img
-                        src={item.imgUrl}
-                        alt="blog img"
-                        className="object-cover"
-                      />
+                  <div className="grid  grid-rows-[auto] place-content-center place-items-start">
+                    <div id="card-image">
+                      <img src={item.imgUrl} alt="blog img" />
                     </div>
-                    <div id="content-wraper" className="p-2">
+                    <div id="card-content">
                       <div className="flex justify-start gap-2 items-center">
                         <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666]">
                           {item.date}
@@ -151,14 +147,13 @@ const Blogs = () => {
                         </h2>
                       </div>
                     </div>
-                    <div className="p-2">
-                      <Link
-                        to={`/blog/${item.id}`}
-                        className="flex justify-start w-fit items-start px-2 py-1 bg-[#ef7f1a] text-[#ffffff] rounded-full text-sm leading-5 font-medium hover:bg-[#ffffff] hover:text-[#ef7f1a]"
-                      >
-                        &#8594; &nbsp;{item.buttonTitle}
-                      </Link>
-                    </div>
+
+                    <Link
+                      to={"/"}
+                      className=" bg-[#ffffff] text-[#666666] rounded-full text-sm leading-5 font-medium hover:bg-[#ef7f1a] hover:text-[#ffffff] p-3"
+                    >
+                      &#8594;&nbsp;{item.buttonTitle}
+                    </Link>
                   </div>
                 </SwiperSlide>
               );
@@ -171,3 +166,38 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+{
+  /* <div className="grid shadow-md grid-rows-2 grid-cols-1 bg-white w-auto ">
+<div id="image-wraper">
+  <img
+    src={item.imgUrl}
+    alt="blog img"
+    className="object-cover"
+  />
+</div>
+<div id="content-wraper" className="p-2">
+  <div className="flex justify-start gap-2 items-center">
+    <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666]">
+      {item.date}
+    </h5>
+    <h5 className="text-sm text-start leading-[26px] font-normal text-[#666666]">
+      {item.comments}
+    </h5>
+  </div>
+  <div className="flex justify-center items-center">
+    <h2 className="text-[#202122] text-start mb-5 font-Manrope text-2xl leading-[32px] font-semibold">
+      {item.heading}
+    </h2>
+  </div>
+</div>
+<div className="p-2">
+  <Link
+    to={`/blog/${item.id}`}
+    className="flex justify-start w-fit items-start px-2 py-1 bg-[#ef7f1a] text-[#ffffff] rounded-full text-sm leading-5 font-medium hover:bg-[#ffffff] hover:text-[#ef7f1a]"
+  >
+    &#8594; &nbsp;{item.buttonTitle}
+  </Link>
+</div>
+</div> */
+}
