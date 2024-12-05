@@ -1,0 +1,19 @@
+.service-ul li {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.service-ul li:before {
+  content: "\203A";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ef7f07;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.service-ul li {
+  margin-left: 10px;
+}

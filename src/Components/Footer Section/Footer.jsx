@@ -1,7 +1,86 @@
 import React from "react";
 import { MdOutlineSubdirectoryArrowLeft } from "react-icons/md";
+import { IoCallSharp, IoMail, IoLocation } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import "../Footer Section/footer.css";
 
 const Footer = () => {
+  const imageData = [
+    {
+      id: "1",
+      imageUrl: "/Footer Section/footercompanylogo.png",
+      alt: "Footer Section Logo",
+      href: "/",
+      slogan: "Elevate Your Vision with Syncabout",
+    },
+  ];
+
+  const serviceData = [
+    {
+      id: "1",
+      title: "Web Development",
+      href: "/",
+    },
+    {
+      id: "2",
+      title: "Software Development",
+      href: "/",
+    },
+    {
+      id: "3",
+      title: "Mobile App Development",
+      href: "/",
+    },
+    {
+      id: "4",
+      title: "Custom ERP Development",
+      href: "/",
+    },
+    {
+      id: "5",
+      title: "SEO Service",
+      href: "/",
+    },
+    {
+      id: "6",
+      title: "Social Media Marketing",
+      href: "/",
+    },
+  ];
+
+  const usefullData = [
+    {
+      id: "1",
+      title: "Home",
+      href: "/",
+    },
+    {
+      id: "2",
+      title: "About Us",
+      href: "/",
+    },
+    {
+      id: "3",
+      title: "Why Choose Us",
+      href: "/",
+    },
+    {
+      id: "4",
+      title: "How We Work",
+      href: "/",
+    },
+    {
+      id: "5",
+      title: "Life At Syncabout",
+      href: "/",
+    },
+    {
+      id: "6",
+      title: "Contact Us",
+      href: "/",
+    },
+  ];
+
   const footerContent = [
     {
       id: "1",
@@ -39,8 +118,132 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#251a38]">
-        <div className="m-auto max-w-7xl w-full"></div>
+
+      <div className="bg-[#251A38]" id="container">
+        <div
+          id="wrapper"
+          className="m-auto w-full max-w-7xl py-10  md:pt-[75px] md:pb-[75px]"
+        >
+          <div
+            id="footer-wrapper"
+            className=" gap-5 md:gap-0 grid md:grid-cols-2 place-content-center px-2 place-items-center"
+          >
+            {/* First Div */}
+            <div
+              id="grid-first-div"
+              className="flex justify-center items-center md:items-start gap-5 md:gap-3 flex-col py-2"
+            >
+              {imageData.map((imageItem) => {
+                return (
+                  <div id="logo-div" key={imageItem.id}>
+                    <Link to={imageItem.href}>
+                      <img
+                        src={imageItem.imageUrl}
+                        alt={imageItem.alt}
+                        className="h-16"
+                      />
+                    </Link>
+                    <h4 className="text-[#ffffff] text-sm mt-3  text-center leading-[26px] font-Jost font-normal">
+                      {imageItem.slogan}
+                    </h4>
+                  </div>
+                );
+              })}
+
+              <div
+                id="content-div"
+                className="flex justify-center items-start flex-col gap-2"
+              >
+                <div className="flex justify-center items-center gap-2">
+                  <IoCallSharp color="#ef7f07" />
+                  <Link
+                    className="text-[#FFFFFF80] font-Jost text-sm font-normal"
+                    to={"tel:+919316016153"}
+                  >
+                    +919316016153
+                  </Link>
+                </div>
+                <div className="flex justify-center items-center gap-2">
+                  <IoMail color="#ef7f07" />
+                  <Link
+                    className="text-[#FFFFFF80] font-Jost text-sm font-normal"
+                    to={"mailto:connect@syncaboutconsultancy.com"}
+                  >
+                    connect@syncaboutconsultancy.com
+                  </Link>
+                </div>
+                <div className="flex justify-center items-center gap-2">
+                  <IoLocation color="#ef7f07" />
+                  <Link
+                    className="text-[#FFFFFF80] font-Jost text-sm font-normal"
+                    to={
+                      "https://www.google.com/maps/place/Sun+Gravitas/@23.0108181,72.528337,17z/data=!4m6!3m5!1s0x395e85e9f2477ef1:0xd22e247bd25f9357!8m2!3d23.0108181!4d72.5309173!16s%2Fg%2F11kjpcrqsw?entry=ttu&g_ep=EgoyMDI0MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+                    }
+                  >
+                    1020 Sun Gravitas, Near Shyamal Cross Road,
+                    <br />
+                    Radio Mirchi Road, Ahmedabad -380015 Gujarat, IN.
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Second Div */}
+
+            <div
+              id="second div"
+              className="flex justify-evenly gap-3 w-full items-center  py-2"
+            >
+              {/* Our Service */}
+
+              <div className="flex justify-center  items-start flex-col gap-2">
+                <h4 className="font-Jost text-[#ffffff] text-lg leading-[23.4px] font-normal">
+                  Our Service
+                </h4>
+                <div>
+                  {serviceData.map((service) => {
+                    return (
+                      <ul className="service-ul" key={service.id}>
+                        <li className="mb-1">
+                          <Link
+                            to={service.href}
+                            className="text-[#ffffff80] font-Jost text-sm font-normal hover:text-[#ef7f1a]"
+                          >
+                            {service.title}
+                          </Link>
+                        </li>
+                      </ul>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Usefull Links */}
+
+              <div className="flex justify-center  items-start flex-col gap-2">
+                <h4 className="font-Jost text-[#ffffff] text-lg leading-[23.4px] font-normal">
+                  Usefull Links
+                </h4>
+                <div>
+                  {usefullData.map((usefulllink) => {
+                    return (
+                      <ul className="service-ul" key={usefulllink.id}>
+                        <li className="mb-1">
+                          <Link
+                            to={usefulllink.href}
+                            className="text-[#ffffff80] font-Jost text-sm font-normal hover:text-[#ef7f1a]"
+                          >
+                            {usefulllink.title}
+                          </Link>
+                        </li>
+                      </ul>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
