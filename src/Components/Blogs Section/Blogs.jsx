@@ -82,7 +82,7 @@ const Blogs = () => {
   ];
 
   return (
-    <section className="bg-[url('/WhyChooseUsSection/whychooseus.jpg')] h-full bg-no-repeat bg-cover">
+    <section className="bg-[#ffffff]">
       <div
         data-aos="fade-down"
         data-aos-delay="50"
@@ -136,7 +136,7 @@ const Blogs = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="grid  rounded grid-rows-[1fr_200px_auto] place-content-center place-items-start">
+                  <div className="grid   rounded grid-rows-[1fr_200px_auto] place-content-center place-items-start">
                     <div id="card-image">
                       <img
                         src={item.imgUrl}
