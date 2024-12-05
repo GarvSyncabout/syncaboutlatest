@@ -28,9 +28,9 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
+/* 
 @media (min-width: 768px) {
   .blog-swiper .swiper .swiper-wrapper {
     padding-bottom: 60px;
   }
-}
+} */
