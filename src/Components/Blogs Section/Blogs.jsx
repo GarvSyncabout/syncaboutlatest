@@ -128,7 +128,7 @@ const Blogs = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="grid bg-slate-500  grid-rows-[auto] place-content-center place-items-start">
+                  <div className=" gap-3 grid bg-slate-500  grid-rows-[auto] place-content-center place-items-start">
                     <div id="card-image">
                       <img src={item.imgUrl} alt="blog img" />
                     </div>
