@@ -3,6 +3,7 @@ import { MdOutlineSubdirectoryArrowLeft } from "react-icons/md";
 import { IoCallSharp, IoMail, IoLocation } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import "../Footer Section/footer.css";
+import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   const imageData = [
@@ -243,6 +244,22 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="m-auto w-full max-w-7xl bg-[#1d152c] py-6 md:py-[80px]">
+          <div className="flex justify-center items-center flex-col gap-8">
+            <Link
+              to={
+                "https://in.linkedin.com/company/syncabout-business-solutions"
+              }
+              target="_blank"
+              className="text-lg"
+            >
+              <FaLinkedin size={30} color="#ffffff" />
+            </Link>
+            <p className="text-center text-[#ffffff] text-sm font-Jost font-normal">
+              &copy; 2023 SyncAbout Consultancy. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
