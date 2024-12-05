@@ -231,6 +231,7 @@ const Footer = () => {
                         <li className="mb-1">
                           <Link
                             to={usefulllink.href}
+                            target="_blank"
                             className="text-[#ffffff80] font-Jost text-sm font-normal hover:text-[#ef7f1a]"
                           >
                             {usefulllink.title}
