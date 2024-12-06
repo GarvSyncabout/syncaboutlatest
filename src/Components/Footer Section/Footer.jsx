@@ -246,8 +246,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="m-auto w-full max-w-7xl bg-[#1d152c] py-6 md:py-[80px]">
-          <div className="flex justify-center items-center flex-col gap-8">
+        <div className="m-auto w-full max-w-[1200px] bg-[#1d152c] rounded-md  p-10">
+          <div className="flex justify-center items-center flex-col gap-5">
             <Link
               to={
                 "https://in.linkedin.com/company/syncabout-business-solutions"
