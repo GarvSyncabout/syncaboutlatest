@@ -158,7 +158,7 @@ const Footer = () => {
                 <div className="flex justify-center items-center gap-2">
                   <IoCallSharp color="#ef7f07" />
                   <Link
-                    className="text-[#FFFFFF80] font-Jost text-sm font-normal"
+                    className="text-[#FFFFFF80] hover:text-[#ef7f07] font-Jost text-sm font-normal"
                     to={"tel:+919316016153"}
                   >
                     +919316016153
@@ -167,7 +167,7 @@ const Footer = () => {
                 <div className="flex justify-center items-center gap-2">
                   <IoMail color="#ef7f07" />
                   <Link
-                    className="text-[#FFFFFF80] font-Jost text-sm font-normal"
+                    className="text-[#FFFFFF80] font-Jost hover:text-[#ef7f07] text-sm font-normal"
                     to={"mailto:connect@syncaboutconsultancy.com"}
                   >
                     connect@syncaboutconsultancy.com
@@ -177,7 +177,7 @@ const Footer = () => {
                   <IoLocation color="#ef7f07" />
                   <Link
                     target="_blank"
-                    className="text-[#FFFFFF80] font-Jost text-sm font-normal"
+                    className="text-[#FFFFFF80] font-Jost hover:text-[#ef7f07] text-sm font-normal"
                     to={
                       "https://www.google.com/maps/place/Sun+Gravitas/@23.0108181,72.528337,17z/data=!4m6!3m5!1s0x395e85e9f2477ef1:0xd22e247bd25f9357!8m2!3d23.0108181!4d72.5309173!16s%2Fg%2F11kjpcrqsw?entry=ttu&g_ep=EgoyMDI0MTIwMi4wIKXMDSoASAFQAw%3D%3D"
                     }
@@ -255,9 +255,12 @@ const Footer = () => {
               target="_blank"
               className="text-lg"
             >
-              <FaLinkedin size={30} color="#ffffff" />
+              <FaLinkedin
+                size={30}
+                className="text-[#ffffff80] hover:text-[#ef7f1a]"
+              />
             </Link>
-            <p className="text-center text-[#ffffff] text-sm font-Jost font-normal">
+            <p className="text-center text-[#ffffff80] text-sm font-Manrope leading-7 font-semibold">
               &copy; 2023 SyncAbout Consultancy. All rights reserved.
             </p>
           </div>
