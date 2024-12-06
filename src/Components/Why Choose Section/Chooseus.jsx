@@ -5,7 +5,6 @@ import "reactjs-popup/dist/index.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Why Choose Section/chooseus.css";
-import { Helmet } from "react-helmet";
 
 const Chooseus = () => {
   useEffect(() => {
@@ -78,9 +77,6 @@ const Chooseus = () => {
   ];
   return (
     <>
-      <Helmet>
-        <title>Why Choose Us</title>
-      </Helmet>
       <section className="bg-[url('/WhyChooseUsSection/whychooseus.jpg')] bg-no-repeat bg-cover ">
         <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
           {contentData.map((data) => {
@@ -130,9 +126,8 @@ const Chooseus = () => {
           </div>
         </div>
       </section>
-      <section className="video-section py-[190px]   bg-[url('/WhyChooseUsSection/chooseusvideosection.jpg')]  bg-no-repeat bg-cover  ">
-        <div className="wrapper"> </div>
-
+      <section className="video-section py-[190px] bg-[url('/WhyChooseUsSection/chooseusvideosection.jpg')]  bg-no-repeat bg-cover  ">
+        <div className="wrapper"></div>
         <div
           id="video-wrapper"
           className=" relative z-50 flex justify-center gap-14 items-center text-center flex-col m-auto w-full  max-w-7xl"

@@ -6,7 +6,6 @@ import "reactjs-popup/dist/index.css";
 import AOS from "aos";
 import CountUp from "react-countup";
 import "aos/dist/aos.css";
-import { Helmet } from "react-helmet";
 
 const Work = () => {
   const counterData = [
@@ -39,9 +38,6 @@ const Work = () => {
 
   return (
     <section className="bg-[#ffffff]">
-      <Helmet>
-        <title>Work | Work Success</title>
-      </Helmet>
       <div
         className="w-full m-auto max-w-7xl"
         data-aos="fade-down"
@@ -151,26 +147,28 @@ const Work = () => {
         </div>
         <div
           id="counter-wraper"
-          className="gap-4 grid md:grid-cols-2 lg:grid-cols-4 py-[60px] border-t-[1px] border-[rgba(37, 26, 55, 0.1)]"
+          className="gap-4 grid md:grid-cols-2 lg:grid-cols-4 py-[60px] border-t-[1px] place-content-center place-items-center border-[rgba(37, 26, 55, 0.1)]"
         >
           {counterData.map((data) => {
             return (
               <div
                 key={data.id}
-                className="flex justify-center items-center flex-col"
+                className=" flex justify-center gap-2 items-center py-2 flex-col"
               >
-                <div className="flex justify-center items-center ">
-                  <span className="font-Manrope text-5xl leading-[30px] lg:text-7xl lg:leading-[50px]  font-bold text-[#202122]">
+                <div>
+                  <span className="font-Manrope text-center text-5xl leading-[30px] lg:text-7xl lg:leading-[50px] font-bold text-[#202122]">
                     +
                   </span>
                   <CountUp
                     end={data.total}
-                    className="font-Manrope text-5xl leading-[30px] lg:text-7xl lg:leading-[50px] font-bold text-[#202122]"
+                    className="font-Manrope  text-5xl text-center leading-[30px] lg:text-7xl lg:leading-[50px] font-bold text-[#202122]"
                   />
                 </div>
-                <span className="text-[#666666] font-Jost text-2xl leading-[50px] mt-4 font-normal">
-                  {data.title}
-                </span>
+                <div>
+                  <span className="text-[#666666] text-center font-Jost text-2xl leading-[50px] mt-4 font-normal">
+                    {data.title}
+                  </span>
+                </div>
               </div>
             );
           })}

@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 const Notfound = () => {
   return (
     <section>
-      <Helmet>
-        <title>404-Not Found</title>
-      </Helmet>
       <div className="m-auto w-full max-w-7xl ">
         <div
           id="wrapper-container"

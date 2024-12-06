@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Helmet } from "react-helmet";
 
 const Service = () => {
   useEffect(() => {
@@ -70,9 +69,6 @@ const Service = () => {
 
   return (
     <section className=" bg-[#fafafa]">
-      <Helmet>
-        <title>Our Service</title>
-      </Helmet>
       <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
         {contentData.map((data) => {
           return (
@@ -119,7 +115,6 @@ const Service = () => {
                   <Link to={"/"}>
                     <FaLongArrowAltRight
                       size={"2.5em"}
-                      style={{}}
                       className="bg-[#ffffff] rounded-[50%] p-3 hover:!bg-[#ef7f1a] hover:text-white"
                     />
                   </Link>
@@ -128,8 +123,6 @@ const Service = () => {
             );
           })}
         </div>
-
-        <div></div>
       </div>
     </section>
   );
