@@ -262,7 +262,7 @@ const Navbar = () => {
               ×
             </button>
           </div>
-          <div className="flex flex-col gap-2 justify-center items-start px-3 text-black space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
+          <div className="flex flex-col items-start px-3 text-black space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
             {/* Mobile Dropdowns */}
             <div className="mobile-nav relative w-full">
               <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
