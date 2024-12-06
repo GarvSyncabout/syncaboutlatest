@@ -377,6 +377,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
@@ -535,7 +537,7 @@ const Navbar = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex space-x-4">
+        <div className="hidden md:flex space-x-4">
           <Link
             to={"https://in.linkedin.com/company/syncabout-business-solutions"}
             target="_blank"
@@ -545,31 +547,26 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Hamburger Icon */}
-        <div className="md:hidden">
-          <button
-            className="text-black"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+        <div className="md:hidden ">
+          {!isMobileMenuOpen ? (
+            <GiHamburgerMenu
+              color="black"
+              size={"1.5em"}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          ) : (
+            <IoCloseSharp
+              color="black"
+              size={"1.5em"}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          )}
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#ffffff] text-black px-4 py-3 space-y-4">
+        <div className="md:hidden bg-[#ffffff] text-black px-4 py-3 absolute left-0 w-full  z-50 space-y-4">
           <Link
             to={"/"}
             className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
@@ -706,6 +703,18 @@ const Navbar = () => {
           >
             Blogs
           </Link>
+
+          {/* Social Icons */}
+          <div className=" md:flex space-x-4">
+            <Link
+              to={
+                "https://in.linkedin.com/company/syncabout-business-solutions"
+              }
+              target="_blank"
+            >
+              <FaLinkedin size={30} />
+            </Link>
+          </div>
         </div>
       )}
     </nav>
