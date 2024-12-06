@@ -373,21 +373,41 @@
 // export default Navbar;
 
 // testing Navigation menu
-
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import "../Navigation Menu/navbar.css";
 
 const Navbar = () => {
   const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
 
   return (
-    <nav className="bg-[#ffffff] text-black px-4 py-3">
+    <nav
+      className={
+        isSticky ? "sticky" : " bg-[#ffffff] text-black shadow-md px-4 py-3"
+      }
+    >
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold">
