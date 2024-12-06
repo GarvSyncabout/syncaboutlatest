@@ -1,372 +1,714 @@
+// import React, { useState } from "react";
+// import { FaLinkedin } from "react-icons/fa";
+// import { Link } from "react-router-dom";
+// import "../Navigation Menu/navbar.css";
+
+// const Navbar = () => {
+//   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+//   const [activeDropdown, setActiveDropdown] = useState(null);
+//   const [isDropdownOpen, setIsDropdownOpen] = useState({
+//     company: false,
+//     services: false,
+//     cloudServices: false,
+//     portfolio: false,
+//   });
+
+//   const toggleMobileMenu = () => {
+//     setMobileMenuOpen(!isMobileMenuOpen);
+//   };
+//   // For Desktop hover
+//   const handleMouseEnter = (dropdown) => {
+//     setActiveDropdown(dropdown);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setActiveDropdown(null);
+//   };
+
+//   // For Mobile click
+//   const toggleDropdown = (dropdown) => {
+//     setIsDropdownOpen((prevState) => ({
+//       ...prevState,
+//       [dropdown]: !prevState[dropdown],
+//     }));
+//   };
+
+//   return (
+//     <header>
+//       <div className="bg-[#fafafa]">
+//         <div
+//           id="top-bar"
+//           className="max-w-7xl m-auto  flex justify-between gap-2  items-center px-5 py-3   flex-col md:flex-row"
+//         >
+//           <div className="flex justify-center items-center flex-col gap-3 md:flex-row">
+//             <Link
+//               to={"mailto:connect@Syncaboutconsultancy.com"}
+//               className="mailid font-Jost text-base font-normal leading-[20px] text-[#787878] hover:text-[#ef7f1a]"
+//             >
+//               connect@syncaboutconsultancy.com
+//             </Link>
+//           </div>
+//           <div className="flex justify-center items-center gap-3 ">
+//             <span className="terms font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+//               Terms & Condition
+//             </span>
+//             <span className="privacy font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+//               Privacy Policy
+//             </span>
+//             <span className="font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
+//               Contact Us
+//             </span>
+//           </div>
+//         </div>
+//       </div>
+//       <nav className="max-w-7xl m-auto p-4 shadow-sm bg-[#ffffff]">
+//         <div className="flex items-center justify-between">
+//           {/* Logo */}
+//           <div>
+//             <Link to={"/"}>
+//               <img
+//                 src="./Company Logo/syncaboutlogo.png"
+//                 alt="Company Logo"
+//                 className="h-12"
+//               />
+//             </Link>
+//           </div>
+
+//           {/* Desktop Menu */}
+//           <div className="hidden lg:flex justify-center items-center z-50   gap-5">
+//             <a
+//               href="#"
+//               className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+//             >
+//               Home
+//             </a>
+
+//             {/* Company Dropdown */}
+//             <div
+//               className="relative"
+//               onMouseEnter={() => handleMouseEnter("company")}
+//               onMouseLeave={handleMouseLeave}
+//             >
+//               <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
+//                 Company
+//               </button>
+//               {activeDropdown === "company" && (
+//                 <div className="w-48 absolute left-0 mt-0 space-y-2 bg-white text-black p-4 rounded shadow-lg">
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     About Us
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Why Choose Us
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     How We Work
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Life At Syncabout
+//                   </a>
+//                 </div>
+//               )}
+//             </div>
+
+//             {/* SAP Services Link */}
+//             <a
+//               href="#"
+//               className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]"
+//             >
+//               SAP Services
+//             </a>
+
+//             {/* Services Dropdown */}
+//             <div
+//               className="relative"
+//               onMouseEnter={() => handleMouseEnter("services")}
+//               onMouseLeave={handleMouseLeave}
+//             >
+//               <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
+//                 Services
+//               </button>
+//               {activeDropdown === "services" && (
+//                 <div className="w-60 absolute left-0 mt-0 space-y-2 bg-white text-black p-4 rounded shadow-lg">
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Web Development
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Software Development
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Mobile App Development
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Custom ERP Development
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     SEO Services
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Social Media Marketing
+//                   </a>
+//                 </div>
+//               )}
+//             </div>
+
+//             {/* Portfolio Dropdown */}
+//             <div
+//               className="relative"
+//               onMouseEnter={() => handleMouseEnter("portfolio")}
+//               onMouseLeave={handleMouseLeave}
+//             >
+//               <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
+//                 Portfolio
+//               </button>
+//               {activeDropdown === "portfolio" && (
+//                 <div className="w-52 absolute left-0 mt-0 space-y-2 bg-white text-black p-4 rounded shadow-lg">
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     Graphics Portfolios
+//                   </a>
+//                   <a
+//                     href="#"
+//                     className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+//                   >
+//                     UI/UX Portfolios
+//                   </a>
+//                 </div>
+//               )}
+//             </div>
+
+//             {/* Blogs Link */}
+//             <a
+//               href="#"
+//               className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]"
+//             >
+//               Blogs
+//             </a>
+//           </div>
+//           <div className="hidden lg:flex space-x-4 ">
+//             <Link
+//               to={
+//                 "https://in.linkedin.com/company/syncabout-business-solutions"
+//               }
+//               target="_blank"
+//             >
+//               <FaLinkedin size={30} />
+//             </Link>
+//           </div>
+
+//           {/* Mobile Menu Button */}
+//           <div className="lg:hidden">
+//             <button
+//               onClick={toggleMobileMenu}
+//               className="text-black focus:outline-none"
+//             >
+//               <svg
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 fill="none"
+//                 viewBox="0 0 24 24"
+//                 stroke="currentColor"
+//                 className="h-6 w-6"
+//               >
+//                 <path
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth="2"
+//                   d="M4 6h16M4 12h16M4 18h16"
+//                 ></path>
+//               </svg>
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* Mobile Menu */}
+//         <div
+//           className={`fixed inset-0 bg-white  z-50 w-full md:max-w-80 transform transition-all duration-300 ${
+//             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full "
+//           }`}
+//         >
+//           <div className="flex justify-end p-4">
+//             <button onClick={toggleMobileMenu} className="text-black text-3xl">
+//               ×
+//             </button>
+//           </div>
+//           <div className="flex flex-col items-start px-3 text-black space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
+//             {/* Mobile Dropdowns */}
+//             <div className="mobile-nav relative w-full">
+//               <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
+//                 Home
+//               </a>
+//             </div>
+//             <div className="mobile-nav relative w-full">
+//               <button
+//                 onClick={() => toggleDropdown("company")}
+//                 className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
+//               >
+//                 Company
+//               </button>
+//               {isDropdownOpen.company && (
+//                 <div className="bg-white text-black p-4 rounded shadow-sm w-full">
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a] ">
+//                     About Us
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Why Choose Us
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     How We Work
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Life At Syncabout
+//                   </a>
+//                 </div>
+//               )}
+//             </div>
+//             <div className="mobile-nav relative w-full">
+//               <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
+//                 SAP Services
+//               </a>
+//             </div>
+//             <div className="mobile-nav relative w-full">
+//               <button
+//                 onClick={() => toggleDropdown("services")}
+//                 className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
+//               >
+//                 Services
+//               </button>
+//               {isDropdownOpen.services && (
+//                 <div className="bg-white text-black p-4 rounded shadow-sm w-full">
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Web Development
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Software Development
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Mobile App Development
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Custom ERP Development
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     SEO Services
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Social Media Marketing
+//                   </a>
+//                 </div>
+//               )}
+//             </div>
+
+//             <div className="mobile-nav relative w-full">
+//               <button
+//                 onClick={() => toggleDropdown("portfolio")}
+//                 className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
+//               >
+//                 Portfolio
+//               </button>
+//               {isDropdownOpen.portfolio && (
+//                 <div className="bg-white text-black p-4 rounded shadow-sm w-full">
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     Graphics Portfolios
+//                   </a>
+//                   <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
+//                     UI/UX Portfolios
+//                   </a>
+//                 </div>
+//               )}
+//             </div>
+//             <div className="mobile-nav relative w-full">
+//               <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
+//                 Blogs
+//               </a>
+//             </div>
+
+//             {/* Social Links */}
+//             <Link
+//               to={
+//                 "https://in.linkedin.com/company/syncabout-business-solutions"
+//               }
+//               target="_blank"
+//               className="text-lg"
+//             >
+//               <FaLinkedin size={30} />
+//             </Link>
+//           </div>
+//         </div>
+//       </nav>
+//     </header>
+//   );
+// };
+
+// export default Navbar;
+
+// testing Navigation menu
+
 import React, { useState } from "react";
-import { FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "../Navigation Menu/navbar.css";
+import { FaLinkedin } from "react-icons/fa";
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState({
-    company: false,
-    services: false,
-    cloudServices: false,
-    portfolio: false,
-  });
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
-  // For Desktop hover
-  const handleMouseEnter = (dropdown) => {
-    setActiveDropdown(dropdown);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveDropdown(null);
-  };
-
-  // For Mobile click
-  const toggleDropdown = (dropdown) => {
-    setIsDropdownOpen((prevState) => ({
-      ...prevState,
-      [dropdown]: !prevState[dropdown],
-    }));
-  };
+  const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header>
-      <div className="bg-[#fafafa]">
-        <div
-          id="top-bar"
-          className="max-w-7xl m-auto  flex justify-between gap-2  items-center px-5 py-3   flex-col md:flex-row"
-        >
-          <div className="flex justify-center items-center flex-col gap-3 md:flex-row">
-            <Link
-              to={"mailto:connect@Syncaboutconsultancy.com"}
-              className="mailid font-Jost text-base font-normal leading-[20px] text-[#787878] hover:text-[#ef7f1a]"
+    <nav className="bg-[#ffffff] text-black px-4 py-3">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <div className="text-2xl font-bold">
+          <Link href="/">
+            <img src="/Company Logo/syncaboutlogo.png" className="h-12" />
+          </Link>
+        </div>
+
+        {/* Nav Links */}
+        <div className="hidden md:flex space-x-6">
+          <Link
+            to={"/"}
+            className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            Home
+          </Link>
+
+          {/* Company  Dropdown */}
+          <div
+            className="relative z-50 group"
+            onMouseEnter={() => setIsCompanyDropdownOpen(true)}
+            onMouseLeave={() => setIsCompanyDropdownOpen(false)}
+          >
+            <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
+              Company
+            </button>
+            {isCompanyDropdownOpen && (
+              <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-48">
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  About Us
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Why Choose Us
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  How We Work
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Life At Syncabout
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link
+            to={"/"}
+            className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            SAP Services
+          </Link>
+          {/* Services Dropdown */}
+          <div
+            className="relative z-50 group"
+            onMouseEnter={() => setIsServicesDropdownOpen(true)}
+            onMouseLeave={() => setIsServicesDropdownOpen(false)}
+          >
+            <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
+              Services
+            </button>
+            {isServicesDropdownOpen && (
+              <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-56">
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Web Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Software Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Mobile App Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Custom ERP Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  SEO Service
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Social Media Marketing
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Portfolio Dropdown */}
+          <div
+            className="relative z-50 group"
+            onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
+            onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
+          >
+            <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
+              Portfolio
+            </button>
+            {isPortfolioDropdownOpen && (
+              <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-48">
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Graphics Portfolio
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  UI/UX Portfolio
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link
+            to={"/"}
+            className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            Blogs
+          </Link>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex space-x-4">
+          <Link
+            to={"https://in.linkedin.com/company/syncabout-business-solutions"}
+            target="_blank"
+          >
+            <FaLinkedin size={30} />
+          </Link>
+        </div>
+
+        {/* Mobile Hamburger Icon */}
+        <div className="md:hidden">
+          <button
+            className="text-black"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
             >
-              connect@syncaboutconsultancy.com
-            </Link>
-          </div>
-          <div className="flex justify-center items-center gap-3 ">
-            <span className="terms font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
-              Terms & Condition
-            </span>
-            <span className="privacy font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
-              Privacy Policy
-            </span>
-            <span className="font-Jost text-sm font-normal  text-[#787878] hover:text-[#ef7f1a]">
-              Contact Us
-            </span>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-      <nav className="max-w-7xl m-auto p-4 shadow-sm bg-[#ffffff]">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div>
-            <Link to={"/"}>
-              <img
-                src="./Company Logo/syncaboutlogo.png"
-                alt="Company Logo"
-                className="h-12"
-              />
-            </Link>
-          </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex justify-center items-center z-50   gap-5">
-            <a
-              href="#"
-              className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
-            >
-              Home
-            </a>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-[#ffffff] text-black px-4 py-3 space-y-4">
+          <Link
+            to={"/"}
+            className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            Home
+          </Link>
 
-            {/* Company Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("company")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
-                Company
-              </button>
-              {activeDropdown === "company" && (
-                <div className="w-48 absolute left-0 mt-0 space-y-2 bg-white text-black p-4 rounded shadow-lg">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    About Us
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Why Choose Us
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    How We Work
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Life At Syncabout
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {/* SAP Services Link */}
-            <a
-              href="#"
-              className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]"
-            >
-              SAP Services
-            </a>
-
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("services")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
-                Services
-              </button>
-              {activeDropdown === "services" && (
-                <div className="w-60 absolute left-0 mt-0 space-y-2 bg-white text-black p-4 rounded shadow-lg">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Web Development
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Software Development
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Mobile App Development
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Custom ERP Development
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    SEO Services
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Social Media Marketing
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {/* Portfolio Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("portfolio")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="dropdown-menu font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]">
-                Portfolio
-              </button>
-              {activeDropdown === "portfolio" && (
-                <div className="w-52 absolute left-0 mt-0 space-y-2 bg-white text-black p-4 rounded shadow-lg">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    Graphics Portfolios
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
-                  >
-                    UI/UX Portfolios
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {/* Blogs Link */}
-            <a
-              href="#"
-              className="font-Manrope text-lg leading-10 font-semibold text-black hover:text-[#ef7f1a]"
-            >
-              Blogs
-            </a>
-          </div>
-          <div className="hidden lg:flex space-x-4 ">
-            <Link
-              to={
-                "https://in.linkedin.com/company/syncabout-business-solutions"
-              }
-              target="_blank"
-            >
-              <FaLinkedin size={30} />
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          {/* Company Dropdown */}
+          <div className="relative">
             <button
-              onClick={toggleMobileMenu}
-              className="text-black focus:outline-none"
+              onClick={() => setIsCompanyDropdownOpen(!isCompanyDropdownOpen)}
+              className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
+              Comapany
             </button>
+            {isCompanyDropdownOpen && (
+              <div className="bg-[#ffffff] p-2 rounded shadow-md space-y-2">
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  About Us
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Why Choose Us
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  How We Work
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Life At Syncabout
+                </Link>
+              </div>
+            )}
           </div>
-        </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`fixed inset-0 bg-white  z-50 w-full md:max-w-80 transform transition-all duration-300 ${
-            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full "
-          }`}
-        >
-          <div className="flex justify-end p-4">
-            <button onClick={toggleMobileMenu} className="text-black text-3xl">
-              ×
+          <Link
+            to={"/"}
+            className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            SAP Services
+          </Link>
+
+          {/* Services Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+              className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+            >
+              Services
             </button>
+            {isServicesDropdownOpen && (
+              <div className="bg-[#ffffff] p-2 rounded shadow-md space-y-2">
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Web Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Software Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Mobile App Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Custom ERP Development
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  SEO Service
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Social Media Marketing
+                </Link>
+              </div>
+            )}
           </div>
-          <div className="flex flex-col items-start px-3 text-black space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
-            {/* Mobile Dropdowns */}
-            <div className="mobile-nav relative w-full">
-              <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
-                Home
-              </a>
-            </div>
-            <div className="mobile-nav relative w-full">
-              <button
-                onClick={() => toggleDropdown("company")}
-                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
-              >
-                Company
-              </button>
-              {isDropdownOpen.company && (
-                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a] ">
-                    About Us
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Why Choose Us
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    How We Work
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Life At Syncabout
-                  </a>
-                </div>
-              )}
-            </div>
-            <div className="mobile-nav relative w-full">
-              <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
-                SAP Services
-              </a>
-            </div>
-            <div className="mobile-nav relative w-full">
-              <button
-                onClick={() => toggleDropdown("services")}
-                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
-              >
-                Services
-              </button>
-              {isDropdownOpen.services && (
-                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Web Development
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Software Development
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Mobile App Development
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Custom ERP Development
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    SEO Services
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Social Media Marketing
-                  </a>
-                </div>
-              )}
-            </div>
 
-            <div className="mobile-nav relative w-full">
-              <button
-                onClick={() => toggleDropdown("portfolio")}
-                className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
-              >
-                Portfolio
-              </button>
-              {isDropdownOpen.portfolio && (
-                <div className="bg-white text-black p-4 rounded shadow-sm w-full">
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    Graphics Portfolios
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:text-[#ef7f1a]">
-                    UI/UX Portfolios
-                  </a>
-                </div>
-              )}
-            </div>
-            <div className="mobile-nav relative w-full">
-              <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
-                Blogs
-              </a>
-            </div>
-
-            {/* Social Links */}
-            <Link
-              to={
-                "https://in.linkedin.com/company/syncabout-business-solutions"
+          {/* Portfolio Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() =>
+                setIsPortfolioDropdownOpen(!isPortfolioDropdownOpen)
               }
-              target="_blank"
-              className="text-lg"
+              className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
-              <FaLinkedin size={30} />
-            </Link>
+              Portfolio
+            </button>
+            {isPortfolioDropdownOpen && (
+              <div className="bg-[#ffffff] p-2 rounded shadow-md space-y-2">
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  Graphics Portfolio
+                </Link>
+                <Link
+                  to={"/"}
+                  className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
+                >
+                  UI/UX Portfolio
+                </Link>
+              </div>
+            )}
           </div>
+
+          <Link
+            to={"/"}
+            className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            Blogs
+          </Link>
         </div>
-      </nav>
-    </header>
+      )}
+    </nav>
   );
 };
 
