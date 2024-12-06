@@ -262,14 +262,14 @@ const Navbar = () => {
               ×
             </button>
           </div>
-          <div className="flex flex-col items-start px-3 text-black space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
+          <div className="flex flex-col gap-2 justify-center items-start px-3 text-black space-y-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
             {/* Mobile Dropdowns */}
-            <div className="relative w-full">
+            <div className="mobile-nav relative w-full">
               <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
                 Home
               </a>
             </div>
-            <div className="relative w-full">
+            <div className="mobile-nav relative w-full">
               <button
                 onClick={() => toggleDropdown("company")}
                 className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
@@ -293,12 +293,12 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <div className="relative w-full">
+            <div className="mobile-nav relative w-full">
               <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
                 SAP Services
               </a>
             </div>
-            <div className="relative w-full">
+            <div className="mobile-nav relative w-full">
               <button
                 onClick={() => toggleDropdown("services")}
                 className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
@@ -329,7 +329,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <div className="relative w-full">
+            <div className="mobile-nav relative w-full">
               <button
                 onClick={() => toggleDropdown("portfolio")}
                 className="dropdown-menu text-lg hover:text-[#ef7f1a] w-full text-start"
@@ -347,7 +347,7 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <div className="relative w-full">
+            <div className="mobile-nav relative w-full">
               <a className="text-lg hover:text-[#ef7f1a] w-full text-start">
                 Blogs
               </a>

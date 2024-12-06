@@ -98,8 +98,8 @@ const Service = () => {
                 className="card-wrapper flex justify-center items-center flex-col gap-2 p-3 min-h-[500px]"
                 key={card.id}
               >
-                <div id="img-div" className="img-div an mb-[30px]">
-                  <div className="card-image  bg-white w-[170px] h-[170px] rounded-[50%] flex justify-center items-center">
+                <div id="img-div" className="img-div mb-[30px]">
+                  <div className="card-image bg-white w-[170px] h-[170px] rounded-[50%] flex justify-center items-center">
                     <img src={card.imageUrl} width={64} height={64} />
                   </div>
                 </div>
