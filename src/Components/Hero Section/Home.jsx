@@ -15,6 +15,7 @@ import Work from "../Work Success Section/Work";
 import Chooseus from "../Why Choose Section/Chooseus";
 import Digitalswiper from "../Company Logo Swiper/Digitalswiper";
 import Blogs from "../Blogs Section/Blogs";
+import Clients from "../Our Clients Section/Clients";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -158,6 +159,9 @@ const Home = () => {
       <Chooseus />
       {/* Company Logo Slider */}
       <Digitalswiper />
+
+      {/* Clients Testimonials  */}
+      <Clients />
 
       {/* Blogs Section */}
       <Blogs />

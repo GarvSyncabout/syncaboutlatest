@@ -72,7 +72,7 @@ const Chooseus = () => {
   const videoContentData = [
     {
       id: "1",
-      heading: "We are top IT Solutions Vedio and history",
+      heading: "A Pioneering SAP & Web Development Service Provider Company",
     },
   ];
   return (
@@ -130,7 +130,7 @@ const Chooseus = () => {
         <div className="wrapper"></div>
         <div
           id="video-wrapper"
-          className=" relative z-50 flex justify-center gap-14 items-center text-center flex-col m-auto w-full  max-w-7xl"
+          className="relative z-50 flex justify-center gap-14 items-center text-center flex-col m-auto w-full  max-w-7xl"
         >
           {videoContentData.map((videoData) => {
             return (

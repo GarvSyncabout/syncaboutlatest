@@ -156,13 +156,13 @@ const Work = () => {
                 className=" flex justify-center gap-2 items-center py-2 flex-col"
               >
                 <div>
-                  <span className="font-Manrope text-center text-5xl leading-[30px] lg:text-7xl lg:leading-[50px] font-bold text-[#202122]">
-                    +
-                  </span>
                   <CountUp
                     end={data.total}
                     className="font-Manrope  text-5xl text-center leading-[30px] lg:text-7xl lg:leading-[50px] font-bold text-[#202122]"
                   />
+                  <span className="font-Manrope text-center text-5xl leading-[30px] lg:text-7xl lg:leading-[50px] font-bold text-[#202122]">
+                    +
+                  </span>
                 </div>
                 <div>
                   <span className="text-[#666666] text-center font-Jost text-2xl leading-[50px] mt-4 font-normal">

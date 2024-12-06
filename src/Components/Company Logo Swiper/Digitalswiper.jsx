@@ -71,7 +71,7 @@ const Digitalswiper = () => {
     ],
   };
   return (
-    <div className="slider-container py-20 bg-[#fafafa]">
+    <div className="slider-container py-5">
       <Slider {...settings} className="p-5">
         {slideImage.map((image) => {
           return <img src={image.src} alt="Image Slider" key={image.id} />;

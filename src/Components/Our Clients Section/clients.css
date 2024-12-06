@@ -1,0 +1,38 @@
+.client-swiper .swiper .swiper-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  outline: solid 0px #fff;
+  transition: all 0.5s cubic-bezier(1, -0.99, 0.14, 1.8) !important;
+}
+
+.client-swiper .swiper .swiper-slide img:hover {
+  outline: solid 30px #fff;
+  outline-offset: -30px;
+  transition: all 0.5s cubic-bezier(1, -0.99, 0.14, 1.8) !important;
+}
+
+.client-swiper .swiper-pagination-bullet-active {
+  background-color: #ef7f01 !important;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.client-swiper .swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.client-swiper .swiper .swiper-pagination {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.client-swiper .swiper .swiper-wrapper {
+  padding-bottom: 60px;
+}
