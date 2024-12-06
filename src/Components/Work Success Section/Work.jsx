@@ -6,6 +6,7 @@ import "reactjs-popup/dist/index.css";
 import AOS from "aos";
 import CountUp from "react-countup";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
 const Work = () => {
   const counterData = [
@@ -38,6 +39,9 @@ const Work = () => {
 
   return (
     <section className="bg-[#ffffff]">
+      <Helmet>
+        <title>Work | Work Success</title>
+      </Helmet>
       <div
         className="w-full m-auto max-w-7xl"
         data-aos="fade-down"

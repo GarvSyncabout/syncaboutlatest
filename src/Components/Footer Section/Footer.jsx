@@ -261,7 +261,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-center text-[#ffffff80] text-sm font-Manrope leading-7 font-semibold">
-              &copy; 2023 SyncAbout Consultancy. All rights reserved.
+              &copy; 2025 Syncabout Business Solutions. All rights reserved.
             </p>
           </div>
         </div>

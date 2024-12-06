@@ -11,6 +11,7 @@ import "reactjs-popup/dist/index.css";
 import "../Blogs Section/blogs.css";
 import { HiMiniCalendarDateRange } from "react-icons/hi2";
 import { FaComments } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Blogs = () => {
   useEffect(() => {
@@ -83,6 +84,9 @@ const Blogs = () => {
 
   return (
     <section className="bg-[#ffffff]">
+      <Helmet>
+        <title>Our Blogs</title>
+      </Helmet>
       <div
         data-aos="fade-down"
         data-aos-delay="50"

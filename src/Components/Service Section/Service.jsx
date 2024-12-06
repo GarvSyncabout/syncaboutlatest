@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
 
 const Service = () => {
   useEffect(() => {
@@ -69,6 +70,9 @@ const Service = () => {
 
   return (
     <section className=" bg-[#fafafa]">
+      <Helmet>
+        <title>Our Service</title>
+      </Helmet>
       <div className="flex m-auto w-full max-w-7xl justify-center items-center flex-col text-center gap-5 p-5 pt-[110px] pb-[80px] ">
         {contentData.map((data) => {
           return (

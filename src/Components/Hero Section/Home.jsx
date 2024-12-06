@@ -15,6 +15,7 @@ import Work from "../Work Success Section/Work";
 import Chooseus from "../Why Choose Section/Chooseus";
 import Digitalswiper from "../Company Logo Swiper/Digitalswiper";
 import Blogs from "../Blogs Section/Blogs";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -46,6 +47,9 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <section className="w-full">
         <Swiper
           autoHeight={true}
