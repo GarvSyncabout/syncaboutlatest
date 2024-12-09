@@ -201,7 +201,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#ffffff] text-black px-4 py-3 absolute left-0 w-full  z-50 space-y-4">
+        <div className="overflow-y-scroll md:hidden bg-[#ffffff] text-black px-4 py-3 absolute left-0 w-full  z-50 space-y-4">
           <Link
             to={"/"}
             className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
