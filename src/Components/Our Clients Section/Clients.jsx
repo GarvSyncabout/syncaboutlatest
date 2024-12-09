@@ -100,7 +100,7 @@ const Clients = () => {
                 <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
                   {data.heading}
                 </span>
-                <h2 className="font-Manrope  md:mb-[50px] text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
+                <h2 className="font-Manrope mb-[50px] text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
                   {data.subHeading}
                 </h2>
               </div>
@@ -137,7 +137,7 @@ const Clients = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="grid grid-rows-3 gap-10 ">
+                  <div className="grid grid-rows-3 md:gap-10 ">
                     <div className="flex justify-start items-center">
                       <ReactStars
                         count={5}
