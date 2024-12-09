@@ -65,7 +65,9 @@ const Aboutus = () => {
                 dominant presence on social media.
               </p>
               <div>
-                <Link to={"/mission"}>Explore Now</Link>
+                <Link className="bg-indigo-950" to={"/mission"}>
+                  Explore Now
+                </Link>
               </div>
             </div>
             <div id="image-div">
