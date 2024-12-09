@@ -13,6 +13,14 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
+    if (isMobileMenuOpen === true) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
