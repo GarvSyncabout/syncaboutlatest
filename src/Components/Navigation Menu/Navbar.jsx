@@ -33,7 +33,7 @@ const Navbar = () => {
         isSticky ? "sticky" : "bg-[#ffffff] text-black shadow-md px-4 py-3"
       }
     >
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container m-auto w-full max-w-7xl flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/">
@@ -201,7 +201,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="overflow-y-scroll md:hidden bg-[#ffffff] text-black px-4 py-3 absolute left-0 w-full  z-50 space-y-4">
+        <div className=" md:hidden bg-[#ffffff] text-black px-4 py-3 absolute left-0 w-full z-50 space-y-4">
           <Link
             to={"/"}
             className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
@@ -210,9 +210,13 @@ const Navbar = () => {
           </Link>
 
           {/* Company Dropdown */}
-          <div className="relative">
+          <div className=" relative">
             <button
-              onClick={() => setIsCompanyDropdownOpen(!isCompanyDropdownOpen)}
+              onClick={() => {
+                setIsCompanyDropdownOpen(!isCompanyDropdownOpen);
+                setIsServicesDropdownOpen(false);
+                setIsPortfolioDropdownOpen(false);
+              }}
               className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
               Comapany
@@ -257,7 +261,11 @@ const Navbar = () => {
           {/* Services Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+              onClick={() => {
+                setIsServicesDropdownOpen(!isServicesDropdownOpen);
+                setIsCompanyDropdownOpen(false);
+                setIsPortfolioDropdownOpen(false);
+              }}
               className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
               Services
@@ -307,9 +315,11 @@ const Navbar = () => {
           {/* Portfolio Dropdown */}
           <div className="relative">
             <button
-              onClick={() =>
-                setIsPortfolioDropdownOpen(!isPortfolioDropdownOpen)
-              }
+              onClick={() => {
+                setIsPortfolioDropdownOpen(!isPortfolioDropdownOpen);
+                setIsCompanyDropdownOpen(false);
+                setIsServicesDropdownOpen(false);
+              }}
               className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
               Portfolio
