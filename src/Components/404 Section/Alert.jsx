@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Notfound = () => {
+const Alert = () => {
   return (
     <section>
       <div className="m-auto w-full max-w-7xl ">
@@ -32,4 +32,4 @@ const Notfound = () => {
   );
 };
 
-export default Notfound;
+export default Alert;

@@ -106,7 +106,7 @@ const Footer = () => {
               <input
                 size={30}
                 type="text"
-                placeholder="infolia.itodo@gmail.com"
+                placeholder="Your Email"
                 className=" font-Jost text-[#ffffff] text-lg lg:text-[32px] leading-[46px] font-normal bg-transparent focus:outline-none border-b border-[#ffffff]"
               />
               <button className="absolute top-[12px] right-0 " type="submit">
