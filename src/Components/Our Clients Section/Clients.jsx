@@ -8,7 +8,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "reactjs-popup/dist/index.css";
 import "../Our Clients Section/clients.css";
-import { CiStar } from "react-icons/ci";
+import { IoStar } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
 
 const Clients = () => {
@@ -137,38 +137,37 @@ const Clients = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="grid rounded grid-rows-3 items-center  place-content-center place-items-start">
-                    <div id="client-starts">
+                  <div className="grid grid-rows-3 gap-10 ">
+                    <div className="flex justify-start items-center">
                       <ReactStars
                         count={5}
                         value={item.stars}
                         // onChange={ratingChanged}
-                        size={30}
+                        size={25}
                         activeColor="#ef7f1a"
+                        edit={false}
+                        char={<IoStar />}
+                        // emptyIcon={<CiStar />}
                       />
                     </div>
-                    <div id="client-description">
-                      <p className="font-Jost text-lg leading-[26px] font-normal text-[#666666]">
+                    <div>
+                      <p className="font-Jost text-lg text-start leading-[26px] font-normal text-[#666666]">
                         {item.description}
                       </p>
                     </div>
-                    <div id="client-details">
-                      <div className="client-content flex justify-center items-start gap-2">
-                        <div>
-                          <img
-                            src={item.clientImgUrl}
-                            alt="Client Image"
-                            className="!w-14 !h-14 object-cover rounded-full"
-                          />
-                        </div>
-                        <div className="flex justify-center items-start flex-col">
-                          <span className="font-Manrope text-[#202122] text-2xl leading-[31px] font-bold">
-                            {item.ClientName}
-                          </span>
-                          <span className="font-Jost text-sm leading-[26px] font-normal text-[#ef7f1a]">
-                            {item.clientRole}
-                          </span>
-                        </div>
+                    <div className="flex justify-start items-center gap-1 ">
+                      <img
+                        src={item.clientImgUrl}
+                        alt="Client Image"
+                        className="max-w-[60px] max-h-[60px] object-cover rounded-full"
+                      />
+                      <div className="flex justify-center items-start flex-col">
+                        <span className="font-Manrope text-[#202122] text-2xl leading-[31px] font-bold">
+                          {item.ClientName}
+                        </span>
+                        <span className="font-Jost text-sm leading-[26px] font-normal text-[#ef7f1a]">
+                          {item.clientRole}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -183,3 +182,42 @@ const Clients = () => {
 };
 
 export default Clients;
+
+{
+  /* <div id="client-starts">
+<ReactStars
+  count={5}
+  value={item.stars}
+  // onChange={ratingChanged}
+  size={25}
+  activeColor="#ef7f1a"
+  edit={false}
+  char={<IoStar />}
+  // emptyIcon={<CiStar />}
+/>
+</div>
+<div id="client-description">
+<p className="font-Jost text-lg text-start leading-[26px] font-normal text-[#666666]">
+  {item.description}
+</p>
+</div>
+<div id="client-details">
+<div className="client-content flex justify-center items-start gap-2">
+  <div>
+    <img
+      src={item.clientImgUrl}
+      alt="Client Image"
+      className="!w-14 !h-14 object-cover rounded-full"
+    />
+  </div>
+  <div className="flex justify-center items-start flex-col">
+    <span className="font-Manrope text-[#202122] text-2xl leading-[31px] font-bold">
+      {item.ClientName}
+    </span>
+    <span className="font-Jost text-sm leading-[26px] font-normal text-[#ef7f1a]">
+      {item.clientRole}
+    </span>
+  </div>
+</div>
+</div> */
+}
