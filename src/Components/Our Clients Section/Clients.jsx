@@ -88,7 +88,7 @@ const Clients = () => {
         data-aos="fade-down"
         data-aos-delay="50"
         data-aos-duration="1000"
-        className=" m-auto w-full max-w-7xl text-center gap-5 h-full p-5 pt-[110px] pb-[80px] "
+        className="m-auto w-full max-w-7xl text-center gap-5 h-full p-5 pt-[110px] pb-[80px] "
       >
         <div className="flex justify-center items-center">
           {contentData.map((data) => {
@@ -100,7 +100,7 @@ const Clients = () => {
                 <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
                   {data.heading}
                 </span>
-                <h2 className="font-Manrope mb-[50px] text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
+                <h2 className="font-Manrope  md:mb-[50px] text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
                   {data.subHeading}
                 </h2>
               </div>
