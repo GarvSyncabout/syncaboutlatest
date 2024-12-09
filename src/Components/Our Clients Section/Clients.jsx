@@ -95,7 +95,7 @@ const Clients = () => {
             return (
               <div
                 key={data.id}
-                className="flex justify-center items-center gap-3 flex-col md:mb-[60px] text-wrap max-w-[750px] "
+                className="flex justify-center items-center gap-3 flex-col lg:mb-[60px] text-wrap max-w-[750px] "
               >
                 <span className="font-Jost text-sm uppercase tracking-normal leading-[26px]  pb-[10px] font-normal  text-[#ef7f1a]">
                   {data.heading}
@@ -137,7 +137,7 @@ const Clients = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="grid grid-rows-3 md:gap-10 ">
+                  <div className="grid grid-rows-3 gap-10 ">
                     <div className="flex justify-start items-center">
                       <ReactStars
                         count={5}

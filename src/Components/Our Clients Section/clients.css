@@ -22,3 +22,15 @@
 .client-swiper .swiper .swiper-wrapper {
   padding-bottom: 60px;
 }
+
+.client-swiper .swiper .swiper-slide {
+  height: fit-content;
+}
+
+.client-swiper .swiper .swiper-wrapper {
+  height: auto !important;
+}
+
+.client-swiper .swiper {
+  height: auto !important;
+}
