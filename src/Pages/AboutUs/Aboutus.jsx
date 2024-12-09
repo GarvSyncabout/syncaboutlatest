@@ -51,15 +51,15 @@ const Aboutus = () => {
               <span className="text-[#ef7f1a] font-Jost text-lg leading-[21px] font-bold">
                 Who We Are
               </span>
-              <h4 className="text-[#000000] font-Jost text-[43px] leading-[52px] font-bold">
+              <h4 className="text-[#202122] font-Jost text-[50px] leading-[66px] font-bold">
                 A Full Service Business Development Company
               </h4>
-              <p className="font-Manrope text-lg text-balance text-start leading-[26px] font-normal text-[#666666]">
+              <p className="font-Manrope text-sm text-start leading-[26px] mb-2 font-normal text-[#666666]">
                 We are a business development company that believes in teamwork
                 to give effective results with such content and strategies for
                 our clients who always keep themselves one step ahead of us.
               </p>
-              <p className="font-Manrope text-balance text-lg text-start leading-[26px] font-normal text-[#666666]">
+              <p className="font-Manrope text-sm text-start leading-[26px] font-normal text-[#666666]">
                 We have experts who are result-oriented in building online brand
                 presence not only by being ranked in SERP but also by showing a
                 dominant presence on social media.
