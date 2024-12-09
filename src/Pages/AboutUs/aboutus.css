@@ -1,0 +1,12 @@
+.aboutus-bg {
+  position: relative;
+}
+
+.aboutus-content-bottom {
+  content: "";
+  position: absolute;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  bottom: 0;
+  right: 0;
+}

@@ -69,7 +69,7 @@ const Navbar = () => {
             {isCompanyDropdownOpen && (
               <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-48">
                 <Link
-                  to={"/"}
+                  to={"/aboutus"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   About Us
@@ -231,7 +231,7 @@ const Navbar = () => {
             {isCompanyDropdownOpen && (
               <div className="bg-[#ffffff] p-2 rounded shadow-md space-y-2">
                 <Link
-                  to={"/"}
+                  to={"/aboutus"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   About Us

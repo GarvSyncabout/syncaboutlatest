@@ -16,6 +16,7 @@ import Chooseus from "../Why Choose Section/Chooseus";
 import Digitalswiper from "../Company Logo Swiper/Digitalswiper";
 import Blogs from "../Blogs Section/Blogs";
 import Clients from "../Our Clients Section/Clients";
+import ScrollToTop from "../ScrollToTop Section/ScrollToTop";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -165,6 +166,9 @@ const Home = () => {
 
       {/* Blogs Section */}
       <Blogs />
+
+      {/* Scroll To Top */}
+      <ScrollToTop />
     </>
   );
 };
