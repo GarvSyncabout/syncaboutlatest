@@ -46,7 +46,7 @@ const Aboutus = () => {
         <div className="m-auto w-full max-w-7xl p-3">
           {/* main content */}
 
-          <div className="grid grid-cols-2 gap-1 place-content-between place-items-center">
+          <div className="grid md:grid-cols-2 gap-1 place-content-between place-items-center">
             <div id="content-div">
               <span className="text-[#ef7f1a] font-Jost text-lg leading-[21px] font-bold">
                 Who We Are
