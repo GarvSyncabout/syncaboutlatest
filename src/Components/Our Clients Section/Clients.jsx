@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
@@ -114,8 +114,13 @@ const Clients = () => {
           <Swiper
             spaceBetween={30}
             slidesPerView={3}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
             pagination={{ clickable: true }}
-            modules={[Pagination]}
+            modules={[Autoplay, Pagination]}
             breakpoints={{
               1024: {
                 slidesPerView: 3, // Show 3 cards on small screens and big screens laptops
@@ -137,7 +142,7 @@ const Clients = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <div className="grid grid-rows-3 gap-10 ">
+                  <div className="grid grid-rows-3 gap-8 ">
                     <div className="flex justify-start items-center">
                       <ReactStars
                         count={5}
@@ -155,7 +160,7 @@ const Clients = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="flex justify-start items-center gap-1 ">
+                    <div className="flex justify-start items-center gap-2 ">
                       <img
                         src={item.clientImgUrl}
                         alt="Client Image"
