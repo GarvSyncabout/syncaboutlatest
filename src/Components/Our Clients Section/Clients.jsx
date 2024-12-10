@@ -86,8 +86,11 @@ const Clients = () => {
     <section className="bg-[#ffffff]">
       <div
         data-aos="fade-down"
+        data-aos-offset="200"
         data-aos-delay="50"
-        data-aos-duration="1000"
+                 data-aos-duration="500"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center"
         className="m-auto w-full max-w-7xl text-center gap-5 h-full p-5 pt-[110px] pb-[80px] "
       >
         <div className="flex justify-center items-center">

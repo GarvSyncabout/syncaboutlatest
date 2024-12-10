@@ -54,8 +54,11 @@ const Aboutus = () => {
 
           <div
             data-aos="fade-down"
+            data-aos-offset="200"
             data-aos-delay="50"
-            data-aos-duration="1000"
+            data-aos-duration="500"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
             className="grid md:grid-cols-2 gap-2 place-content-between place-items-center"
           >
             <div
