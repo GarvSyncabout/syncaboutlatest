@@ -6,7 +6,6 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-import "reactjs-popup/dist/index.css";
 import "../Our Clients Section/clients.css";
 import { IoStar } from "react-icons/io5";
 import ReactStars from "react-rating-stars-component";
@@ -88,9 +87,8 @@ const Clients = () => {
         data-aos="fade-down"
         data-aos-offset="200"
         data-aos-delay="50"
-                 data-aos-duration="1000"
+        data-aos-duration="1000"
         data-aos-once="false"
-        data-aos-anchor-placement="top-center"
         className="m-auto w-full max-w-7xl text-center gap-5 h-full p-5 pt-[110px] pb-[80px] "
       >
         <div className="flex justify-center items-center">
@@ -190,42 +188,3 @@ const Clients = () => {
 };
 
 export default Clients;
-
-{
-  /* <div id="client-starts">
-<ReactStars
-  count={5}
-  value={item.stars}
-  // onChange={ratingChanged}
-  size={25}
-  activeColor="#ef7f1a"
-  edit={false}
-  char={<IoStar />}
-  // emptyIcon={<CiStar />}
-/>
-</div>
-<div id="client-description">
-<p className="font-Jost text-lg text-start leading-[26px] font-normal text-[#666666]">
-  {item.description}
-</p>
-</div>
-<div id="client-details">
-<div className="client-content flex justify-center items-start gap-2">
-  <div>
-    <img
-      src={item.clientImgUrl}
-      alt="Client Image"
-      className="!w-14 !h-14 object-cover rounded-full"
-    />
-  </div>
-  <div className="flex justify-center items-start flex-col">
-    <span className="font-Manrope text-[#202122] text-2xl leading-[31px] font-bold">
-      {item.ClientName}
-    </span>
-    <span className="font-Jost text-sm leading-[26px] font-normal text-[#ef7f1a]">
-      {item.clientRole}
-    </span>
-  </div>
-</div>
-</div> */
-}

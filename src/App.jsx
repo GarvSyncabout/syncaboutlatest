@@ -4,6 +4,7 @@ import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Hero Section/Home";
 import Notfound from "./Components/404 Section/Notfound";
 import Aboutus from "./Pages/AboutUs/Aboutus";
+import Whychooseus from "./Pages/whychooseus/Whychooseus";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <Aboutus />,
+      },
+      {
+        path: "/why-choose-us",
+        element: <Whychooseus />,
       },
     ],
   },

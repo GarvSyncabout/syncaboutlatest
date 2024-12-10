@@ -75,7 +75,7 @@ const Navbar = () => {
                   About Us
                 </Link>
                 <Link
-                  to={"/"}
+                  to={"/why-choose-us"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   Why Choose Us
@@ -217,7 +217,7 @@ const Navbar = () => {
           </Link>
 
           {/* Company Dropdown */}
-          <div className=" relative">
+          <div className="relative">
             <button
               onClick={() => {
                 setIsCompanyDropdownOpen(!isCompanyDropdownOpen);
@@ -237,13 +237,13 @@ const Navbar = () => {
                   About Us
                 </Link>
                 <Link
-                  to={"/"}
+                  to={"/why-choose-us"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   Why Choose Us
                 </Link>
                 <Link
-                  to={"/"}
+                  to={"/why-choose-us"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   How We Work

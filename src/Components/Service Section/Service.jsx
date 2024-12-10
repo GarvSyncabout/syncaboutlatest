@@ -89,9 +89,8 @@ const Service = () => {
           data-aos="fade-down"
           data-aos-offset="200"
           data-aos-delay="50"
-            data-aos-duration="1000"
+          data-aos-duration="1000"
           data-aos-once="false"
-          data-aos-anchor-placement="top-center"
           className=" grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8"
         >
           {cards.map((card) => {
