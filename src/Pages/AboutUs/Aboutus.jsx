@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../AboutUs/aboutus.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Aboutus = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
-      <section className="w-full  aboutus-bg bg-[url('/aboutus/aboutus.jpg')] bg-no-repeat bg-cover ">
+      <section className="w-full aboutus-bg bg-[url('/aboutus/aboutus.jpg')] bg-no-repeat bg-cover ">
         <div className="m-auto w-full max-w-7xl">
           {/* About section hero page */}
 
@@ -43,34 +49,43 @@ const Aboutus = () => {
       </section>
 
       <section>
-        <div className="m-auto w-full max-w-7xl p-3">
+        <div className="m-auto w-full max-w-7xl p-3 py-[80px]">
           {/* main content */}
 
-          <div className="grid md:grid-cols-2 gap-1 place-content-between place-items-center">
-            <div id="content-div">
-              <span className="text-[#ef7f1a] font-Jost text-lg leading-[21px] font-bold">
+          <div
+            data-aos="fade-down"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            className="grid md:grid-cols-2 gap-2 place-content-between place-items-center"
+          >
+            <div
+              id="content-div"
+              className="flex justify-center items-center text-center md:text-start md:items-start gap-1 flex-col"
+            >
+              <span className="text-[#ef7f1a] font-Manrope text-lg leading-[21px] font-bold">
                 Who We Are
               </span>
-              <h4 className="text-[#202122] font-Jost text-[50px] leading-[66px] font-bold">
+              <h4 className="text-[#202122] font-Manrope mb-2 text-3xl md:text-[50px] md:leading-[66px] font-bold">
                 A Full Service Business Development Company
               </h4>
-              <p className="font-Manrope text-sm text-start leading-[26px] mb-2 font-normal text-[#666666]">
+              <p className="font-Jost text-balance  text-sm md:text-start leading-[26px] mb-3 font-normal text-[#666666]">
                 We are a business development company that believes in teamwork
                 to give effective results with such content and strategies for
                 our clients who always keep themselves one step ahead of us.
               </p>
-              <p className="font-Manrope text-sm text-start leading-[26px] font-normal text-[#666666]">
+              <p className="font-Jost  text-balance  text-sm md:text-start mb-3 leading-[26px] font-normal text-[#666666]">
                 We have experts who are result-oriented in building online brand
                 presence not only by being ranked in SERP but also by showing a
                 dominant presence on social media.
               </p>
-              <div>
-                <Link className="bg-indigo-950" to={"/mission"}>
-                  Explore Now
-                </Link>
-              </div>
+              <Link
+                className="bg-[#ef7f1a] p-3 md:py-[25px] md:px-[60px] hover:bg-[#fafafa] hover:shadow-inner rounded-full font-Jost text-base  text-start  leading-5 font-medium text-[#fafafa] hover:text-[#202122]"
+                to={"/mission"}
+              >
+                Explore Now
+              </Link>
             </div>
-            <div id="image-div">
+            <div id="image-div" className="relative">
               <img
                 src="/aboutus/whoweare.jpg"
                 alt="who we are image"
