@@ -43,7 +43,7 @@ const Work = () => {
         data-aos="fade-down"
         data-aos-offset="200"
         data-aos-delay="50"
-               data-aos-duration="500"
+               data-aos-duration="1000"
         data-aos-once="false"
         data-aos-anchor-placement="top-center"
       >
