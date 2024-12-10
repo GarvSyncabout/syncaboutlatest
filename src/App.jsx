@@ -5,6 +5,7 @@ import Home from "./Components/Hero Section/Home";
 import Notfound from "./Components/404 Section/Notfound";
 import Aboutus from "./Pages/AboutUs/Aboutus";
 import Whychooseus from "./Pages/whychooseus/Whychooseus";
+import Howwework from "./Pages/HowWeWork/Howwework";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/why-choose-us",
         element: <Whychooseus />,
+      },
+      {
+        path: "/how-we-work",
+        element: <Howwework />,
       },
     ],
   },

@@ -81,7 +81,7 @@ const Navbar = () => {
                   Why Choose Us
                 </Link>
                 <Link
-                  to={"/"}
+                  to={"/how-we-work"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   How We Work
@@ -243,7 +243,7 @@ const Navbar = () => {
                   Why Choose Us
                 </Link>
                 <Link
-                  to={"/why-choose-us"}
+                  to={"/how-we-work"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   How We Work

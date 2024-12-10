@@ -1,58 +1,59 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import CountUp from "react-countup";
-import "./whychooseus.css";
+import "aos/dist/aos.css";
+import "../HowWeWork/howwework.css";
 
-const Whychooseus = () => {
-  const counterData = [
-    { id: "1", title: "Project Completed", total: 150 },
-    { id: "2", title: "Customer Satisfaction", total: 99 },
-  ];
-
+const Howwework = () => {
   const companyValuesCards = [
     {
       id: "1",
       number: "01",
-      title: "Innovative Solutions",
+      title: "Understanding Your Goals",
       description:
-        "Elevate your business with Syncabout's avant-garde solutions tailored to meet the unique demands of the digital landscape.",
+        "We kickstart the process by delving deep into your objectives, understanding the essence of your project, and aligning our strategies with your goals.",
     },
     {
       id: "2",
       number: "02",
-      title: "Expert Guidance",
+      title: "Strategic Planning",
       description:
-        "Our experts guide you through tech complexities, ensuring informed decisions and sustainable growth.",
+        "With a comprehensive understanding, we craft a tailored roadmap, outlining the steps needed to bring your project to fruition, ensuring precision and efficiency",
     },
     {
       id: "3",
       number: "03",
-      title: "Collaborative Partnership",
+      title: "Transparent Communication",
       description:
-        "Our dedicated team works alongside you, ensuring a shared journey toward success.",
+        "Throughout the process, we maintain transparent and regular communication, keeping you informed and involved at every crucial juncture",
     },
     {
       id: "4",
       number: "04",
-      title: "Cutting-Edge Technology",
+      title: "Streamlined Development",
       description:
-        "Stay ahead in the dynamic digital innovation race with Syncabout's commitment to utilizing the latest technology and tools.",
+        "We navigate challenges seamlessly, making adjustments in real-time to deliver a product that exceeds expectations.",
     },
     {
       id: "5",
       number: "05",
-      title: "Proven Track Record",
+      title: "Thorough Testing",
       description:
-        "Choose Syncabout with confidence, backed by proven track record of delivering measurable success to our clients.",
+        "Quality is paramount. Our rigorous testing process guarantees that every aspect of your project is thoroughly examined, ensuring a flawless end product.",
     },
     {
       id: "6",
       number: "06",
-      title: "24/7 Service Excellence",
+      title: "On-Time Delivery",
       description:
-        "Count on Syncabout's 24/7 commitment for seamless business operations, providing continuous support and peace of mind.",
+        "With meticulous planning and execution, we commit to delivering your project within the agreed-upon timeframe, without compromising on quality.",
+    },
+    {
+      id: "7",
+      number: "07",
+      title: "Post-Launch Support",
+      description:
+        "Our commitment extends beyond the launch. We provide comprehensive post-launch support, ensuring your project continues to thrive and evolve.",
     },
   ];
 
@@ -63,7 +64,7 @@ const Whychooseus = () => {
 
   return (
     <>
-      <section className="w-full whychooseus-bg bg-[url('/whychooseus/whychooseus.jpg')] bg-no-repeat bg-cover ">
+      <section className="w-full whychooseus-bg bg-[url('/whywework/whywework.jpg')] bg-no-repeat bg-cover ">
         <div className="m-auto w-full max-w-7xl">
           {/* About section hero page */}
 
@@ -73,10 +74,10 @@ const Whychooseus = () => {
           >
             <div>
               <span className="font-Jost text-[#ffffff] uppercase text-lg leading-[30px] tracking-[5px] font-normal">
-                Your Success Is Our Priority
+                THIS IS A PLACE WHERE IDEAS GROW
               </span>
               <h2 className="font-Manrope text-5xl md:text-[80px] md:leading-[88px] font-extrabold text-[#ffffff]">
-                Why Choose Us
+                How WE Work
               </h2>
             </div>
             <div>
@@ -86,7 +87,7 @@ const Whychooseus = () => {
                     <Link to={"/"}>Home</Link>
                   </li>
                   <li className="font-Jost text-base leading-5 font-medium text-[#ffffff] cursor-pointer">
-                    Choose Us
+                    How We Work
                   </li>
                 </ul>
               </div>
@@ -97,80 +98,6 @@ const Whychooseus = () => {
           <h1 className="font-Poppins text-2xl md:text-6xl  lg:text-8xl uppercase   lg:leading-[128px] font-bold opacity-20">
             it solution
           </h1>
-        </div>
-      </section>
-
-      <section>
-        <div className="m-auto w-full max-w-7xl p-3 py-[80px]">
-          {/* main content */}
-
-          <div
-            data-aos="fade-down"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-once="false"
-            className="grid lg:grid-cols-2 gap-8 place-content-center lg:place-content-between place-items-center"
-          >
-            <div id="image-div">
-              <img
-                src="/whychooseus/whychooseustwo.jpg"
-                alt="who we are image"
-                className="rounded-md"
-              />
-            </div>
-            <div
-              id="content-div"
-              className="flex justify-center items-center md:text-start text-center md:items-start gap-3 flex-col"
-            >
-              <span className="text-[#ef7f1a] font-Manrope text-base md:text-lg leading-[21px] font-bold">
-                Look no further!
-              </span>
-              <h4 className="text-[#202122] font-Manrope mb-1 text-3xl md:text-[43.95px] md:leading-[52.74px] font-bold">
-                Join Syncabout's Innovation
-                <br />
-                Journey
-              </h4>
-              <p className="font-Jost text-pretty  text-sm md:text-start leading-[26px] mb-1 font-normal text-[#666666]">
-                Embrace innovation at Syncabout. Join our transformative journey
-                where cutting-edge solutions meet unparalleled excellence
-              </p>
-              <div
-                id="client-counter"
-                className="grid md:grid-cols-2 place-content-center mb-1 place-items-center md:place-items-start gap-3"
-              >
-                {counterData.map((data) => {
-                  return (
-                    <div
-                      key={data.id}
-                      className="flex bg-[#FBF2E0] rounded-md justify-center gap-2 items-center p-6 flex-col"
-                    >
-                      <div>
-                        <CountUp
-                          end={data.total}
-                          className="font-Manrope  text-4xl text-center leading-[30px] lg:text-[54px] lg:leading-[65px] font-bold text-[#202122]"
-                        />
-                        <span className="font-Manrope text-center text-4xl leading-[30px] lg:text-[54px] lg:leading-[65px] font-bold text-[#202122]">
-                          {data.total >= 150 ? "+" : "%"}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-[#ef7f1a] text-center font-Jost text-sm md:text-[18px] leading-[21px] mt-4 font-bold">
-                          {data.title}
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <Link
-                className="bg-[#ef7f1a] p-3 md:py-[15px] md:px-[20px] hover:bg-[#fafafa] hover:shadow-inner rounded-full font-Jost text-base  text-start  leading-5 font-medium text-[#fafafa] hover:text-[#202122]"
-                to={"/ourservice"}
-              >
-                View Services
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -186,10 +113,10 @@ const Whychooseus = () => {
         >
           <div className="inherent-content flex justify-center gap-2 items-center flex-col">
             <span className="font-Jost text-sm uppercase tracking-normal leading-[26px] pb-[10px] font-normal  text-[#ef7f1a]">
-              Our features
+              Approach
             </span>
             <h3 className="font-Manrope mb-[50px] text-[#000000] text-[32px] leading-[41.6px] text-center font-extrabold">
-              We give our best to make you happy!
+              How We Work
             </h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center gap-16 p-5">
@@ -221,7 +148,6 @@ const Whychooseus = () => {
           </div>
         </div>
       </section>
-
       <section className="trust-blindly">
         <div
           data-aos="fade-down"
@@ -232,7 +158,7 @@ const Whychooseus = () => {
           className="w-full max-w-7xl m-auto p-20"
         >
           <div className="flex justify-center md:justify-between items-center gap-4 md:gap-0 flex-wrap">
-            <div className="flex flex-col md:flex-row justify-center items-center gap-2 text-start">
+            <div className="flex flex-col max-w-[500px] md:flex-row justify-center items-center gap-2 text-start">
               <div className="bg-[#FFCF5C] hover:bg-[#ef7f1a] p-4 rounded-full">
                 <img
                   src={"/whychooseus/robot.svg"}
@@ -241,13 +167,13 @@ const Whychooseus = () => {
                 />
               </div>
               <span className=" text-[#000000] font-Manrope text-center md:text-start text-[22px] leading-[33px] font-bold">
-                A Name Where You Can Trust Blindly
+                Work with a Dedicated Business Development Company
               </span>
             </div>
-            <div className="text-center md:text-start max-w-[500px]">
+            <div className="text-center max-w-[500px] md:text-start">
               <h4 className="text-balance text-[#666666] text-[20px] leading-[36px] font-Jost font-normal">
-                Needs of our clients are always put ahead of our own and we
-                focus on the importance of each and every project.
+                We help you stay on top of the current trends in a rapidly
+                changing business world.
               </h4>
             </div>
             <div className="text-end">
@@ -262,4 +188,4 @@ const Whychooseus = () => {
   );
 };
 
-export default Whychooseus;
+export default Howwework;
