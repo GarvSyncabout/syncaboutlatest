@@ -8,6 +8,7 @@ import Whychooseus from "./Pages/whychooseus/Whychooseus";
 import Howwework from "./Pages/HowWeWork/Howwework";
 import Lifeatsyncabout from "./Pages/LifeAtSyncabout/Lifeatsyncabout";
 import Webdev from "./Pages/WebDevelopment/Webdev";
+import Softwaredev from "./Pages/SoftwareDevelopment/Softwaredev";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/web-development",
         element: <Webdev />,
+      },
+      {
+        path: "/software-development",
+        element: <Softwaredev />,
       },
     ],
   },
