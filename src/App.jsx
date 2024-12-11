@@ -7,6 +7,7 @@ import Aboutus from "./Pages/AboutUs/Aboutus";
 import Whychooseus from "./Pages/whychooseus/Whychooseus";
 import Howwework from "./Pages/HowWeWork/Howwework";
 import Lifeatsyncabout from "./Pages/LifeAtSyncabout/Lifeatsyncabout";
+import Webdev from "./Pages/WebDevelopment/Webdev";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/life-at-sync-about",
         element: <Lifeatsyncabout />,
+      },
+      {
+        path: "/web-development",
+        element: <Webdev />,
       },
     ],
   },
