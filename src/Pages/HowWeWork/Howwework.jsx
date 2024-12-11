@@ -64,24 +64,24 @@ const Howwework = () => {
 
   return (
     <>
-      <section className="w-full whychooseus-bg bg-[url('/whywework/whywework.jpg')] bg-no-repeat bg-cover ">
+      <section className="w-full howwework-bg bg-[url('/whywework/whywework.jpg')] bg-no-repeat bg-cover ">
         <div className="m-auto w-full max-w-7xl">
           {/* About section hero page */}
 
           <div
-            id="whychooseus-wrapper"
-            className="gap-3 flex flex-wrap justify-start md:justify-between md:h-[57vh] items-center p-5"
+            id="howwework-wrapper"
+            className="gap-3 flex flex-wrap justify-start md:justify-between md:h-[57vh] items-center py-9 px-2 md:p-5"
           >
             <div>
-              <span className="font-Jost text-[#ffffff] uppercase text-lg leading-[30px] tracking-[5px] font-normal">
+              <span className="font-Jost text-[#ffffff] uppercase text-base md:text-lg leading-[30px] tracking-[5px] font-normal">
                 THIS IS A PLACE WHERE IDEAS GROW
               </span>
-              <h2 className="font-Manrope text-5xl md:text-[80px] md:leading-[88px] font-extrabold text-[#ffffff]">
+              <h2 className="font-Manrope text-4xl md:text-[80px] md:leading-[88px] font-extrabold text-[#ffffff]">
                 How WE Work
               </h2>
             </div>
             <div>
-              <div className="bg-[#ef7f1a] p-4 md:py-[25px] md:px-[60px] rounded-full">
+              <div className="bg-[#ef7f1a] p-3 md:py-[25px] md:px-[60px] rounded-full">
                 <ul className="flex items-center gap-5">
                   <li className="text-[#fff] text-base hover:text-[#454647] leading-[20px] font-Jost font-medium relative after:content-['\2192'] after:absolute  after:ml-1 after:text-white cursor-pointer">
                     <Link to={"/"}>Home</Link>
@@ -94,14 +94,14 @@ const Howwework = () => {
             </div>
           </div>
         </div>
-        <div className="whychooseus-content-bottom">
+        <div className="howwework-content-bottom">
           <h1 className="font-Poppins text-2xl md:text-6xl  lg:text-8xl uppercase   lg:leading-[128px] font-bold opacity-20">
             it solution
           </h1>
         </div>
       </section>
 
-      <section className="  bg-[#fafafa] pb-10">
+      <section className="bg-[#fafafa] pb-10">
         <div
           data-aos="fade-down"
           data-aos-offset="200"
@@ -109,7 +109,7 @@ const Howwework = () => {
           data-aos-duration="1000"
           data-aos-once="false"
           id="wrapper"
-          className="flex justify-center gap-16 flex-col items-center pt-9 "
+          className="m-auto w-full max-w-7xl flex justify-center gap-16 flex-col items-center pt-9 "
         >
           <div className="inherent-content flex justify-center gap-2 items-center flex-col">
             <span className="font-Jost text-sm uppercase tracking-normal leading-[26px] pb-[10px] font-normal  text-[#ef7f1a]">
@@ -119,7 +119,7 @@ const Howwework = () => {
               How We Work
             </h3>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center gap-16 p-5">
+          <div className="flex justify-center flex-wrap  gap-16 p-5">
             {companyValuesCards.map((cards) => {
               return (
                 <div
@@ -148,7 +148,7 @@ const Howwework = () => {
           </div>
         </div>
       </section>
-      <section className="trust-blindly">
+      <section className="business-development">
         <div
           data-aos="fade-down"
           data-aos-offset="200"

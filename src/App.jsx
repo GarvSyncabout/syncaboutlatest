@@ -6,6 +6,7 @@ import Notfound from "./Components/404 Section/Notfound";
 import Aboutus from "./Pages/AboutUs/Aboutus";
 import Whychooseus from "./Pages/whychooseus/Whychooseus";
 import Howwework from "./Pages/HowWeWork/Howwework";
+import Lifeatsyncabout from "./Pages/LifeAtSyncabout/Lifeatsyncabout";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/how-we-work",
         element: <Howwework />,
+      },
+      {
+        path: "/life-at-sync-about",
+        element: <Lifeatsyncabout />,
       },
     ],
   },

@@ -87,7 +87,7 @@ const Navbar = () => {
                   How We Work
                 </Link>
                 <Link
-                  to={"/"}
+                  to={"/life-at-sync-about"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   Life At Syncabout
@@ -249,7 +249,7 @@ const Navbar = () => {
                   How We Work
                 </Link>
                 <Link
-                  to={"/"}
+                  to={"/life-at-sync-about"}
                   className="block px-4 py-2 font-Manrope text-sm font-semibold text-black hover:text-[#ef7f1a]"
                 >
                   Life At Syncabout

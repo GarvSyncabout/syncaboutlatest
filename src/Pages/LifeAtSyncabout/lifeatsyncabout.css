@@ -1,8 +1,8 @@
-.howwework-bg {
+.lifeatsyncabout-bg {
   position: relative;
 }
 
-.howwework-bg-content-bottom {
+.lifeatsyncabout-content-bottom {
   content: "";
   position: absolute;
   -webkit-text-stroke: 1px #fff;
@@ -17,11 +17,11 @@
   font-size: 30px;
 }
 
-.business-development {
+.trust-blindly {
   position: relative;
 }
 
-.business-development:after {
+.trust-blindly:after {
   content: "";
   position: absolute;
   bottom: 0%;
@@ -35,7 +35,7 @@
   border-bottom: 20px solid #291f3a;
 }
 
-.business-development:before {
+.trust-blindly:before {
   content: "";
   position: absolute;
   top: 0%;
