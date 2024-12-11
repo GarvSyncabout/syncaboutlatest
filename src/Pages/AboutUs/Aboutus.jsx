@@ -36,13 +36,13 @@ const Aboutus = () => {
 
           <div
             id="aboutus-wrapper"
-            className="gap-3 flex flex-wrap justify-start md:justify-between md:h-[57vh] items-center py-9 px-2 md:p-5"
+            className="gap-3 flex flex-wrap justify-start md:justify-between md:h-[57vh] items-center p-5"
           >
             <div>
-              <span className="font-Jost text-[#ffffff] uppercase text-lg leading-[30px] tracking-[5px] font-normal">
+              <span className="font-Jost text-[#ffffff] uppercase text-base md:text-lg leading-[30px] tracking-[5px] font-normal">
                 We are dedicated
               </span>
-              <h2 className="font-Manrope text-5xl md:text-[80px] md:leading-[88px] font-extrabold text-[#ffffff]">
+              <h2 className="font-Manrope text-4xl md:text-[80px] md:leading-[88px] font-extrabold text-[#ffffff]">
                 About Us
               </h2>
             </div>
