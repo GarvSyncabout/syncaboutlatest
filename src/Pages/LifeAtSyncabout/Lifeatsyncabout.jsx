@@ -2,11 +2,9 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import { Link } from "react-router-dom";
 import "aos/dist/aos.css";
-import "../lifeatsyncabout/lifeatsyncabout.css";
-
+import "../LifeAtSyncabout/lifeatsyncabout.css";
 import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
-import { Zoom } from "swiper/modules";
 
 const Lifeatsyncabout = () => {
   useEffect(() => {
