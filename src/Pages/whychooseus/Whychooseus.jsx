@@ -174,7 +174,7 @@ const Whychooseus = () => {
         </div>
       </section>
 
-      <section className="  bg-[#fafafa] pb-10">
+      <section className="bg-[#fafafa] pb-10">
         <div
           data-aos="fade-down"
           data-aos-offset="200"

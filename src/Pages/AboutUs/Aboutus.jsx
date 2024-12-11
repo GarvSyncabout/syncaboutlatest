@@ -200,7 +200,7 @@ const Aboutus = () => {
                         <img
                           src={card.imgUrl}
                           alt="Card Image"
-                          className="h-12 w-12 filter brightness(0) invert(1);"
+                          className="h-12 w-12 filter brightness(0) invert(1)"
                         />
                       </div>
                       <div className="flex justify-center items-center flex-col gap-2 pt-9 pb-6">

@@ -16,35 +16,3 @@
   color: #ef7f1a;
   font-size: 30px;
 }
-
-.trust-blindly {
-  position: relative;
-}
-
-.trust-blindly:after {
-  content: "";
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, -0%);
-  width: 0;
-  height: 0;
-  border: 0 solid transparent;
-  border-right-width: 20px;
-  border-left-width: 20px;
-  border-bottom: 20px solid #291f3a;
-}
-
-.trust-blindly:before {
-  content: "";
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, -0%);
-  width: 0;
-  height: 0;
-  border: 0 solid transparent;
-  border-left-width: 20px;
-  border-right-width: 20px;
-  border-top: 20px solid #fafafa;
-}
