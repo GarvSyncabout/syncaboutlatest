@@ -158,16 +158,20 @@ const Howwework = () => {
           className="w-full max-w-7xl m-auto p-20"
         >
           <div className="flex justify-center md:justify-between items-center gap-4 md:gap-0 flex-wrap">
-            <div className="flex flex-col max-w-[500px] md:flex-row justify-center items-center gap-2 text-start">
-              <div className="bg-[#FFCF5C] hover:bg-[#ef7f1a] p-4 rounded-full">
+            <div className="flex flex-col  md:flex-row justify-center items-center gap-4 text-start">
+              <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-[#FFCF5C] hover:bg-[#ef7f1a] p-4 rounded-full">
                 <img
-                  src={"/whychooseus/robot.svg"}
+                  src={"/howwework/plane.svg"}
                   alt="image"
                   className="h-10 w-10"
                 />
               </div>
               <span className=" text-[#000000] font-Manrope text-center md:text-start text-[22px] leading-[33px] font-bold">
-                Work with a Dedicated Business Development Company
+                Work with a Dedicated
+                <br />
+                Business Development
+                <br />
+                Company
               </span>
             </div>
             <div className="text-center max-w-[500px] md:text-start">

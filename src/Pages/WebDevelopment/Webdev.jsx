@@ -271,7 +271,7 @@ const Webdev = () => {
         >
           <div className="flex justify-center md:justify-between items-center gap-4 md:gap-0 flex-wrap">
             <div className="flex flex-col md:flex-row justify-center items-center gap-2 text-start">
-              <div className="bg-[#FFCF5C] hover:bg-[#ef7f1a] p-4 rounded-full">
+              <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-[#FFCF5C] hover:bg-[#ef7f1a] p-4 rounded-full">
                 <img
                   src={"/webdevelopment/plane.svg"}
                   alt="image"
