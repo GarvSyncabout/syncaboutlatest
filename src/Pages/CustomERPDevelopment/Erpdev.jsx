@@ -161,8 +161,20 @@ const Erpdev = () => {
               <img
                 src={"/customerpdevelopment/erptwo.jpg"}
                 alt="image"
-                className="rounded-md"
+                className=" rounded-md"
               />
+              <div
+                id="image-overlay"
+                className="absolute bottom-[1px] left-[10px] right-[10px] rounded-b-md  bg-[#ef7f1a] p-4"
+              >
+                <span
+                  className="font-Jost text-[#ffffff] text-base leading-[26px]
+                  font-medium"
+                >
+                  Trust Syncabout Solutions as your dedicated ERP development
+                  partner.
+                </span>
+              </div>
             </div>
 
             <div
