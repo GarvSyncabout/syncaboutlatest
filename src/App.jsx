@@ -60,7 +60,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <main className="overflow-hidden ">
+    <main className="overflow-hidden">
       <RouterProvider router={router}></RouterProvider>
     </main>
   );

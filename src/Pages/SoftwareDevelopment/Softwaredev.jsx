@@ -225,7 +225,7 @@ const Softwaredev = () => {
                 alt="image"
                 className="rounded-sm"
               />
-              <div className="hover:animate-zoomInOut absolute top-[13%]  md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FFCF5C] hover:bg-[#ef7f1a]   p-2  border-8 rounded-full md:p-4 border-[#ffffff] ">
+              <div className="hover:animate-zoomInOut absolute top-[18%]  md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FFCF5C] hover:bg-[#ef7f1a]   p-2  border-8 rounded-full md:p-4 border-[#ffffff] ">
                 <img
                   src="/softwaredevelopment/rocket.svg"
                   className="h-10 w-10 md:h-10 md:w-10 p-1"

@@ -91,22 +91,22 @@ const Erpdev = () => {
             data-aos-duration="1000"
             data-aos-once="false"
             id="div-wrappper"
-            className="flex justify-between gap-2 md:gap-6 items-center md:flex-col p-2 md:p-0"
+            className="flex justify-between gap-2 md:gap-6 items-center flex-col p-2 md:p-0"
           >
             <div
               id="div-content"
-              className="flex justify-between w-full items-center p-2 md:p-0"
+              className=" gap-4 flex justify-between w-full text-center lg:text-start items-center flex-col lg:flex-row p-2 md:p-0"
             >
               <div>
-                <span className="text-[#ef7f1a] font-Manrope text-center md:text-start  uppercase text-base md:text-lg leading-[21px] font-bold">
+                <span className="text-[#ef7f1a] font-Manrope text-center md:text-start  uppercase text-base md:text-lg mb-2 lg:mb-0 leading-[21px] font-bold">
                   Custom ERP
                 </span>
-                <h4 className="text-[#202122] font-Manrope uppercase mb-3 text-3xl md:text-[33px] md:leading-[52.74px] font-bold">
+                <h4 className="text-[#202122] font-Manrope uppercase mb-3 text-2xl md:text-[33px] md:leading-[52.74px] font-bold">
                   ERP Software Development
                 </h4>
               </div>
               <div>
-                <h4 className="text-balance text-[#666666] text-[18px] leading-[26px]   font-Jost font-normal ">
+                <h4 className="text-balance text-[#666666] text-[18px] leading-[26px] font-Jost font-normal ">
                   Crafting ERP solutions for web and mobile, ensuring
                   <br />
                   seamless operations and intuitive user experiences.
@@ -155,29 +155,16 @@ const Erpdev = () => {
       </section>
 
       <section>
-        <div id="main-wrappper" className="w-full m-auto max-w-7xl py-9">
-          <div className="grid lg:grid-cols-2 w-full place-content-between gap-4 items-center">
-            <div
-              data-aos="fade-right"
-              data-aos-offset="200"
-              data-aos-delay="50"
-              data-aos-duration="1000"
-              data-aos-once="false"
-              id="image-div"
-              className="relative"
-            >
+        <div id="main-wrappper" className="w-full m-auto max-w-7xl ">
+          <div className="grid lg:grid-cols-2 place-content-center gap-4 place-items-center py-9">
+            <div id="image-div" className="relative px-2">
               <img
                 src={"/customerpdevelopment/erptwo.jpg"}
                 alt="image"
-                className="rounded-md h-fit"
+                className="rounded-md"
               />
-              <div className="bg-[#ef7f1a] text-center absolute bottom-0 w-full p-5 rounded-b-md">
-                <span className="font-Jost text-[#ffffff] text-base leading-[26px] font-medium">
-                  Trust Syncabout Solutions as your dedicated ERP development
-                  partner.
-                </span>
-              </div>
             </div>
+
             <div
               data-aos="fade-left"
               data-aos-offset="200"
