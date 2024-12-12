@@ -50,7 +50,7 @@ const Softwaredev = () => {
 
       <section className=" py-10">
         <div id="main-wrapper" className="max-w-7xl w-full m-auto">
-          <div className="grid md:grid-cols-2 gap-4 place-content-center place-items-center p-2">
+          <div className="grid md:grid-cols-2 gap-7 md:gap-4 place-content-center place-items-center p-2">
             <div
               data-aos="fade-right"
               data-aos-offset="200"
@@ -200,7 +200,7 @@ const Softwaredev = () => {
           data-aos-duration="1000"
           data-aos-once="false"
           id="wrapper"
-          className="m-auto w-full max-w-7xl flex justify-center gap-16 flex-col items-center pt-9 "
+          className="m-auto w-full max-w-7xl flex justify-center gap-16 flex-col items-center py-9 px-2 "
         >
           <div className="inherent-content flex justify-center gap-2 items-center flex-col">
             <span className="font-Jost text-sm text-center uppercase tracking-normal leading-[26px] pb-[10px] font-normal  text-[#ef7f1a]">
@@ -212,7 +212,7 @@ const Softwaredev = () => {
           </div>
           <div
             id="div-content"
-            className="grid w-full place-content-evenly place-items-center bg-[#FBF2E0]  md:grid-cols-2 gap-2 rounded-sm"
+            className="grid w-full place-content-evenly place-items-center bg-[#FBF2E0]  md:grid-cols-2 gap-2  rounded-sm"
           >
             <div id="child-div-image">
               <img
@@ -228,9 +228,9 @@ const Softwaredev = () => {
               data-aos-duration="1000"
               data-aos-once="false"
               id="content-div"
-              className="flex justify-center items-center text-center md:text-start md:items-start gap-3 md:gap-3 flex-col px-10 "
+              className="flex justify-center items-center text-center md:text-start md:items-start gap-3 md:gap-3 flex-col px-10 p-2 "
             >
-              <h4 className="text-[#ef7f1a] font-Manrope uppercase mb-3 text-3xl md:text-[40px] md:leading-[52.74px] font-bold">
+              <h4 className="text-[#ef7f1a] font-Manrope uppercase mb-3 text-2xl md:text-[40px] md:leading-[52.74px] font-bold">
                 Software Development
               </h4>
               <p className="font-Jost  text-base md:text-start leading-[26px] mb-3 font-normal text-[#666666]">
@@ -240,8 +240,8 @@ const Softwaredev = () => {
                 production-ready custom software development services. Talk to
                 our experts today!
               </p>
-              <div className="flex justify-center items-start text-start   flex-col mb-4">
-                <span className="relative pl-5 before:content-['\25A0'] before:text-xs before:text-[#ef7f1a] before:absolute before:top-[50%] before:left-[0%] brfore:-translate-x-1/2 before:-translate-y-1/2 text-[#202122] font-Manrope capitalize text-sm md:text-base leading-[21px] font-bold">
+              <div className="flex justify-center items-start gap-1 md:gap-0 text-start flex-col mb-4">
+                <span className="relative pl-5 before:content-['\25A0'] before:text-xs before:text-[#ef7f1a] before:absolute before:top-[50%] before:left-[0%] brfore:-translate-x-1/2 before:-translate-y-1/2 text-[#202122] font-Manrope capitalize text-sm md:text-base leading-[21px]  font-bold">
                   Sucesfully Delivered more then 20 Solutions.
                 </span>
                 <span className="relative pl-5 before:content-['\25A0'] before:text-xs before:text-[#ef7f1a] before:absolute before:top-[50%] before:left-[0%] brfore:-translate-x-1/2 before:-translate-y-1/2 text-[#202122] font-Manrope capitalize text-sm  md:text-base leading-[21px] font-bold">
