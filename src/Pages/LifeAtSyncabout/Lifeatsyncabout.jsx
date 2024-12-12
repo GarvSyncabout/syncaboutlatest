@@ -91,7 +91,7 @@ const Lifeatsyncabout = () => {
             <span className="font-Jost text-sm uppercase tracking-normal leading-[26px] pb-[10px] font-normal  text-[#ef7f1a]">
               Life at syncabout
             </span>
-            <h3 className="font-Manrope mb-[50px] text-[#000000] text-balance text-3xl md:text-[32px] leading-[41.6px] text-center font-extrabold">
+            <h3 className="font-Manrope mb-[50px] text-[#000000]  text-2xl md:text-[32px] leading-[41.6px] text-center font-extrabold">
               At Syncabout, we believe happy employees are the driving force
               behind innovation and success!
             </h3>

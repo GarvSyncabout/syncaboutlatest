@@ -121,7 +121,7 @@ const Webdev = () => {
                   <div className="absolute -top-11 left-4  md:-left-7 px-3 z-50 bg-[#fbf2e0]  rounded-full">
                     <span
                       style={{ WebkitTextStroke: "1px #ef7f1a" }}
-                      className="font-Rajdhani text-[54.93px] text-transparent font-bold"
+                      className="font-Poppins text-[54.93px] text-transparent font-bold"
                     >
                       {cards.number}
                     </span>
