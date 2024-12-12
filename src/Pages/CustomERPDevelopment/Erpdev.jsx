@@ -91,7 +91,7 @@ const Erpdev = () => {
             data-aos-duration="1000"
             data-aos-once="false"
             id="div-wrappper"
-            className="flex justify-between gap-2 md:gap-6 items-center flex-col p-2 md:p-0"
+            className="flex justify-between gap-2 md:gap-6 items-center md:flex-col p-2 md:p-0"
           >
             <div
               id="div-content"
