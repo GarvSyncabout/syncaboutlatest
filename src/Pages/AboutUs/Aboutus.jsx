@@ -121,6 +121,7 @@ const Aboutus = () => {
           </div>
         </div>
       </section>
+
       <section className="bg-[#fafafa]">
         <div className="m-auto w-full max-w-7xl p-3 py-[80px]">
           {/* main content */}
@@ -170,13 +171,13 @@ const Aboutus = () => {
                     id="button-div"
                     className="flex justify-start items-center gap-3"
                   >
-                    <div className="p-3 bg-[#ef7f1a] rounded-md">
-                      <Link className=" text-[#ffffff] font-jost font-Jost text-base leading-5 font-medium  ">
+                    <div className="p-3 bg-[#ef7f1a] rounded-md hover:bg-[#ffffff] hover:shadow-inner text-[#ffffff] hover:text-[#000000]">
+                      <Link className="font-jost font-Jost text-base leading-5 font-medium  ">
                         Our Services
                       </Link>
                     </div>
-                    <div className=" p-3 bg-[#ef7f1a] rounded-md ">
-                      <Link className=" text-[#ffffff] font-jost font-Jost text-base leading-5 font-medium">
+                    <div className="p-3 bg-[#ef7f1a] rounded-md hover:bg-[#ffffff] hover:shadow-inner text-[#ffffff] hover:text-[#000000]">
+                      <Link className="font-jost font-Jost text-base leading-5 font-medium">
                         Create Appointment
                       </Link>
                     </div>
@@ -219,6 +220,7 @@ const Aboutus = () => {
           </div>
         </div>
       </section>
+
       <section>
         <Clients />
       </section>

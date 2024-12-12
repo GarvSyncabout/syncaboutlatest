@@ -5,10 +5,30 @@ import "../SoftwareDevelopment/softwaredev.css";
 import { Link } from "react-router-dom";
 
 const Softwaredev = () => {
+  const cards = [
+    {
+      id: "1",
+      imageUrl: "/softwaredevelopment/softwaredevtwo.jpg",
+      title: "Custom Software Development",
+      description:
+        "We plan tailored software solutions for you to achieve operational excellence and deliver them fast and error-free.",
+      btnTitle: "Get Started Now",
+    },
+    {
+      id: "2",
+      imageUrl: "/softwaredevelopment/softwaredevthree.jpg",
+      title: "Software product development",
+      description:
+        "We help startups and ISVs envision selling SaaS, mobile and desktop products, launch MVP in 1-4 months and consistently grow it to a full- blown product with major releases every 2-4 weeks.",
+      btnTitle: "Get Started Now",
+    },
+  ];
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
+
   return (
     <>
       <section className="w-full softwaredev-bg bg-[url('/softwaredevelopment/softwaredev.jpg')] bg-no-repeat bg-cover ">
@@ -145,48 +165,32 @@ const Softwaredev = () => {
               id="content-card"
               className="grid md:grid-cols-2 w-full place-content-between place-items-center gap-4 p-2"
             >
-              <div className="border shadow-md overflow-hidden">
-                <div className="relative">
-                  <img
-                    src="/softwaredevelopment/softwaredevtwo.jpg"
-                    className="overflow-hidden  transition-all duration-300 ease-in-out  hover:scale-150 hover:delay-300  hover:duration-2000 hover:ease-linear"
-                  />
-                  <div className="absolute top-[50%] left-[50%] -translate-x-[50%] opacity-40 hover:opacity-100  bg-[#ef7f1a] text-white -translate-y-[50%] ">
-                    <div className="flex justify-center gap-3 items-start flex-col p-1">
-                      <h4>Custom software development</h4>
-                      <p>
-                        We plan tailored software solutions for you to achieve
-                        operational excellence and deliver them fast and error-
-                        free
-                      </p>
-                      <div className="border-[1px]  border-[#ffffff]  p-2 rounded-sm">
-                        <Link to={"/contactus"}>Contact Now</Link>
+              {cards.map((card) => {
+                return (
+                  <div key={card.id} className="shadow-md overflow-hidden">
+                    <div className="group relative">
+                      <img
+                        src={card.imageUrl}
+                        alt="image"
+                        className="min-h-[420px]  object-cover  group overflow-hidden transition-all duration-300 ease-in-out  group-hover:scale-150 group-hover:delay-300  group-hover:duration-2000 group-hover:ease-linear"
+                      />
+                      <div className="absolute top-[50%] left-[50%] -translate-x-[50%] opacity-50 group-hover:ease-linear group-hover:delay-100 group-hover:duration-700  group-hover:opacity-100 h-full w-full  bg-[#ef7f1a] text-white -translate-y-[50%] ">
+                        <div className="flex justify-center  gap-3 items-start text-start h-full  flex-col px-10 group-hover:-translate-y-8 group-hover:ease-linear group-hover:delay-300 group-hover:duration-300 ">
+                          <h4 className="text-[#ffffff] font-Manrope uppercase mb-3 text-2xl md:text-[30px] md:leading-[40px] font-bold">
+                            {card.title}
+                          </h4>
+                          <p className="text-[#ffffff] font-Manrope capitalize text-base leading-[26px] font-normal mb-3">
+                            {card.description}
+                          </p>
+                          <div className="border-[1px]  border-[#ffffff]  p-2 rounded-sm">
+                            <Link to={"/contactus"}>{card.btnTitle}</Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="border shadow-md overflow-hidden">
-                <div className="relative">
-                  <img
-                    src="/softwaredevelopment/softwaredevthree.jpg"
-                    className="overflow-hidden  transition-all duration-300 ease-in-out  hover:scale-150 hover:delay-300  hover:duration-2000 hover:ease-linear"
-                  />
-                  <div className="absolute top-[50%] left-[50%] -translate-x-[50%] opacity-40 hover:opacity-100  bg-[#ef7f1a] text-white -translate-y-[50%] ">
-                    <div className="flex justify-center gap-3 items-start flex-col p-1">
-                      <h4>Custom software development</h4>
-                      <p>
-                        We plan tailored software solutions for you to achieve
-                        operational excellence and deliver them fast and error-
-                        free
-                      </p>
-                      <div className="border-[1px]  border-[#ffffff]  p-2 rounded-sm">
-                        <Link to={"/contactus"}>Contact Now</Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -210,9 +214,10 @@ const Softwaredev = () => {
               Do You Need Consultation On Advance Software Development ?
             </h3>
           </div>
+
           <div
             id="div-content"
-            className="grid w-full place-content-evenly place-items-center bg-[#FBF2E0]  md:grid-cols-2 gap-2  rounded-sm"
+            className="relative grid w-full place-content-evenly place-items-center bg-[#FBF2E0]  md:grid-cols-2 gap-5 rounded-sm"
           >
             <div id="child-div-image">
               <img
@@ -220,6 +225,12 @@ const Softwaredev = () => {
                 alt="image"
                 className="rounded-sm"
               />
+              <div className="hover:animate-zoomInOut absolute top-[13%]  md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FFCF5C] hover:bg-[#ef7f1a]   p-2  border-8 rounded-full md:p-4 border-[#ffffff] ">
+                <img
+                  src="/softwaredevelopment/rocket.svg"
+                  className="h-10 w-10 md:h-10 md:w-10 p-1"
+                />
+              </div>
             </div>
             <div
               data-aos="fade-left"

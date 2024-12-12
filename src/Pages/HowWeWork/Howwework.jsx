@@ -64,7 +64,7 @@ const Howwework = () => {
 
   return (
     <>
-      <section className="w-full howwework-bg bg-[url('/whywework/whywework.jpg')] bg-no-repeat bg-cover ">
+      <section className="w-full howwework-bg bg-[url('/howwework/howwework.jpg')] bg-no-repeat bg-cover ">
         <div className="m-auto w-full max-w-7xl">
           {/* About section hero page */}
 
@@ -149,7 +149,6 @@ const Howwework = () => {
         </div>
       </section>
 
-      
       <section className="business-development">
         <div
           data-aos="fade-down"

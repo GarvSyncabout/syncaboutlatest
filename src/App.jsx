@@ -9,6 +9,8 @@ import Howwework from "./Pages/HowWeWork/Howwework";
 import Lifeatsyncabout from "./Pages/LifeAtSyncabout/Lifeatsyncabout";
 import Webdev from "./Pages/WebDevelopment/Webdev";
 import Softwaredev from "./Pages/SoftwareDevelopment/Softwaredev";
+import Mobiledev from "./Pages/MobileAppDevelopment/Mobiledev";
+import Erpdev from "./Pages/CustomERPDevelopment/Erpdev";
 
 const router = createBrowserRouter([
   {
@@ -44,13 +46,21 @@ const router = createBrowserRouter([
         path: "/software-development",
         element: <Softwaredev />,
       },
+      {
+        path: "/mobile-app-development",
+        element: <Mobiledev />,
+      },
+      {
+        path: "/custom-erp-development",
+        element: <Erpdev />,
+      },
     ],
   },
 ]);
 
 function App() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden ">
       <RouterProvider router={router}></RouterProvider>
     </main>
   );
