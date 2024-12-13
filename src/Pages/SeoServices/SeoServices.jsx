@@ -3,7 +3,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import "../SeoServices/seoservices.css";
-import { MdDescription } from "react-icons/md";
 
 const SeoServices = () => {
   useEffect(() => {

@@ -12,6 +12,8 @@ import Softwaredev from "./Pages/SoftwareDevelopment/Softwaredev";
 import Mobiledev from "./Pages/MobileAppDevelopment/Mobiledev";
 import Erpdev from "./Pages/CustomERPDevelopment/Erpdev";
 import SeoServices from "./Pages/SeoServices/SeoServices";
+import Socialmedia from "./Pages/SocialMediaMarketing/Socialmedia";
+import Graphics from "./Pages/GraphicsDesigning/Graphics";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +60,14 @@ const router = createBrowserRouter([
       {
         path: "/seo-service",
         element: <SeoServices />,
+      },
+      {
+        path: "/social-media-marketing",
+        element: <Socialmedia />,
+      },
+      {
+        path: "/graphics-portfolio",
+        element: <Graphics />,
       },
     ],
   },

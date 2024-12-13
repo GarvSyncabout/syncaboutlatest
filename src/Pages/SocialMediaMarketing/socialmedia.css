@@ -1,0 +1,50 @@
+.socialmediamarketing-bg {
+  position: relative;
+}
+
+.socialmediamarketing-content-bottom {
+  content: "";
+  position: absolute;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  bottom: 0;
+  right: 0;
+}
+.inherent-content:before {
+  content: "\2193";
+  position: "absolute";
+  color: #ef7f1a;
+  font-size: 30px;
+}
+
+.socialmedia {
+  position: relative;
+}
+
+.socialmedia:after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-right-width: 20px;
+  border-left-width: 20px;
+  border-bottom: 20px solid #291f3a;
+}
+
+.socialmedia:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-top: 20px solid #ffffff;
+}
