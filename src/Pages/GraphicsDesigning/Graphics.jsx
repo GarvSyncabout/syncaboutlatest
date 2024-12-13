@@ -156,7 +156,7 @@ const Graphics = () => {
         </div>
       </section>
 
-      <section className="bg-[#fafafa] py-10">
+      <section className=" py-10">
         <div id="main-wrapper" className="max-w-7xl w-full m-auto">
           <div className="flex justify-center items-start text-center md:text-start flex-col">
             <div
