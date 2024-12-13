@@ -17,7 +17,7 @@ const SeoServices = () => {
       title: "Competitor Analysis",
       description:
         "By researching and analyzing your competitor's content strategy, our content marketing efforts will put you ahead of your competitors.",
-      imgUrl: "/mobileappdevelopment/developer.svg",
+      imgUrl: "/seocervices/competitor.svg",
     },
 
     {
@@ -25,14 +25,14 @@ const SeoServices = () => {
       title: "Audience Analysis",
       description:
         "Our content marketing team will analyze your target audience and their interaction to deliver you the right content, which catches their attention.",
-      imgUrl: "/mobileappdevelopment/time.svg",
+      imgUrl: "/seocervices/analysis.svg",
     },
     {
       id: "3",
       title: "Result-Oriented Content",
       description:
         "We specialize in tailoring content to your specific needs, delivering results that not only boost site traffic but also elevate click-through rates.",
-      imgUrl: "/mobileappdevelopment/bulb.svg",
+      imgUrl: "/seocervices/result.svg",
     },
   ];
 
