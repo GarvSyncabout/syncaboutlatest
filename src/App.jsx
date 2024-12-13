@@ -11,6 +11,7 @@ import Webdev from "./Pages/WebDevelopment/Webdev";
 import Softwaredev from "./Pages/SoftwareDevelopment/Softwaredev";
 import Mobiledev from "./Pages/MobileAppDevelopment/Mobiledev";
 import Erpdev from "./Pages/CustomERPDevelopment/Erpdev";
+import SeoServices from "./Pages/SeoServices/SeoServices";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/custom-erp-development",
         element: <Erpdev />,
+      },
+      {
+        path: "/seo-service",
+        element: <SeoServices />,
       },
     ],
   },
