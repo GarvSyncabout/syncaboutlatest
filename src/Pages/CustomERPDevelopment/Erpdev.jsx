@@ -95,7 +95,7 @@ const Erpdev = () => {
           >
             <div
               id="div-content"
-              className=" gap-4 flex justify-between w-full text-center lg:text-start items-center flex-col lg:flex-row p-2 md:p-0"
+              className="gap-4 flex justify-between w-full text-center lg:text-start items-center flex-col lg:flex-row p-2 md:p-0"
             >
               <div>
                 <span className="text-[#ef7f1a] font-Manrope text-center md:text-start  uppercase text-base md:text-lg mb-2 lg:mb-0 leading-[21px] font-bold">
@@ -107,9 +107,8 @@ const Erpdev = () => {
               </div>
               <div>
                 <h4 className="text-balance text-[#666666] text-[18px] leading-[26px] font-Jost font-normal ">
-                  Crafting ERP solutions for web and mobile, ensuring
-                 
-                  seamless operations and intuitive user experiences.
+                  Crafting ERP solutions for web and mobile, ensuring seamless
+                  operations and intuitive user experiences.
                 </h4>
               </div>
               <div>
@@ -155,17 +154,17 @@ const Erpdev = () => {
       </section>
 
       <section>
-        <div id="main-wrappper" className="w-full m-auto max-w-7xl ">
-          <div className="grid lg:grid-cols-2 place-content-center gap-4 place-items-center py-9">
-            <div id="image-div" className="relative px-2">
+        <div id="main-wrappper" className="w-full m-auto max-w-7xl py-9 ">
+          <div className="grid lg:grid-cols-2 place-content-center gap-4 place-items-center px-2">
+            <div id="image-div" className="relative">
               <img
                 src={"/customerpdevelopment/erptwo.jpg"}
                 alt="image"
-                className=" rounded-md"
+                className="rounded-md w-full h-full object-contain"
               />
               <div
                 id="image-overlay"
-                className="absolute bottom-[1px] left-[10px] right-[10px] rounded-b-md  bg-[#ef7f1a] p-4"
+                className="absolute content-[] bottom-[0px] text-center left-0 right-0 rounded-b-md  bg-[#ef7f1a] p-4"
               >
                 <span
                   className="font-Jost text-[#ffffff] text-base leading-[26px]
