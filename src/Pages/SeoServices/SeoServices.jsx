@@ -274,7 +274,7 @@ const SeoServices = () => {
               id="div-content-two"
               className="flex justify-center items-center flex-col gap-6 "
             >
-              <div className="grid lg:grid-cols-2 md:gap-5 place-content-between place-items-center">
+              <div className="grid gap-2 lg:grid-cols-2 md:gap-5 place-content-between place-items-center">
                 <div
                   id="content-div"
                   className="flex justify-center items-center text-center md:text-start md:items-start gap-1 flex-col"
