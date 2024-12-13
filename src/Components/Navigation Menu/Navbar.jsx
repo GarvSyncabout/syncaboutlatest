@@ -97,7 +97,8 @@ const Navbar = () => {
           </div>
 
           <Link
-            to={"/"}
+            to={"https://syncaboutconsultancy.com/sap-consulting/"}
+            target="_blank"
             className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
           >
             SAP Services
@@ -259,7 +260,8 @@ const Navbar = () => {
           </div>
 
           <Link
-            to={"/"}
+            to={"https://syncaboutconsultancy.com/sap-consulting/"}
+            target="_blank"
             className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
           >
             SAP Services

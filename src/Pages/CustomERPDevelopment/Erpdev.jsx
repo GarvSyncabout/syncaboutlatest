@@ -106,7 +106,7 @@ const Erpdev = () => {
                 </h4>
               </div>
               <div>
-                <h4 className="text-balance text-[#666666] text-[18px] leading-[26px] font-Jost font-normal ">
+                <h4 className=" text-[#666666] text-[18px] leading-[26px] font-Jost font-normal ">
                   Crafting ERP solutions for web and mobile, ensuring
                   <br />
                   seamless operations and intuitive user experiences.
