@@ -58,6 +58,10 @@
   margin-right: auto;
 }
 
+#graphics-wrapper .swiper .swiper-slide {
+  height: fit-content !important;
+}
+
 #graphics-wrapper .swiper .swiper-slide img {
   width: auto !important;
   height: auto !important;

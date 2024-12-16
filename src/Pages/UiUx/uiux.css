@@ -57,7 +57,9 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+#uiux-wrapper .swiper .swiper-slide {
+  height: fit-content !important;
+}
 #uiux-wrapper .swiper .swiper-slide img {
   width: auto !important;
   height: auto !important;

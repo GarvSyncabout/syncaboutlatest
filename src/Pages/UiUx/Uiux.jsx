@@ -245,7 +245,7 @@ const Uiux = () => {
         <div className="max-w-7xl m-auto w-full py-10">
           <div
             id="uiux-wrapper"
-            className="flex justify-center items-center text-center flex-col gap-5"
+            className="flex justify-center items-center text-center flex-col gap-5 px-2"
           >
             <div
               id="content-div"
@@ -264,6 +264,7 @@ const Uiux = () => {
               </h4>
             </div>
             <Swiper
+              spaceBetween={10}
               slidesPerView={2}
               autoplay={true}
               loop={true}
