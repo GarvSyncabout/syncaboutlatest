@@ -182,7 +182,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            to={"/"}
+            to={"/blogs"}
             className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
           >
             Blogs
@@ -352,7 +352,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            to={"/"}
+            to={"/blogs"}
             className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
           >
             Blogs

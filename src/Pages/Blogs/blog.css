@@ -1,0 +1,32 @@
+.blog-bg {
+  position: relative;
+}
+
+.blog-content-bottom {
+  content: "";
+  position: absolute;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  bottom: 0;
+  right: 0;
+}
+.inherent-content:before {
+  content: "\2193";
+  position: "absolute";
+  color: #ef7f1a;
+  font-size: 30px;
+}
+
+#card-wrapper img {
+  outline: solid 0px #fff;
+  transition: all 0.5s cubic-bezier(1, -0.99, 0.14, 1.8) !important;
+}
+
+#card-wrapper img:hover {
+  outline: solid 30px #fff;
+  outline-offset: -30px;
+  transition: all 0.5s cubic-bezier(1, -0.99, 0.14, 1.8) !important;
+}
+
+#card-wrapper:hover {
+}

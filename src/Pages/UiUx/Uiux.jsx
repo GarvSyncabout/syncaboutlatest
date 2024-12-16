@@ -264,6 +264,10 @@ const Uiux = () => {
               </h4>
             </div>
             <Swiper
+              data-aos="fade-down"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
               spaceBetween={10}
               slidesPerView={2}
               autoplay={true}

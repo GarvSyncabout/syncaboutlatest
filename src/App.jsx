@@ -15,6 +15,9 @@ import SeoServices from "./Pages/SeoServices/SeoServices";
 import Socialmedia from "./Pages/SocialMediaMarketing/Socialmedia";
 import Graphics from "./Pages/GraphicsDesigning/Graphics";
 import Uiux from "./Pages/UiUx/Uiux";
+import Blog from "./Pages/Blogs/blog";
+
+
 
 const router = createBrowserRouter([
   {
@@ -74,10 +77,13 @@ const router = createBrowserRouter([
         path: "/ui-ux-portfolio",
         element: <Uiux />,
       },
+      {
+        path: "/blogs",
+        element: <Blog />,
+      },
     ],
   },
 ]);
-
 function App() {
   return (
     <main className="overflow-hidden">
