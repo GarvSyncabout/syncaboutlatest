@@ -94,7 +94,7 @@ const Howwework = () => {
             </div>
           </div>
         </div>
-        <div className="howwework-content-bottom">
+        <div className="howwework-bg-content-bottom">
           <h1 className="font-Poppins text-2xl md:text-6xl  lg:text-8xl uppercase   lg:leading-[128px] font-bold opacity-20">
             it solution
           </h1>

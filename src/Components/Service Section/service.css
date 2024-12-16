@@ -22,10 +22,10 @@
 .card-wrapper:hover {
   --p: 100%;
   background-position: left;
-}
 
-.img-div:hover {
-  animation: zoom-in 4s, bounce 1s;
+  .img-div {
+    animation: zoom-in 4s, bounce 1s;
+  }
 }
 
 @keyframes bounce {

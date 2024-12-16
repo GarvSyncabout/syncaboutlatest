@@ -14,7 +14,10 @@ import Erpdev from "./Pages/CustomERPDevelopment/Erpdev";
 import SeoServices from "./Pages/SeoServices/SeoServices";
 import Socialmedia from "./Pages/SocialMediaMarketing/Socialmedia";
 import Graphics from "./Pages/GraphicsDesigning/Graphics";
+<<<<<<< HEAD
 import Uiux from "./Pages/UiUx/Uiux";
+=======
+>>>>>>> e33dd44642ab3c449c5cca393f8240919e47976c
 
 const router = createBrowserRouter([
   {
@@ -70,10 +73,13 @@ const router = createBrowserRouter([
         path: "/graphics-portfolio",
         element: <Graphics />,
       },
+<<<<<<< HEAD
       {
         path: "/ui-ux-portfolio",
         element: <Uiux />,
       },
+=======
+>>>>>>> e33dd44642ab3c449c5cca393f8240919e47976c
     ],
   },
 ]);

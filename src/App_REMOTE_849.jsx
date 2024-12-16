@@ -14,7 +14,6 @@ import Erpdev from "./Pages/CustomERPDevelopment/Erpdev";
 import SeoServices from "./Pages/SeoServices/SeoServices";
 import Socialmedia from "./Pages/SocialMediaMarketing/Socialmedia";
 import Graphics from "./Pages/GraphicsDesigning/Graphics";
-import Uiux from "./Pages/UiUx/Uiux";
 
 const router = createBrowserRouter([
   {
@@ -69,10 +68,6 @@ const router = createBrowserRouter([
       {
         path: "/graphics-portfolio",
         element: <Graphics />,
-      },
-      {
-        path: "/ui-ux-portfolio",
-        element: <Uiux />,
       },
     ],
   },

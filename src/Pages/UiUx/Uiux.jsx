@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../GraphicsDesigning/graphics.css";
+import "../UiUx/uiux.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Grid, Pagination, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -10,61 +10,61 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const Graphics = () => {
-  const swiperImage = [
+const Uiux = () => {
+  const uiuxSwiperImage = [
     {
       id: "1",
-      imageUrl: "/graphicsdesigning/carouselone.jpg",
+      imageUrl: "/uiux/crouselone.png",
     },
     {
       id: "2",
-      imageUrl: "/graphicsdesigning/carouseltwo.jpg",
+      imageUrl: "/uiux/crouseltwo.png",
     },
     {
       id: "3",
-      imageUrl: "/graphicsdesigning/carouselthree.jpg",
+      imageUrl: "/uiux/crouselthree.png",
     },
     {
       id: "4",
-      imageUrl: "/graphicsdesigning/carouselfour.jpg",
+      imageUrl: "/uiux/crouselfour.png",
     },
     {
       id: "5",
-      imageUrl: "/graphicsdesigning/carouselfive.jpg",
+      imageUrl: "/uiux/crouselfive.png",
     },
     {
       id: "6",
-      imageUrl: "/graphicsdesigning/carouselsix.jpg",
+      imageUrl: "/uiux/crouselsix.png",
     },
   ];
 
   const cards = [
     {
       id: "1",
-      imageUrl: "/graphicsdesigning/graphicsthree.png",
-      title: "Marketing and Digital Design",
-      description: "Logos, brochures, social media graphics, and more.",
+      imageUrl: "/uiux/uiuxthree.png",
+      title: "Wireframing and Prototyping",
+      description: "Visualize your application and website.",
       btnTitle: "Get Started Now",
     },
     {
       id: "2",
-      imageUrl: "/graphicsdesigning/graphicsfour.png",
+      imageUrl: "/uiux/uiuxfour.png",
       title: "Packaging Design",
       description: "Package designing with functionality.",
       btnTitle: "Get Started Now",
     },
     {
       id: "3",
-      imageUrl: "/graphicsdesigning/graphicsfive.png",
-      title: "Print Design",
-      description: "Timeless prints that make a statement.",
+      imageUrl: "/uiux/uiuxfive.png",
+      title: "UI-UX research and development",
+      description: "Developing designs for target audience and better ROI.",
       btnTitle: "Get Started Now",
     },
     {
       id: "4",
-      imageUrl: "/graphicsdesigning/graphicssix.png",
-      title: "Infographics",
-      description: "Designing everything with our creative canvas.",
+      imageUrl: "/uiux/uiuxsix.png",
+      title: "Usability Testing",
+      description: "Analyzing and fixing usability issues.",
       btnTitle: "Get Started Now",
     },
   ];
@@ -74,7 +74,7 @@ const Graphics = () => {
   }, []);
   return (
     <>
-      <section className="w-full graphicsdesigning-bg bg-[url('/graphicsdesigning/graphic.jpg')] bg-no-repeat bg-cover ">
+      <section className="w-full uiux-bg bg-[url('/uiux/uiux.jpg')] bg-no-repeat bg-cover ">
         <div className="m-auto w-full max-w-7xl">
           {/* About section hero page */}
 
@@ -87,7 +87,7 @@ const Graphics = () => {
                 Syncabout Business Solutions
               </span>
               <h2 className="font-Manrope text-3xl md:text-[60px] md:leading-[88px] font-extrabold text-[#ffffff]">
-                Graphic Design Portfolio
+                UIUX Portfolio
               </h2>
             </div>
             <div>
@@ -97,14 +97,14 @@ const Graphics = () => {
                     <Link to={"/"}>Home</Link>
                   </li>
                   <li className="font-Jost text-base leading-5 font-medium text-[#ffffff] cursor-pointer">
-                    Graphic Design Portfolio
+                    UIUX Portfolio
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div className="graphicsdesigning-content-bottom">
+        <div className="uiux-content-bottom">
           <h1 className="font-Poppins text-2xl md:text-6xl  lg:text-8xl uppercase   lg:leading-[128px] font-bold opacity-20">
             it solution
           </h1>
@@ -124,7 +124,7 @@ const Graphics = () => {
               className="relative"
             >
               <img
-                src="/graphicsdesigning/graphicsone.png"
+                src="/uiux/uiuxone.png"
                 alt="image"
                 className="rounded-md h-full w-full object-contain"
               />
@@ -147,30 +147,30 @@ const Graphics = () => {
                 Who we are
               </span>
               <h4 className="text-[#202122] font-Manrope uppercase mb-3 text-2xl md:text-[43.95px] md:leading-[52.74px] font-bold">
-                Designing your imagination to reality!
+                Humanizing technology for better usability
               </h4>
               <p className="font-Jost  text-base md:text-start leading-[26px] mb-3 font-normal text-[#666666]">
-                Graphic design services can be a powerful tool for any company,
-                big or small. We create a unique and memorable brand identity
-                that represents your company’s values and resonates with your
-                target audience.
+                We designed UI/UX strategies which keep users happy and coming
+                back for more. A user-friendly interface makes it easier for
+                users to achieve their goals, leading to more sales or sign-ups
+                and reflects positively on your brand.
               </p>
               <div>
                 <p className="font-Manrope text-lg md:text-start leading-[30px] font-semibold mb-3 md:mb-1 text-[#ef7f1a]">
-                  Here’s an overview of what Syncabout offer in this field
+                  Here’s an overview of what Syncabout offer in this field:
                 </p>
                 <div className="grid text-start  md:grid-cols-2 gap-4 mb-4">
                   <span className="relative pl-5 before:content-['\2713'] before:text-[#ef7f1a] before:absolute before:top-[50%] before:left-[0%] brfore:-translate-x-1/2 before:-translate-y-1/2 text-[#202122] font-Manrope capitalize text-base md:text-base leading-[21px] font-bold">
-                    Marketing and Digital Design
+                    Wireframing and Prototyping
                   </span>
                   <span className="relative pl-5 before:content-['\2713'] before:text-[#ef7f1a] before:absolute before:top-[50%] before:left-[0%] brfore:-translate-x-1/2 before:-translate-y-1/2 text-[#202122] font-Manrope capitalize text-base md:text-base leading-[21px] font-bold">
-                    Print Design
+                    UI-UX research and development
                   </span>
                   <span className="relative pl-5 before:content-['\2713'] before:text-[#ef7f1a] before:absolute before:top-[50%] before:left-[0%] brfore:-translate-x-1/2 before:-translate-y-1/2 text-[#202122] font-Manrope capitalize text-base md:text-base leading-[21px] font-bold">
-                    Packaging Design
+                    UX audits
                   </span>
                   <span className="relative pl-5 before:content-['\2713'] before:text-[#ef7f1a] before:absolute before:top-[50%] before:left-[0%] brfore:-translate-x-1/2 before:-translate-y-1/2 text-[#202122] font-Manrope capitalize text-base md:text-base leading-[21px] font-bold">
-                    Infographics, illustration and more
+                    Usability Testing
                   </span>
                 </div>
               </div>
@@ -195,10 +195,10 @@ const Graphics = () => {
               className="pb-7"
             >
               <span className="text-[#ef7f1a] font-Manrope uppercase text-base md:text-lg leading-[21px] font-bold mb-3">
-                Our Graphic Design Services
+                Our UI/UX Services
               </span>
               <h4 className="text-[#202122] font-Manrope uppercase mb-3 text-2xl md:text-[43.95px] md:leading-[52.74px] font-bold">
-                Graphic Design Services
+                UI/UX Services
               </h4>
             </div>
             <div
@@ -244,7 +244,7 @@ const Graphics = () => {
       <section>
         <div className="max-w-7xl m-auto w-full py-10">
           <div
-            id="graphics-wrapper"
+            id="uiux-wrapper"
             className="flex justify-center items-center text-center flex-col gap-5"
           >
             <div
@@ -260,7 +260,7 @@ const Graphics = () => {
                 Crafting graphic design solutions worth talking about
               </span>
               <h4 className="text-[#202122] font-Manrope uppercase mb-3 text-2xl md:text-[43.95px] md:leading-[52.74px] font-bold">
-                Checkout Our Portfolio
+                A Comprehensive Suite of AWS Solutions
               </h4>
             </div>
             <Swiper
@@ -297,7 +297,7 @@ const Graphics = () => {
               modules={[Grid, Pagination, Navigation, Autoplay]}
               className="mySwiper"
             >
-              {swiperImage.map((swiper) => {
+              {uiuxSwiperImage.map((swiper) => {
                 return (
                   <SwiperSlide key={swiper.id}>
                     <img src={swiper.imageUrl} alt="image" />
@@ -309,7 +309,7 @@ const Graphics = () => {
         </div>
       </section>
 
-      <section className="graphics bg-[#fafafa]">
+      <section className="uiux bg-[#fafafa]">
         <div
           data-aos="fade-down"
           data-aos-offset="200"
@@ -322,7 +322,7 @@ const Graphics = () => {
             <div className="flex flex-col md:flex-row justify-center items-center gap-2 text-start">
               <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-[#FFCF5C] hover:bg-[#ef7f1a] p-4 rounded-full">
                 <img
-                  src={"/graphicsdesigning/graphicpen.svg"}
+                  src={"/uiux/figma.svg"}
                   alt="image"
                   className="h-10 w-10"
                 />
@@ -351,4 +351,4 @@ const Graphics = () => {
   );
 };
 
-export default Graphics;
+export default Uiux;

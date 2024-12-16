@@ -98,7 +98,7 @@ const Erpdev = () => {
               className="gap-4 flex justify-between w-full text-center lg:text-start items-center flex-col lg:flex-row p-2 md:p-0"
             >
               <div>
-                <span className="text-[#ef7f1a] font-Manrope text-center md:text-start  uppercase text-base md:text-lg mb-2 lg:mb-0 leading-[21px] font-bold">
+                <span className="text-[#ef7f1a] font-Manrope text-center md:text-start uppercase text-base md:text-lg mb-2 lg:mb-0 leading-[21px] font-bold">
                   Custom ERP
                 </span>
                 <h4 className="text-[#202122] font-Manrope uppercase mb-3 text-2xl md:text-[33px] md:leading-[52.74px] font-bold">
@@ -106,7 +106,7 @@ const Erpdev = () => {
                 </h4>
               </div>
               <div>
-                <h4 className="text-balance text-[#666666] text-[18px] leading-[26px] font-Jost font-normal ">
+                <h4 className="text-balance text-[#666666] text-[18px] leading-[26px] font-Jost max-w-[500px] font-normal ">
                   Crafting ERP solutions for web and mobile, ensuring seamless
                   operations and intuitive user experiences.
                 </h4>

@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import "../SocialMediaMarketing/socialmedia.css";
+import Accordion from "../../Components/Accordion/Accordion";
 
 const Socialmedia = () => {
   useEffect(() => {
@@ -259,28 +260,16 @@ const Socialmedia = () => {
                 online landscape.
               </p>
 
-              {/* daisyUI Accordian container */}
+              {/*  Accordian container */}
 
               <div className="px-2">
                 {accordionData.map((data) => {
                   return (
-                    <div key={data.id} className="join join-vertical w-full">
-                      <div
-                        className={
-                          "collapse collapse-plus join-item border-base-300 border"
-                        }
-                      >
-                        <input type="radio" name="my-accordion-4" />
-                        <div className="font-Manrope text-[#000000] collapse-title text-base md:text-lg font-bold">
-                          {data.title}
-                        </div>
-                        <div className="collapse-content">
-                          <p className="font-Jost text-sm md:text-start leading-[26px] mb-3 font-normal text-[#666666]">
-                            {data.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    <Accordion
+                      key={data.id}
+                      title={data.title}
+                      content={data.description}
+                    />
                   );
                 })}
               </div>

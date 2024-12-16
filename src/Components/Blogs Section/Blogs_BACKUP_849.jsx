@@ -138,7 +138,11 @@ const Blogs = () => {
             {blogCards.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
+<<<<<<< HEAD
                   <div className="grid rounded grid-rows-[1fr_200px_auto] place-content-center place-items-start">
+=======
+                  <div className="grid   rounded grid-rows-[1fr_200px_auto] place-content-center place-items-start">
+>>>>>>> e33dd44642ab3c449c5cca393f8240919e47976c
                     <div id="card-image">
                       <img
                         src={item.imgUrl}

@@ -91,7 +91,7 @@ const Service = () => {
           data-aos-delay="50"
           data-aos-duration="1000"
           data-aos-once="false"
-          className=" grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8"
+          className="grid place-items-center place-content-center self-center md:grid-cols-2  lg:grid-cols-3 gap-8"
         >
           {cards.map((card) => {
             return (
