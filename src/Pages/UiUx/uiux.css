@@ -57,6 +57,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+#uiux-wrapper .swiper .swiper-wrapper {
+  height: auto !important;
+}
 #uiux-wrapper .swiper .swiper-slide {
   height: fit-content !important;
 }
@@ -103,5 +107,12 @@
   .swiper-button-next:after,
   .swiper-button-prev:after {
     display: none;
+  }
+
+  #uiux-wrapper .swiper {
+    width: 100%;
+    height: 55vh !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
