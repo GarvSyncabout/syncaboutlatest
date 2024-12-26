@@ -164,7 +164,7 @@ const Blogs = () => {
                         </div>
                       </div>
                       <div className="flex justify-center  items-center">
-                        <Link to={"/"}>
+                        <Link to={`/blogs`}>
                           <h4 className="text-[#202122] hover:text-[#ef7f1a] text-balance text-start mb-5 font-Manrope text-2xl leading-[32px] font-semibold">
                             {item.heading}
                           </h4>

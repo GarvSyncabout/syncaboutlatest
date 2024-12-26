@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import "../BlogData/blogdetails.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Blogs from "../../Components/Blogs Section/Blogs";
 
 const BlogDetails = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const BlogDetails = () => {
     AOS.refresh();
   }, []);
 
-  const Blogs = [
+  const BlogsData = [
     {
       id: 1,
       heroData: {
@@ -201,10 +202,10 @@ const BlogDetails = () => {
   ];
 
   const { id } = useParams();
-  const blog = Blogs.find((blog) => blog.id === parseInt(id));
+  const blog = BlogsData.find((blog) => blog.id === parseInt(id));
 
   return (
-    <section>
+    <>
       {blog ? (
         <>
           <section className="w-full blogdetail-bg bg-[url('/blog/blog.jpg')] bg-no-repeat bg-cover ">
@@ -244,7 +245,7 @@ const BlogDetails = () => {
           <section>
             <div
               id="main-wrapper"
-              className=" w-full max-w-7xl m-auto grid md:grid-cols-[auto_320px]  place-content-center place-items-start"
+              className=" w-full max-w-7xl m-auto grid md:grid-cols-[auto_420px]  place-content-center place-items-start"
             >
               <div id="blog-detail-container" className="p-2">
                 <div
@@ -348,11 +349,14 @@ const BlogDetails = () => {
               </div>
             </div>
           </section>
+          <section>
+            <Blogs />
+          </section>
         </>
       ) : (
         <div>Blogs Details Not Found</div>
       )}
-    </section>
+    </>
   );
 };
 
