@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
 
         {/* Nav Links */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex md:gap-1 space-x-6">
           <Link
             to={"/"}
             className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
@@ -59,13 +59,17 @@ const Navbar = () => {
 
           {/* Company  Dropdown */}
           <div
-            className="relative z-50 group"
+            className="relative dropdown z-50 group"
             onMouseEnter={() => setIsCompanyDropdownOpen(true)}
             onMouseLeave={() => setIsCompanyDropdownOpen(false)}
           >
             <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
               Company
+              <span className="absolute content-[''] top-[5px] ml-1 text-base">
+                &#8964;
+              </span>
             </button>
+
             {isCompanyDropdownOpen && (
               <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-48">
                 <Link
@@ -105,12 +109,15 @@ const Navbar = () => {
           </Link>
           {/* Services Dropdown */}
           <div
-            className="relative z-50 group"
+            className="relative dropdown z-50 group"
             onMouseEnter={() => setIsServicesDropdownOpen(true)}
             onMouseLeave={() => setIsServicesDropdownOpen(false)}
           >
             <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
               Services
+              <span className="absolute content-[''] top-[5px] ml-1 text-base">
+                &#8964;
+              </span>
             </button>
             {isServicesDropdownOpen && (
               <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-56">
@@ -156,12 +163,15 @@ const Navbar = () => {
 
           {/* Portfolio Dropdown */}
           <div
-            className="relative z-50 group"
+            className="relative dropdown z-50 group"
             onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
             onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
           >
             <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
               Portfolio
+              <span className="absolute content-[''] top-[5px] ml-1 text-base">
+                &#8964;
+              </span>
             </button>
             {isPortfolioDropdownOpen && (
               <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-48">
@@ -218,14 +228,14 @@ const Navbar = () => {
           </Link>
 
           {/* Company Dropdown */}
-          <div className="relative">
+          <div className="relative ">
             <button
               onClick={() => {
                 setIsCompanyDropdownOpen(!isCompanyDropdownOpen);
                 setIsServicesDropdownOpen(false);
                 setIsPortfolioDropdownOpen(false);
               }}
-              className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+              className="dropdown w-fit text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
               Comapany
             </button>
@@ -268,14 +278,14 @@ const Navbar = () => {
           </Link>
 
           {/* Services Dropdown */}
-          <div className="relative">
+          <div className="relative ">
             <button
               onClick={() => {
                 setIsServicesDropdownOpen(!isServicesDropdownOpen);
                 setIsCompanyDropdownOpen(false);
                 setIsPortfolioDropdownOpen(false);
               }}
-              className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+              className=" dropdown w-fit text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
               Services
             </button>
@@ -322,14 +332,14 @@ const Navbar = () => {
           </div>
 
           {/* Portfolio Dropdown */}
-          <div className="relative">
+          <div className="relative ">
             <button
               onClick={() => {
                 setIsPortfolioDropdownOpen(!isPortfolioDropdownOpen);
                 setIsCompanyDropdownOpen(false);
                 setIsServicesDropdownOpen(false);
               }}
-              className="w-full text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+              className="dropdown w-fit text-left font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
             >
               Portfolio
             </button>

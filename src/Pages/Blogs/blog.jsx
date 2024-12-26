@@ -141,7 +141,7 @@ const Blog = () => {
                   </div>
                   <div className="flex justify-between items-start text-start flex-col gap-2 p-4">
                     <Link
-                      to={"/blogs"}
+                      to={`/blogs/${card.id}`}
                       className="font-Manrope text-[21px] capitalize leading-[25px] pb-[10px] font-bold text-[#000000] hover:text-[#ef7f1a]"
                     >
                       {card.heading}

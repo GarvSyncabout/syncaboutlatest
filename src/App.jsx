@@ -16,8 +16,7 @@ import Socialmedia from "./Pages/SocialMediaMarketing/Socialmedia";
 import Graphics from "./Pages/GraphicsDesigning/Graphics";
 import Uiux from "./Pages/UiUx/Uiux";
 import Blog from "./Pages/Blogs/blog";
-
-
+import BlogDetails from "./Pages/BlogData/BlogDetails";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blog />,
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogDetails />,
       },
     ],
   },
