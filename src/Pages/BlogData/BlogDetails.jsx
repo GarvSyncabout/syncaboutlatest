@@ -3,8 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import "../BlogData/blogdetails.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { SiAnswer } from "react-icons/si";
-import { MdDescription } from "react-icons/md";
 
 const BlogDetails = () => {
   useEffect(() => {
@@ -22,10 +20,114 @@ const BlogDetails = () => {
       },
       blogData: {
         imgurl: "/blogdetails/designservice.png",
-
         date: "March 12,2024",
         time: "11:50am",
       },
+      blogDetails: [
+        {
+          question: "The Importance of Responsive UI/UX Design Services",
+          answer:
+            "These days every one using mobile and users are now everywhere, accessing information and interacting with brands on a vast array of devices with screens of all sizes. They’re on laptops, tablets, smartphones, and a plethora of other devices with varying screen sizes. If your website or application isn’t designed to adapt seamlessly to this reality, you’re likely losing out on potential customers and hindering your brand’s success. This is where responsive UI/UX design services from experts like Syncabout Solutions become invaluable.",
+        },
+        {
+          question: "What is Responsive UI/UX Design?",
+          answer:
+            "Responsive UI/UX design is a web development approach that focuses on creating interfaces that automatically adjust to the user’s screen size, resolution, and device orientation. This means that whether someone is accessing your website from a massive desktop monitor or a pocket-sized smartphone, the design elements, content, and navigation will rearrange themselves to provide the best possible viewing and interaction experience.",
+        },
+        {
+          question: "Why is Responsive Design So Crucial?",
+          answer:
+            "There are numerous reasons why responsive UI/UX design is non-negotiable in the modern era:",
+          points: [
+            {
+              title: "Enhanced User Experience (UX):",
+              content:
+                "A positive user experience is the foundation of any successful website or app. Responsive design ensures that your content is easy to read, buttons are easy to tap, and navigation is intuitive regardless of the device being used. This translates to happier users, longer site visits, and increased conversions.",
+            },
+            {
+              title: "Improved Search Engine Optimization (SEO):",
+              content:
+                "Google and other search engines love responsive websites. They prioritize mobile-friendly sites in search results because they know that’s where the majority of users are. By prioritizing responsive design, you can significantly improve your search rankings.",
+            },
+            {
+              title: "Boosted Brand Perception:",
+              content:
+                "A website that looks and functions flawlessly across devices conveys professionalism and attention to detail. Responsive design helps you build a strong, trustworthy brand image.",
+            },
+            {
+              title: "Increased Accessibility:",
+              content:
+                "Responsive design makes your website accessible to a wider audience, including users with disabilities who may use assistive technologies. It helps you meet accessibility guidelines and tap into a broader market.",
+            },
+            {
+              title: "Cost-Effectiveness:",
+              content:
+                " Rather than developing and maintaining separate versions of your website for different devices, responsive design offers a streamlined solution. This saves development time and money in the long run.",
+            },
+          ],
+        },
+
+        {
+          question: "Syncabout Solutions: You’re Partners in Responsive Design",
+          answer:
+            "At Syncabout Solutions, we understand the critical importance of responsive design for businesses of all sizes. Our talented UI/UX designers and developers possess deep expertise in creating websites and applications that deliver exceptional user experiences across the device spectrum.",
+          subAnswer: "Our UI/UX Design Services Include:",
+          points: [
+            {
+              title: "Research and Strategy:",
+              content:
+                "We deeply analyze your target audience, their needs, and their device preferences, laying the foundation for a tailored responsive design strategy.",
+            },
+            {
+              title: "Responsive Wire framing:",
+              content:
+                "We create detailed wireframes that demonstrate how your website or app will look and function on various devices.",
+            },
+            {
+              title: "Visually appealing and Intuitive Interface Design: ",
+              content:
+                " We prioritize aesthetics and usability to ensure a design that both attracts and engages users.",
+            },
+            {
+              title: "Cross-Device Testing: ",
+              content:
+                "Our rigorous testing ensures that your website or app works perfectly across various browsers, devices, and operating systems.",
+            },
+            {
+              title: "On-going Support and Optimization:",
+              content:
+                "We offer on-going maintenance and support to help you adapt your responsive design as technologies and user needs evolve.",
+            },
+          ],
+        },
+
+        {
+          question: "The Benefits of Choosing Syncabout Solutions",
+          points: [
+            {
+              title: "Proven Track Record:",
+              content:
+                "We have a strong portfolio of successfully delivered responsive design projects for clients across industries.",
+            },
+            {
+              title: "Customer-Centric Approach:",
+              content:
+                "We put your users’ needs at the heart of everything we do.",
+            },
+            {
+              title: "Cutting-Edge Technologies:",
+              content:
+                "We utilize the latest tools and frameworks to deliver the most advanced responsive design solutions.",
+            },
+          ],
+          descriptionOne:
+            "In today’s constantly connected world, where internet access is available almost everywhere, ensuring a seamless user experience across all devices is crucial for capturing and retaining the attention of your target audience.",
+          descriptionTwo:
+            "Responsive UI/UX design ensures that your digital presence adapts seamlessly to any screen size, providing an exceptional user experience that keeps visitors engaged and coming back for more.",
+          descriptionThree:
+            "Responsive UI/UX design is an essential element for any successful digital strategy. If you want to enhance your online presence, boost customer satisfaction, and achieve your business goals, partnering with Syncabout Solutions is a smart investment. Contact us today to learn more about how our responsive UI/UX design services can power your digital success.",
+        },
+      ],
     },
     {
       id: 2,
@@ -142,10 +244,13 @@ const BlogDetails = () => {
           <section>
             <div
               id="main-wrapper"
-              className="w-full max-w-7xl m-auto grid grid-cols-[auto_320px] place-content-center place-items-center"
+              className=" w-full max-w-7xl m-auto grid md:grid-cols-[auto_320px]  place-content-center place-items-start"
             >
               <div id="blog-detail-container" className="p-2">
-                <div id="card-wrapper">
+                <div
+                  id="card-wrapper"
+                  className=" flex justify-center items-start flex-col gap-2 "
+                >
                   <img
                     src={blog.blogData.imgurl}
                     alt="blog image"
@@ -170,14 +275,77 @@ const BlogDetails = () => {
                   </div>
                   <div id="detail-wrapper">
                     <div>
-                      <h2 className="font-Jost text-[43px] leading-[52px] font-bold text-[#000000]">
-                        The Importance of Responsive UI/UX Design Services
-                      </h2>
+                      {blog.blogDetails.map((data, index) => {
+                        return (
+                          <div key={index}>
+                            <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
+                              {data.question}
+                            </h2>
+                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
+                              {data.answer}
+                            </p>
+                            <h2 className="font-Jost text-[33px] leading-[42px] mb-2 font-bold text-[#000000]">
+                              {data.subAnswer}
+                            </h2>
+                            <ul className="ml-5 list-disc text-[#818181]">
+                              {data.points?.map((point, index) => {
+                                return (
+                                  <li key={index} className="mb-3">
+                                    <p className="text-[#818181] text-[17px] leading-[30px] font-Manrope font-medium">
+                                      <strong>{point.title}</strong>
+                                      {point.content}
+                                    </p>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
+                              {data.descriptionOne}
+                            </p>
+                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
+                              {data.descriptionTwo}
+                            </p>
+                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
+                              {data.descriptionThree}
+                            </p>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
               </div>
-              <div id="sidebar">Sidebar</div>
+              <div id="sidebar" className="order-first md:order-last p-2">
+                <div id="related-post"></div>
+                <table
+                  id="table-of-content"
+                  className="table-auto border-[1px] border-[#ef7f1a] !rounded-full"
+                >
+                  <thead className="bg-[#ef7f1a]">
+                    <tr>
+                      <th className="px-3 py-3 text-left text-base font-medium text-[#fafafa]">
+                        Table of Content
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {blog.blogDetails.map((tableDetail, index) => {
+                      return (
+                        <tr
+                          className="list-decimal list-item ml-5 text-[#818181] hover:underline"
+                          key={index}
+                        >
+                          <Link>
+                            <td className="px-2 py-2 text-left text-base text-[#818181]">
+                              {tableDetail.question}
+                            </td>
+                          </Link>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </section>
         </>
