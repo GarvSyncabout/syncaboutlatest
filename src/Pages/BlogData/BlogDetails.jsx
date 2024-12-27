@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "../BlogData/blogdetails.css";
 import AOS from "aos";
@@ -149,10 +149,27 @@ const BlogDetails = () => {
     },
     {
       id: 2,
+      remainingBlogs: [
+        {
+          id: 2,
+          imageBlogsUrl: "/blogdetails/softwaredevelopment.png",
+          imageBlogHeading:
+            "8 Reasons Why Your Business Needs Custom Software Development Service",
+          imageBlogDate: "February 7,2024",
+          imageBlogButtonTitle: "Read More",
+        },
+        {
+          imageBlogsUrl: "/blogdetails/business.png",
+          imageBlogHeading:
+            "Why Web Design and Development Is Important for Business in 2024",
+          imageBlogDate: "February 7,2024",
+          imageBlogButtonTitle: "Read More",
+        },
+      ],
       blogData: {
         imgurl: "/blogdetails/softwaredevelopment.png",
-        date: "",
-        time: "",
+        date: "March 12,2024",
+        time: "11:50am",
       },
       heroData: {
         heading:
@@ -160,6 +177,47 @@ const BlogDetails = () => {
         subHeading:
           "In the fast-paced digital landscape, having the right tools and technologies can make a significant difference in the success of your business.",
       },
+      blogDetails: [
+        {
+          question:
+            "8 Reasons Why Your Business Needs Custom Software Development Service",
+          answer:
+            "In the fast-paced digital landscape, having the right tools and technologies can make a significant difference in the success of your business. One such crucial tool is custom software developed specifically for your unique needs. In this blog, we’ll explore eight compelling reasons why your business can benefit from Syncabout’s Custom Software Development Service. Let’s delve into how this tailored approach can elevate your business operations, enhance user experience, and contribute to your overall success.",
+          points: [
+            {
+              title: "Research and Strategy:",
+              content:
+                "We deeply analyze your target audience, their needs, and their device preferences, laying the foundation for a tailored responsive design strategy.",
+            },
+            {
+              title: "Responsive Wire framing:",
+              content:
+                "We create detailed wireframes that demonstrate how your website or app will look and function on various devices.",
+            },
+            {
+              title: "Visually appealing and Intuitive Interface Design: ",
+              content:
+                " We prioritize aesthetics and usability to ensure a design that both attracts and engages users.",
+            },
+            {
+              title: "Cross-Device Testing: ",
+              content:
+                "Our rigorous testing ensures that your website or app works perfectly across various browsers, devices, and operating systems.",
+            },
+            {
+              title: "On-going Support and Optimization:",
+              content:
+                "We offer on-going maintenance and support to help you adapt your responsive design as technologies and user needs evolve.",
+            },
+          ],
+        },
+        {
+          question:
+            "Conclusion: Elevate Your Business with Syncabout’s Custom Software Development",
+          answer:
+            "Syncabout’s Custom Software Development Service provides a tailored approach to meet the unique needs of your business. From enhanced security and efficiency to scalability and comprehensive support, investing in custom software can be a game-changer for your company. With the added benefit of Syncabout’s expertise as a digital marketing agency, your business is not only equipped with powerful software but also positioned for success in the digital realm. Explore the possibilities and take your business to new heights with Syncabout.",
+        },
+      ],
     },
     {
       id: 3,
@@ -220,6 +278,8 @@ const BlogDetails = () => {
 
   const { id } = useParams();
   const blog = BlogsData.find((blog) => blog.id === parseInt(id));
+
+  const navigation = useNavigate();
 
   return (
     <>
@@ -293,7 +353,7 @@ const BlogDetails = () => {
                   </div>
                   <div id="detail-wrapper">
                     <div>
-                      {blog.blogDetails.map((data, index) => {
+                      {blog?.blogDetails?.map((data, index) => {
                         return (
                           <div id={data.question} key={index}>
                             <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
@@ -333,12 +393,30 @@ const BlogDetails = () => {
                   </div>
                 </div>
                 <div className="flex justify-between items-center pl-5 pr-5 pt-5">
-                  <Link className="font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative before:absolute before:content-['\00AB'] before:text-2xl before:font-Manrope before:font-bold before:text-[#000000] before:hover:text-[#ef7f1a] before:-top-2 before:left-0 before:-ml-[14px] ">
+                  <button
+                    onClick={() => {
+                      if (`blogs/${blog.id}` === `blogs/${blog.id}`) {
+                        navigation(`/blogs/${blog.id - 1}`);
+                      } else if (`blogs/${blog.id}` == "blogs/1") {
+                        setShowPrev(false);
+                      } else {
+                        setShowPrev(true);
+                      }
+                    }}
+                    className=" font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative before:content-['\00AB'] before:absolute before:text-2xl before:font-Manrope before:font-bold before:text-[#000000] before:hover:text-[#ef7f1a] before:-top-2 before:left-0 before:-ml-[14px]"
+                  >
                     Prev
-                  </Link>
-                  <Link className="font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative after:absolute after:content-['\00BB'] after:text-2xl after:font-Manrope after:font-bold after:text-[#000000] after:hover:text-[#ef7f1a] after:-top-2 ">
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (`blogs/${blog.id}` === `blogs/${blog.id}`) {
+                        navigation(`/blogs/${blog.id + 1}`);
+                      }
+                    }}
+                    className="font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative after:absolute after:content-['\00BB'] after:text-2xl after:font-Manrope after:font-bold after:text-[#000000] after:hover:text-[#ef7f1a] after:-top-2 "
+                  >
                     Next
-                  </Link>
+                  </button>
                 </div>
               </div>
               <div id="sidebar" className="order-first lg:order-last p-2">
@@ -394,17 +472,17 @@ const BlogDetails = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {blog.blogDetails.map((tableDetail, index) => {
+                    {blog?.blogDetails?.map((tableDetail, index) => {
                       return (
                         <tr
                           className="list-decimal list-item ml-5 text-[#818181] hover:underline"
                           key={index}
                         >
-                          <a href={`#${tableDetail.question}`}>
-                            <td className="px-2 py-2 text-left text-base text-[#818181]">
+                          <td className="px-2 py-2 text-left text-base text-[#818181]">
+                            <a href={`#${tableDetail.question}`}>
                               {tableDetail.question}
-                            </td>
-                          </a>
+                            </a>
+                          </td>
                         </tr>
                       );
                     })}
