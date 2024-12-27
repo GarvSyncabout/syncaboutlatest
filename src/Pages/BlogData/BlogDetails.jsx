@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import "../BlogData/blogdetails.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,6 +14,23 @@ const BlogDetails = () => {
   const BlogsData = [
     {
       id: 1,
+      remainingBlogs: [
+        {
+          id: 2,
+          imageBlogsUrl: "/blogdetails/softwaredevelopment.png",
+          imageBlogHeading:
+            "8 Reasons Why Your Business Needs Custom Software Development Service",
+          imageBlogDate: "February 7,2024",
+          imageBlogButtonTitle: "Read More",
+        },
+        {
+          imageBlogsUrl: "/blogdetails/business.png",
+          imageBlogHeading:
+            "Why Web Design and Development Is Important for Business in 2024",
+          imageBlogDate: "February 7,2024",
+          imageBlogButtonTitle: "Read More",
+        },
+      ],
       heroData: {
         heading: "The Importance of Responsive UI/UX Design Services",
         subHeading:
@@ -237,7 +254,7 @@ const BlogDetails = () => {
               </div>
             </div>
             <div className="blogdetail-content-bottom">
-              <h1 className="font-Poppins text-2xl md:text-6xl  lg:text-8xl uppercase   lg:leading-[128px] font-bold opacity-20">
+              <h1 className="font-Poppins text-2xl md:text-6xl lg:text-8xl uppercase lg:leading-[128px] font-bold opacity-20">
                 it solution
               </h1>
             </div>
@@ -245,12 +262,12 @@ const BlogDetails = () => {
           <section>
             <div
               id="main-wrapper"
-              className=" w-full max-w-7xl m-auto grid md:grid-cols-[auto_420px]  place-content-center place-items-start"
+              className="w-full max-w-7xl m-auto grid lg:grid-cols-[auto_510px]  place-content-center place-items-start"
             >
               <div id="blog-detail-container" className="p-2">
                 <div
                   id="card-wrapper"
-                  className=" flex justify-center items-start flex-col gap-2 "
+                  className=" flex justify-center items-start flex-col gap-2  border-b-[1px] border-[#ef7f1a] border-opacity-40 pb-5 "
                 >
                   <img
                     src={blog.blogData.imgurl}
@@ -278,7 +295,7 @@ const BlogDetails = () => {
                     <div>
                       {blog.blogDetails.map((data, index) => {
                         return (
-                          <div key={index}>
+                          <div id={data.question} key={index}>
                             <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
                               {data.question}
                             </h2>
@@ -315,16 +332,63 @@ const BlogDetails = () => {
                     </div>
                   </div>
                 </div>
+                <div className="flex justify-between items-center pl-5 pr-5 pt-5">
+                  <Link className="font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative before:absolute before:content-['\00AB'] before:text-2xl before:font-Manrope before:font-bold before:text-[#000000] before:hover:text-[#ef7f1a] before:-top-2 before:left-0 before:-ml-[14px] ">
+                    Prev
+                  </Link>
+                  <Link className="font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative after:absolute after:content-['\00BB'] after:text-2xl after:font-Manrope after:font-bold after:text-[#000000] after:hover:text-[#ef7f1a] after:-top-2 ">
+                    Next
+                  </Link>
+                </div>
               </div>
-              <div id="sidebar" className="order-first md:order-last p-2">
-                <div id="related-post"></div>
+              <div id="sidebar" className="order-first lg:order-last p-2">
+                <div
+                  id="related-post"
+                  className="border-b-[1px] border-[#8d8d8d] border-opacity-15 mb-4"
+                >
+                  <h2 className="font-Jost text-2xl uppercase leading-[70px] lg:leading-[90px] font-bold text-[#ef7f1a]  lg:text-4xl">
+                    Related Posts
+                  </h2>
+                  <div>
+                    {blog.remainingBlogs?.map((otherBlog, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="flex justify-center items-start gap-2 mb-3 md:mb-4"
+                        >
+                          <img
+                            src={otherBlog.imageBlogsUrl}
+                            className="object-cover md:h-[100px] rounded-md"
+                            alt="images"
+                          />
+                          <div className="hidden md:block">
+                            <h2 className="text-lg leading-5 font-bold font-Manrope text-[#000000] hover:text-[#ef7f1a]">
+                              {otherBlog.imageBlogHeading}
+                            </h2>
+                            <span className="font-Manrope text-base leading-4 font-medium text-[#adadad]">
+                              {otherBlog.imageBlogDate}
+                            </span>
+                            <div>
+                              <Link
+                                className="text-Jost hover:text-[#ef7f1a] text-sm relative after:content-['\00BB'] after:absolute after:top-0 after:ml-[2px]   "
+                                to={`blogs/${blog.remainingBlogs.id}`}
+                              >
+                                {otherBlog.imageBlogButtonTitle}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
                 <table
                   id="table-of-content"
-                  className="table-auto border-[1px] border-[#ef7f1a] !rounded-full"
+                  className="table-auto border-[1px] border-[#ef7f1a] !rounded-full p-2"
                 >
                   <thead className="bg-[#ef7f1a]">
                     <tr>
-                      <th className="px-3 py-3 text-left text-base font-medium text-[#fafafa]">
+                      <th className="px-3 py-3 text-left text-base font-medium text-[#fafafa] p-2">
                         Table of Content
                       </th>
                     </tr>
@@ -336,11 +400,11 @@ const BlogDetails = () => {
                           className="list-decimal list-item ml-5 text-[#818181] hover:underline"
                           key={index}
                         >
-                          <Link>
+                          <a href={`#${tableDetail.question}`}>
                             <td className="px-2 py-2 text-left text-base text-[#818181]">
                               {tableDetail.question}
                             </td>
-                          </Link>
+                          </a>
                         </tr>
                       );
                     })}
