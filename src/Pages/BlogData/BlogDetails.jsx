@@ -25,6 +25,7 @@ const BlogDetails = () => {
           imageBlogButtonTitle: "Read More",
         },
         {
+          id: 3,
           imageBlogsUrl: "/blogdetails/business.png",
           imageBlogHeading:
             "Why Web Design and Development Is Important for Business in 2024",
@@ -394,20 +395,6 @@ const BlogDetails = () => {
                   </div>
                 </div>
                 <div className="flex justify-between items-center pl-5 pr-5 pt-5">
-                  {/* <button
-                    onClick={() => {
-                      if (`blogs/${blog.id}` === `blogs/${blog.id}`) {
-                        navigation(`/blogs/${blog.id - 1}`);
-                      } else if (`blogs/${blog.id}` == "blogs/1") {
-                        setShowPrev(false);
-                      } else {
-                        setShowPrev(true);
-                      }
-                    }}
-                    className=" font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative before:content-['\00AB'] before:absolute before:text-2xl before:font-Manrope before:font-bold before:text-[#000000] before:hover:text-[#ef7f1a] before:-top-2 before:left-0 before:-ml-[14px]"
-                  >
-                    Prev
-                  </button> */}
                   <button
                     onClick={() => {
                       if (blog.id > 1) {
@@ -455,9 +442,11 @@ const BlogDetails = () => {
                             alt="images"
                           />
                           <div className="hidden md:block">
-                            <h2 className="text-lg leading-5 font-bold font-Manrope text-[#000000] hover:text-[#ef7f1a]">
-                              {otherBlog.imageBlogHeading}
-                            </h2>
+                            <Link to={`/blogs/${otherBlog.id}`}>
+                              <h2 className="text-lg leading-5 font-bold font-Manrope text-[#000000] hover:text-[#ef7f1a]">
+                                {otherBlog.imageBlogHeading}
+                              </h2>
+                            </Link>
                             <span className="font-Manrope text-base leading-4 font-medium text-[#adadad]">
                               {otherBlog.imageBlogDate}
                             </span>
