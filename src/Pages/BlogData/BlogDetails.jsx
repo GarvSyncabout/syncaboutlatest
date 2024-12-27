@@ -4,6 +4,7 @@ import "../BlogData/blogdetails.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Blogs from "../../Components/Blogs Section/Blogs";
+import { Link as ScrollLink } from "react-scroll";
 
 const BlogDetails = () => {
   useEffect(() => {
@@ -393,7 +394,7 @@ const BlogDetails = () => {
                   </div>
                 </div>
                 <div className="flex justify-between items-center pl-5 pr-5 pt-5">
-                  <button
+                  {/* <button
                     onClick={() => {
                       if (`blogs/${blog.id}` === `blogs/${blog.id}`) {
                         navigation(`/blogs/${blog.id - 1}`);
@@ -406,7 +407,21 @@ const BlogDetails = () => {
                     className=" font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative before:content-['\00AB'] before:absolute before:text-2xl before:font-Manrope before:font-bold before:text-[#000000] before:hover:text-[#ef7f1a] before:-top-2 before:left-0 before:-ml-[14px]"
                   >
                     Prev
+                  </button> */}
+                  <button
+                    onClick={() => {
+                      if (blog.id > 1) {
+                        navigation(`/blogs/${blog.id - 1}`);
+                      }
+                    }}
+                    disabled={blog.id === 1}
+                    className={`font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative ${
+                      blog.id === 1 ? "opacity-50 cursor-not-allowed" : ""
+                    } before:content-['«'] before:absolute before:text-2xl before:font-Manrope before:font-bold before:text-[#000000] before:hover:text-[#ef7f1a] before:-top-2 before:left-0 before:-ml-[14px]`}
+                  >
+                    Prev
                   </button>
+
                   <button
                     onClick={() => {
                       if (`blogs/${blog.id}` === `blogs/${blog.id}`) {
@@ -460,13 +475,15 @@ const BlogDetails = () => {
                     })}
                   </div>
                 </div>
+
                 <table
                   id="table-of-content"
-                  className="table-auto border-[1px] border-[#ef7f1a] !rounded-full p-2"
+                  role="table"
+                  className="table-auto border border-[#ef7f1a] rounded-lg p-2 w-full overflow-x-auto"
                 >
                   <thead className="bg-[#ef7f1a]">
                     <tr>
-                      <th className="px-3 py-3 text-left text-base font-medium text-[#fafafa] p-2">
+                      <th className="px-3 py-3 text-left text-base font-medium text-white">
                         Table of Content
                       </th>
                     </tr>
@@ -475,13 +492,19 @@ const BlogDetails = () => {
                     {blog?.blogDetails?.map((tableDetail, index) => {
                       return (
                         <tr
-                          className="list-decimal list-item ml-5 text-[#818181] hover:underline"
                           key={index}
+                          className="hover:underline text-[#818181]"
                         >
-                          <td className="px-2 py-2 text-left text-base text-[#818181]">
-                            <a href={`#${tableDetail.question}`}>
+                          <td className="px-2 py-2 text-left text-base">
+                            <ScrollLink
+                              to={tableDetail.question}
+                              smooth={true}
+                              duration={1000}
+                              offset={-80} // Adjust offset for fixed navbar
+                              className="hover:text-[#ef7f1a] focus:text-[#ef7f1a] transition-colors duration-300"
+                            >
                               {tableDetail.question}
-                            </a>
+                            </ScrollLink>
                           </td>
                         </tr>
                       );
