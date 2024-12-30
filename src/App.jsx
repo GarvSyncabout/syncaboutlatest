@@ -15,8 +15,8 @@ import SeoServices from "./Pages/SeoServices/SeoServices";
 import Socialmedia from "./Pages/SocialMediaMarketing/Socialmedia";
 import Graphics from "./Pages/GraphicsDesigning/Graphics";
 import Uiux from "./Pages/UiUx/Uiux";
-import Blog from "./Pages/Blogs/blog";
-import BlogDetails from "./Pages/BlogData/BlogDetails";
+import AllBlog from "./Pages/AllBlog/AllBlog";
+import OneBlog from "./Pages/OneBlog/OneBlog";
 
 const router = createBrowserRouter([
   {
@@ -78,11 +78,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs",
-        element: <Blog />,
+        element: <AllBlog />,
       },
       {
-        path: "/blogs/:id",
-        element: <BlogDetails />,
+        path: "/:slug",
+        element: <OneBlog />,
       },
     ],
   },
