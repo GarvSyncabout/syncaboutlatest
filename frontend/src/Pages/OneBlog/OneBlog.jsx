@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import client from "../../SanityClient/client";
-// import BlockContent from "@sanity/block-content-to-react";
+import BlockContent from "@sanity/block-content-to-react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "./blogdetails.css";
 import AOS from "aos";
