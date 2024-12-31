@@ -6,8 +6,18 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'heroSubTitle',
+      title: 'Helro Subtitle',
+      type: 'string',
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
       type: 'string',
     }),
     defineField({
@@ -24,6 +34,11 @@ export default defineType({
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+    }),
+    defineField({
+      name: 'comments',
+      title: 'Comments',
+      type: 'number',
     }),
     defineField({
       name: 'mainImage',
@@ -43,6 +58,11 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+    }),
+    defineField({
+      name: 'buttonTitle',
+      title: 'ButtonTitle',
+      type: 'string',
     }),
     defineField({
       name: 'body',

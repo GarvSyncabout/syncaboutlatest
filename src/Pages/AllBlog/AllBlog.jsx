@@ -13,72 +13,6 @@ const AllBlog = () => {
   function urlFor(source) {
     return builder.image(source);
   }
-  // const blogCards = [
-  //   {
-  //     id: "1",
-  //     imgUrl: "/blog/designservice.png",
-  //     date: "March 12, 2024",
-  //     comments: "0 Comment",
-  //     heading: "The Importance of Responsive UI/UX Design Services",
-  //     description:
-  //       "These days every one using mobile and users are now everywhere, accessing information and interacting with brands on a vast",
-  //     buttonTitle: "Read More",
-  //   },
-  //   {
-  //     id: "2",
-  //     imgUrl: "/blog/softwaredevelopment.png",
-  //     date: "February 7, 2024",
-  //     comments: "0 Comment",
-  //     heading:
-  //       "8 Reasons Why Your Business Needs Custom Software Development Service",
-  //     description:
-  //       "In the fast-paced digital landscape, having the right tools and technologies can make a significant difference in the success of",
-  //     buttonTitle: "Read More",
-  //   },
-  //   {
-  //     id: "3",
-  //     imgUrl: "/blog/business.png",
-  //     date: "February 7, 2024",
-  //     comments: "0 Comment",
-  //     heading:
-  //       "Why Web Design and Development Is Important for Business in 2024",
-  //     description:
-  //       "In today’s digital age, having a strong online presence is non-negotiable for businesses.",
-  //     buttonTitle: "Read More",
-  //   },
-  //   {
-  //     id: "4",
-  //     imgUrl: "/blog/designservice.png",
-  //     date: "March 12, 2024",
-  //     comments: "0 Comment",
-  //     heading: "The Importance of Responsive UI/UX Design Services",
-  //     description:
-  //       "These days every one using mobile and users are now everywhere, accessing information and interacting with brands on a vast",
-  //     buttonTitle: "Read More",
-  //   },
-  //   {
-  //     id: "5",
-  //     imgUrl: "/blog/softwaredevelopment.png",
-  //     date: "February 7, 2024",
-  //     comments: "0 Comment",
-  //     heading:
-  //       "8 Reasons Why Your Business Needs Custom Software Development Service",
-  //     description:
-  //       "In the fast-paced digital landscape, having the right tools and technologies can make a significant difference in the success of",
-  //     buttonTitle: "Read More",
-  //   },
-  //   {
-  //     id: "6",
-  //     imgUrl: "/blog/business.png",
-  //     date: "February 7, 2024",
-  //     comments: "0 Comment",
-  //     heading:
-  //       "Why Web Design and Development Is Important for Business in 2024",
-  //     description:
-  //       "In today’s digital age, having a strong online presence is non-negotiable for businesses.",
-  //     buttonTitle: "Read More",
-  //   },
-  // ];
 
   useEffect(() => {
     client
@@ -86,6 +20,15 @@ const AllBlog = () => {
         `*[_type == "post"]{
         title,
         slug,
+        categories[] -> {
+        title,
+        },
+        heroSubTitle,
+        _id,
+      
+        comments,
+        description,
+        buttonTitle,
         body,
         "mainImage": {
     "_type": "image",
@@ -99,6 +42,7 @@ const AllBlog = () => {
       )
       .then((data) => {
         setAllPosts(data);
+        console.log(allPostsData.map((data) => data.categories));
       })
       .catch(console.error);
   }, []);
@@ -157,7 +101,7 @@ const AllBlog = () => {
         >
           <div className="grid md:grid-cols-3 gap-4 px-2">
             {allPostsData &&
-              allPostsData.map((blog, index) => {
+              allPostsData.map((blog) => {
                 const formattedDate = format(
                   new Date(blog._createdAt),
                   "MMMM dd, yyyy"
@@ -166,7 +110,7 @@ const AllBlog = () => {
                 return (
                   <div
                     id="card-wrapper"
-                    key={index}
+                    key={blog._id}
                     className="flex justify-between flex-col items-start shadow-md rounded-md"
                   >
                     <div>
@@ -192,7 +136,7 @@ const AllBlog = () => {
                         className="text-xs leading-[30px] font-bold font-Manrope uppercase text-[#000000] hover:text-[#ef7f1a]"
                         to={`/${blog.slug.current}`}
                       >
-                        Read More &#187;
+                        {blog.buttonTitle} &#187;
                       </Link>
                     </div>
                     <div className="flex justify-start items-center  gap-2 p-4 border-[#adadad] border-t-[1px] border-opacity-20 w-full">
@@ -200,7 +144,7 @@ const AllBlog = () => {
                         {formattedDate}
                       </span>
                       <span className="font-Manrope text-[#adadad] text-[12px] leading-[15px] font-medium">
-                        {blog.comments}
+                        {`${blog.comments} Comments`}
                       </span>
                     </div>
                   </div>
