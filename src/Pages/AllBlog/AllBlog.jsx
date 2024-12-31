@@ -25,7 +25,6 @@ const AllBlog = () => {
         },
         heroSubTitle,
         _id,
-      
         comments,
         description,
         buttonTitle,
@@ -42,7 +41,6 @@ const AllBlog = () => {
       )
       .then((data) => {
         setAllPosts(data);
-        console.log(allPostsData.map((data) => data.categories));
       })
       .catch(console.error);
   }, []);
