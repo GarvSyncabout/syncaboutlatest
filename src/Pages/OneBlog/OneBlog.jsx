@@ -15,6 +15,12 @@ const OneBlog = () => {
   const builder = imageUrlBuilder(client);
 
   const components = {
+    listItem: {
+      bullet: ({ children }) => (
+        <li className="ml-7 mb-4 text-[#818181] list-disc">{children}</li>
+      ),
+    },
+
     block: {
       h2: ({ children }) => (
         <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
@@ -26,8 +32,13 @@ const OneBlog = () => {
           {children}
         </h3>
       ),
+      h4: ({ children }) => (
+        <h2 className="font-Jost text-[30px] leading-[40px] mb-2 font-bold text-[#000000]">
+          {children}
+        </h2>
+      ),
       p: ({ children }) => (
-        <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
+        <p className="text-[#818181] text-[17px] text-justify mb-2 leading-[30px] font-Manrope font-medium">
           {children}
         </p>
       ),
@@ -152,7 +163,7 @@ const OneBlog = () => {
           <section>
             <div
               id="main-wrapper"
-              className="w-full max-w-7xl m-auto grid lg:grid-cols-[auto_510px]  place-content-between md:place-items-stretch"
+              className="w-full max-w-7xl m-auto grid lg:grid-cols-[auto_410px]  place-content-between md:place-items-stretch"
             >
               <div id="blog-detail-container" className="p-2">
                 <div
