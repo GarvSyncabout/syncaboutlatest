@@ -13,7 +13,7 @@ import moment from "moment";
 const OneBlog = () => {
   const [postData, setPostData] = useState(null);
   const builder = imageUrlBuilder(client);
-
+  const navigate = useNavigate();
   const components = {
     listItem: {
       bullet: ({ children }) => (
@@ -45,6 +45,29 @@ const OneBlog = () => {
       customHeading: ({ children }) => (
         <h2 className="text-lg text-primary text-purple-700">{children}</h2>
       ),
+    },
+    marks: {
+      // Ex. 1: custom renderer for the em / italics decorator
+      em: ({ children }) => (
+        <em className="text-gray-600 font-semibold">{children}</em>
+      ),
+
+      // Ex. 2: rendering a custom `link` annotation
+      link: ({ value, children }) => {
+        const target = (value?.href || "").startsWith("http")
+          ? "_blank"
+          : undefined;
+        return (
+          <a
+            className="cursor-pointer text-blue-950"
+            onClick={() => {
+              navigate(`/seo-service`);
+            }}
+          >
+            {children}
+          </a>
+        );
+      },
     },
   };
 
