@@ -55,11 +55,6 @@ export default defineType({
               },
             ],
           },
-          {
-            title: 'textcolor',
-            name: 'textcolor',
-            type: 'textColor',
-          },
         ],
       },
     }),

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import client from "../../SanityClient/client";
-import BlockContent from "@sanity/block-content-to-react";
+import { PortableText } from "@portabletext/react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "./oneblog.css";
 import AOS from "aos";
@@ -13,6 +13,29 @@ import moment from "moment";
 const OneBlog = () => {
   const [postData, setPostData] = useState(null);
   const builder = imageUrlBuilder(client);
+
+  const components = {
+    block: {
+      h2: ({ children }) => (
+        <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
+          {children}
+        </h2>
+      ),
+      h3: ({ children }) => (
+        <h3 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
+          {children}
+        </h3>
+      ),
+      p: ({ children }) => (
+        <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
+          {children}
+        </p>
+      ),
+      customHeading: ({ children }) => (
+        <h2 className="text-lg text-primary text-purple-700">{children}</h2>
+      ),
+    },
+  };
 
   function urlFor(source) {
     return builder.image(source);
@@ -200,11 +223,7 @@ const OneBlog = () => {
                       })}
                     </div>
                   </div> */}
-                  <BlockContent
-                    blocks={postData.body}
-                    projectId={"5ri1ym64"}
-                    dataset={"production"}
-                  />
+                  <PortableText value={postData.body} components={components} />
                 </div>
                 <div className="flex justify-between items-center pl-5 pr-5 pt-5">
                   <button
