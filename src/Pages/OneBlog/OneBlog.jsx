@@ -47,16 +47,7 @@ const OneBlog = () => {
       ),
     },
     marks: {
-      // Ex. 1: custom renderer for the em / italics decorator
-      em: ({ children }) => (
-        <em className="text-gray-600 font-semibold">{children}</em>
-      ),
-
-      // Ex. 2: rendering a custom `link` annotation
-      link: ({ value, children }) => {
-        const target = (value?.href || "").startsWith("http")
-          ? "_blank"
-          : undefined;
+      link: ({ children }) => {
         return (
           <a
             className="cursor-pointer text-blue-950"
