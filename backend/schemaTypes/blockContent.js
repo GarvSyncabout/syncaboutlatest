@@ -55,6 +55,18 @@ export default defineType({
               },
             ],
           },
+          {
+            title: 'URL',
+            name: 'link',
+            type: 'object',
+            fields: [
+              {
+                title: 'URL',
+                name: 'href',
+                type: 'url',
+              },
+            ],
+          },
         ],
       },
     }),

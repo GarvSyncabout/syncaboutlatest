@@ -7,60 +7,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Blogs from "../../Components/Blogs Section/Blogs";
 import imageUrlBuilder from "@sanity/image-url";
-import { Link as ScrollLink } from "react-scroll";
+// import { Link as ScrollLink } from "react-scroll";
 import moment from "moment";
 
 const OneBlog = () => {
   const [postData, setPostData] = useState(null);
   const builder = imageUrlBuilder(client);
   const navigate = useNavigate();
-  const components = {
-    listItem: {
-      bullet: ({ children }) => (
-        <li className="ml-7 mb-4 text-[#818181] list-disc">{children}</li>
-      ),
-    },
-
-    block: {
-      h2: ({ children }) => (
-        <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
-          {children}
-        </h2>
-      ),
-      h3: ({ children }) => (
-        <h3 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
-          {children}
-        </h3>
-      ),
-      h4: ({ children }) => (
-        <h2 className="font-Jost text-[30px] leading-[40px] mb-2 font-bold text-[#000000]">
-          {children}
-        </h2>
-      ),
-      p: ({ children }) => (
-        <p className="text-[#818181] text-[17px] text-justify mb-2 leading-[30px] font-Manrope font-medium">
-          {children}
-        </p>
-      ),
-      customHeading: ({ children }) => (
-        <h2 className="text-lg text-primary text-purple-700">{children}</h2>
-      ),
-    },
-    marks: {
-      link: ({ children }) => {
-        return (
-          <a
-            className="cursor-pointer text-blue-950"
-            onClick={() => {
-              navigate(`/seo-service`);
-            }}
-          >
-            {children}
-          </a>
-        );
-      },
-    },
-  };
 
   function urlFor(source) {
     return builder.image(source);
@@ -92,7 +45,8 @@ const OneBlog = () => {
          body,
         "name": author->name,
         "authorImage": author->image,
-        _createdAt
+        _createdAt,
+        "headings": body[style in ["h3"]]
        }`,
         { slug }
       )
@@ -104,7 +58,53 @@ const OneBlog = () => {
 
   if (!postData) return <div>Loading...</div>;
 
-  // const navigation = useNavigate();
+  const components = {
+    listItem: {
+      bullet: ({ children }) => (
+        <li className="ml-7 mb-4 text-[#818181] list-disc">{children}</li>
+      ),
+    },
+
+    block: {
+      h2: ({ children }) => (
+        <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
+          {children}
+        </h2>
+      ),
+      h3: ({ children }) => (
+        <h3 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
+          {children}
+        </h3>
+      ),
+      h4: ({ children }) => (
+        <h4 className="font-Jost text-[30px] leading-[40px] mb-2 font-bold text-[#000000]">
+          {children}
+        </h4>
+      ),
+      p: ({ children }) => (
+        <p className="text-[#818181] text-[17px] text-justify mb-2 leading-[30px] font-Manrope font-medium">
+          {children}
+        </p>
+      ),
+      customHeading: ({ children }) => (
+        <h2 className="text-lg text-primary text-purple-700">{children}</h2>
+      ),
+    },
+    marks: {
+      link: ({ children }) => {
+        return (
+          <a
+            className="cursor-pointer text-blue-950"
+            onClick={() => {
+              navigate(`/seo-service`);
+            }}
+          >
+            {children}
+          </a>
+        );
+      },
+    },
+  };
 
   return (
     <>
@@ -208,53 +208,14 @@ const OneBlog = () => {
                       {moment(postData._createdAt).format("LT")}
                     </span>
                   </div>
-                  {/* <div id="detail-wrapper">
-                    <div>
-                      {postData?.blogDetails?.map((data, index) => {
-                        return (
-                          <div id={data.question} key={index}>
-                            <h2 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
-                              {data.question}
-                            </h2>
-                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
-                              {data.answer}
-                            </p>
-                            <h2 className="font-Jost text-[33px] leading-[42px] mb-2 font-bold text-[#000000]">
-                              {data.subAnswer}
-                            </h2>
-                            <ul className="ml-5 list-disc text-[#818181]">
-                              {data.points?.map((point, index) => {
-                                return (
-                                  <li key={index} className="mb-3">
-                                    <p className="text-[#818181] text-[17px] leading-[30px] font-Manrope font-medium">
-                                      <strong>{point.title}</strong>
-                                      {point.content}
-                                    </p>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
-                              {data.descriptionOne}
-                            </p>
-                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
-                              {data.descriptionTwo}
-                            </p>
-                            <p className="text-[#818181] text-[17px] mb-2 leading-[30px] font-Manrope font-medium">
-                              {data.descriptionThree}
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div> */}
+
                   <PortableText value={postData.body} components={components} />
                 </div>
                 <div className="flex justify-between items-center pl-5 pr-5 pt-5">
                   <button
                     onClick={() => {
-                      if (postData.id > 1) {
-                        navigation(`/blogs/${blog.id - 1}`);
+                      if (postData.slug > 1) {
+                        navigate(`/blogs/${postData.slug - 1}`);
                       }
                     }}
                     disabled={postData.id === 1}
@@ -268,7 +229,7 @@ const OneBlog = () => {
                   <button
                     onClick={() => {
                       if (`blogs/${postData.id}` === `blogs/${postData.id}`) {
-                        navigation(`/blogs/${postData.id + 1}`);
+                        navigate(`/blogs/${postData.id + 1}`);
                       }
                     }}
                     className="font-Manrope text-base leading-5 text-[#000000] hover:text-[#ef7f1a] font-bold relative after:absolute after:content-['\00BB'] after:text-2xl after:font-Manrope after:font-bold after:text-[#000000] after:hover:text-[#ef7f1a] after:-top-2 "
@@ -286,38 +247,31 @@ const OneBlog = () => {
                     Related Posts
                   </h2>
                   <div>
-                    {postData.remainingBlogs?.map((otherBlog, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="flex justify-center items-start gap-2 mb-3 md:mb-4"
-                        >
-                          <img
-                            src={otherBlog.imageBlogsUrl}
-                            className="object-cover md:h-[100px] rounded-md"
-                            alt="images"
-                          />
-                          <div className="hidden md:block">
-                            <Link to={`/blogs/${otherBlog.id}`}>
-                              <h2 className="text-lg leading-5 font-bold font-Manrope text-[#000000] hover:text-[#ef7f1a]">
-                                {otherBlog.imageBlogHeading}
-                              </h2>
-                            </Link>
-                            <span className="font-Manrope text-base leading-4 font-medium text-[#adadad]">
-                              {otherBlog.imageBlogDate}
-                            </span>
-                            <div>
-                              <Link
-                                className="text-Jost hover:text-[#ef7f1a] text-sm relative after:content-['\00BB'] after:absolute after:top-0 after:ml-[2px]   "
-                                to={`blogs/${blog.remainingBlogs.id}`}
-                              >
-                                {otherBlog.imageBlogButtonTitle}
-                              </Link>
-                            </div>
-                          </div>
+                    <div className="flex justify-center items-start gap-2 mb-3 md:mb-4">
+                      <img
+                        src={urlFor(postData.mainImage.asset.url).url()}
+                        className="object-cover md:h-[100px] rounded-md"
+                        alt="images"
+                      />
+                      <div className="hidden md:block">
+                        <Link to={`/blogs/${postData.id}`}>
+                          <h2 className="text-base text-balance leading-5 font-bold font-Manrope text-[#000000] hover:text-[#ef7f1a]">
+                            {postData.title}
+                          </h2>
+                        </Link>
+                        <span className="font-Manrope text-base leading-4 font-medium text-[#adadad]">
+                          {postData._createdAt}
+                        </span>
+                        <div>
+                          <Link
+                            className="text-Jost hover:text-[#ef7f1a] text-sm relative after:content-['\00BB'] after:absolute after:top-0 after:ml-[2px]   "
+                            to={`blogs/${postData.id}`}
+                          >
+                            ReadMore
+                          </Link>
                         </div>
-                      );
-                    })}
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -334,22 +288,19 @@ const OneBlog = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {postData?.blogDetails?.map((tableDetail, index) => {
+                    {postData?.headings?.map((toc) => {
                       return (
                         <tr
-                          key={index}
+                          key={toc._key}
                           className="hover:underline text-[#818181]"
                         >
                           <td className="px-2 py-2 text-left text-base">
-                            <ScrollLink
-                              to={tableDetail.question}
-                              smooth={true}
-                              duration={1000}
-                              offset={-80} // Adjust offset for fixed navbar
-                              className="hover:text-[#ef7f1a] focus:text-[#ef7f1a] transition-colors duration-300"
+                            <a
+                              href={`#${toc.children[0]._key}`}
+                              className="hover:text-[#ef7f1a] cursor-pointer focus:text-[#ef7f1a] transition-colors duration-300"
                             >
-                              {tableDetail.question}
-                            </ScrollLink>
+                              {toc.children[0].text}
+                            </a>
                           </td>
                         </tr>
                       );
