@@ -42,9 +42,9 @@ const Navbar = () => {
     >
       <div className="container m-auto w-full max-w-7xl flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold">
+        <div>
           <Link href="/">
-            <img src="/Company Logo/syncaboutlogo.png" className="h-12" />
+            <img src="/Company Logo/syncaboutlogo.jpg" className="h-12" />
           </Link>
         </div>
 

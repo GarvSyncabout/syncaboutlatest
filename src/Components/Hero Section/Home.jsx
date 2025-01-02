@@ -27,9 +27,9 @@ const Home = () => {
       id: 1,
       imgUrl: "./Hero Section/herosectionimageone.jpg",
       title: "Syncabout",
-      heading: "Your Trusted Partner for Web design & Development Services.",
+      heading: "SAP End to End Consulting, Power your intelligent enterprise",
       description:
-        "Grow Your Brand Online Through Expert Web Design and Development Services. Your Success, Our Priority.",
+        "IT IS ALL ABOUT SYNCING BUSINESS WITH OUR IDEA AND INNOVATION.",
       buttonTitle: "Our Service",
       subHeading: "IT SOLUTION",
     },
@@ -88,7 +88,7 @@ const Home = () => {
                       <h2 className="animate__animated animate__fadeInUp font-Manrope text-xl text-wrap md:text-4xl lg:text-[64px] mb-5 text-center lg:text-start lg:text-balance lg:leading-[83px] font-extrabold">
                         {item.heading}
                       </h2>
-                      <p className="animate__animated animate__fadeInUp font-Jost text-base lg:text-lg lg:leading-7 text-center lg:text-start font-normal text-wrap">
+                      <p className="animate__animated animate__fadeInUp font-Jost text-base lg:text-lg lg:leading-7 text-center uppercase lg:text-start font-normal text-wrap">
                         {item.description}
                       </p>
                     </div>
