@@ -7,7 +7,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Blogs from "../../Components/Blogs Section/Blogs";
 import imageUrlBuilder from "@sanity/image-url";
-// import { Link as ScrollLink } from "react-scroll";
 import moment from "moment";
 
 const OneBlog = () => {

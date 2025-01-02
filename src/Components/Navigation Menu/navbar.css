@@ -10,14 +10,3 @@
 .dropdown {
   position: relative;
 }
-
-@media (max-width: 768px) {
-  .dropdown:after {
-    content: "\2304";
-    position: absolute;
-    font-size: 15px;
-    top: -1%;
-    margin-left: 2px;
-    font-weight: bold;
-  }
-}

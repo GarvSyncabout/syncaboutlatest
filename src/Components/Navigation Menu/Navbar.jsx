@@ -52,7 +52,7 @@ const Navbar = () => {
         <div className="hidden md:flex md:gap-1 space-x-6">
           <Link
             to={"/"}
-            className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+            className="font-Manrope text-lg leading-10 font-semibold text-[#ef7f1a]"
           >
             Home
           </Link>
@@ -65,9 +65,6 @@ const Navbar = () => {
           >
             <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
               Company
-              <span className="absolute content-[''] top-[5px] ml-1 text-base">
-                &#8964;
-              </span>
             </button>
 
             {isCompanyDropdownOpen && (
@@ -115,9 +112,6 @@ const Navbar = () => {
           >
             <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
               Services
-              <span className="absolute content-[''] top-[5px] ml-1 text-base">
-                &#8964;
-              </span>
             </button>
             {isServicesDropdownOpen && (
               <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-56">
@@ -169,9 +163,6 @@ const Navbar = () => {
           >
             <button className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]">
               Portfolio
-              <span className="absolute content-[''] top-[5px] ml-1 text-base">
-                &#8964;
-              </span>
             </button>
             {isPortfolioDropdownOpen && (
               <div className="absolute left-0 mt-0 bg-[#ffffff] p-2 rounded shadow-md w-48">
@@ -222,7 +213,7 @@ const Navbar = () => {
         <div className=" md:hidden bg-[#ffffff] text-black px-4 py-3 absolute left-0 w-full z-50 space-y-4">
           <Link
             to={"/"}
-            className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+            className="block font-Manrope text-lg leading-10 font-semibold text-[#ef7f1a]"
           >
             Home
           </Link>
