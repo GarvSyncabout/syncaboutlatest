@@ -29,6 +29,7 @@ const OneBlog = () => {
     client
       .fetch(
         `*[slug.current == $slug]{
+          _id,
           title,
           slug,
         categories[]->{
@@ -45,7 +46,10 @@ const OneBlog = () => {
         "name": author->name,
         "authorImage": author->image,
         _createdAt,
-        "headings": body[style in ["h3"]]
+        'toc': body[style == 'h3']{
+       'text': children[0].text,
+       'key' : children[0]._key
+        } 
        }`,
         { slug }
       )
@@ -55,7 +59,10 @@ const OneBlog = () => {
       .catch(console.error);
   }, [slug]);
 
-  if (!postData) return <div>Loading...</div>;
+  if (!postData)
+    return (
+      <div className="text-5xl text-[#000000] text-center">LOADING...</div>
+    );
 
   const components = {
     listItem: {
@@ -71,7 +78,7 @@ const OneBlog = () => {
         </h2>
       ),
       h3: ({ children }) => (
-        <h3 className="font-Jost text-[43px] leading-[52px] mb-2 font-bold text-[#000000]">
+        <h3 className="font-Jost text-[41px] leading-[40px] mb-2 font-bold text-[#000000]">
           {children}
         </h3>
       ),
@@ -245,10 +252,11 @@ const OneBlog = () => {
                   <h2 className="font-Jost text-2xl uppercase leading-[70px] lg:leading-[90px] font-bold text-[#ef7f1a]  lg:text-4xl">
                     Related Posts
                   </h2>
+
                   <div>
                     <div className="flex justify-center items-start gap-2 mb-3 md:mb-4">
                       <img
-                        src={urlFor(postData.mainImage.asset.url).url()}
+                        src={postData?.mainImage?.asset?._ref}
                         className="object-cover md:h-[100px] rounded-md"
                         alt="images"
                       />
@@ -287,18 +295,18 @@ const OneBlog = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {postData?.headings?.map((toc) => {
+                    {postData?.toc?.map((toc) => {
                       return (
                         <tr
-                          key={toc._key}
+                          key={toc.text}
                           className="hover:underline text-[#818181]"
                         >
                           <td className="px-2 py-2 text-left text-base">
                             <a
-                              href={`#${toc.children[0]._key}`}
+                              href={`#${toc.text}`}
                               className="hover:text-[#ef7f1a] cursor-pointer focus:text-[#ef7f1a] transition-colors duration-300"
                             >
-                              {toc.children[0].text}
+                              {toc.text}
                             </a>
                           </td>
                         </tr>
