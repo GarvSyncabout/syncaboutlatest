@@ -8,8 +8,10 @@ import "aos/dist/aos.css";
 import Blogs from "../../Components/Blogs Section/Blogs";
 import imageUrlBuilder from "@sanity/image-url";
 import moment from "moment";
+import { format } from "date-fns";
 
 const OneBlog = () => {
+  const [relatedData, setRelatedData] = useState(null);
   const [postData, setPostData] = useState(null);
   const builder = imageUrlBuilder(client);
   const navigate = useNavigate();
@@ -24,6 +26,36 @@ const OneBlog = () => {
   }, []);
 
   const { slug } = useParams();
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "post"]{
+          title,
+          slug,
+          categories[] -> {
+          title,
+          },
+          heroSubTitle,
+          _id,
+          comments,
+          description,
+          buttonTitle,
+          body,
+         mainImage{
+              asset->{
+                _id,
+                url
+               }
+             },
+     _createdAt
+      }`
+      )
+      .then((data) => {
+        setRelatedData(data);
+      })
+      .catch(console.error);
+  }, []);
 
   useEffect(() => {
     client
@@ -61,7 +93,9 @@ const OneBlog = () => {
 
   if (!postData)
     return (
-      <div className="text-5xl text-[#000000] text-center">LOADING...</div>
+      <div className="text-5xl h-[600px] text-[#000000] text-center">
+        LOADING...
+      </div>
     );
 
   const components = {
@@ -253,33 +287,59 @@ const OneBlog = () => {
                     Related Posts
                   </h2>
 
-                  <div>
-                    <div className="flex justify-center items-start gap-2 mb-3 md:mb-4">
-                      <img
-                        src={postData?.mainImage?.asset?._ref}
-                        className="object-cover md:h-[100px] rounded-md"
-                        alt="images"
-                      />
-                      <div className="hidden md:block">
-                        <Link to={`/blogs/${postData.id}`}>
-                          <h2 className="text-base text-balance leading-5 font-bold font-Manrope text-[#000000] hover:text-[#ef7f1a]">
-                            {postData.title}
-                          </h2>
-                        </Link>
-                        <span className="font-Manrope text-base leading-4 font-medium text-[#adadad]">
-                          {postData._createdAt}
-                        </span>
-                        <div>
-                          <Link
-                            className="text-Jost hover:text-[#ef7f1a] text-sm relative after:content-['\00BB'] after:absolute after:top-0 after:ml-[2px]   "
-                            to={`blogs/${postData.id}`}
-                          >
-                            ReadMore
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {relatedData
+                    ? relatedData.map((relatedPost) => {
+                        const formattedDate = format(
+                          new Date(relatedPost._createdAt),
+                          "MMMM dd, yyyy"
+                        );
+                        return (
+                          <div key={relatedPost._id}>
+                            <Link
+                              className="text-Jost text-sm"
+                              to={"/" + relatedPost.slug.current}
+                              key={relatedPost.slug.current}
+                            >
+                              <div
+                                id="card-wrapper"
+                                className="flex justify-center items-start gap-2 mb-3 md:mb-4 "
+                              >
+                                <img
+                                  src={urlFor(
+                                    relatedPost.mainImage.asset.url
+                                  ).url()}
+                                  className="object-cover md:h-[100px] rounded-md"
+                                  alt="images"
+                                />
+
+                                <div className="hidden md:block">
+                                  <Link
+                                    to={"/" + relatedPost.slug.current}
+                                    key={relatedPost.slug.current}
+                                  >
+                                    <h2 className="text-[14px] text-wrap leading-5 font-bold font-Manrope text-[#000000] hover:text-[#ef7f1a]">
+                                      {relatedPost.title}
+                                    </h2>
+                                  </Link>
+                                  <span className="font-Manrope text-sm leading-4 font-medium text-[#adadad]">
+                                    {formattedDate}
+                                  </span>
+                                  <div>
+                                    <Link
+                                      className="text-Jost hover:text-[#ef7f1a] text-xs relative after:content-['\00BB'] after:absolute after:top-0 after:ml-[2px]   "
+                                      to={"/" + relatedPost.slug.current}
+                                      key={relatedPost.slug.current}
+                                    >
+                                      ReadMore
+                                    </Link>
+                                  </div>
+                                </div>
+                              </div>
+                            </Link>
+                          </div>
+                        );
+                      })
+                    : "No Related Post Available"}
                 </div>
 
                 <table

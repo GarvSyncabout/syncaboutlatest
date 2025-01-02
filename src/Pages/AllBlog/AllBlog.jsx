@@ -29,13 +29,12 @@ const AllBlog = () => {
         description,
         buttonTitle,
         body,
-        "mainImage": {
-    "_type": "image",
-    "asset": {
-      "_ref": "image-1f997023965892c6d33f329b23c171813f23f81f-1200x720-png",
-      "_type": "reference",
-    }
-      },
+       mainImage{
+            asset->{
+              _id,
+              url
+             }
+           },
    _createdAt
     }`
       )
@@ -113,7 +112,7 @@ const AllBlog = () => {
                   >
                     <div>
                       <img
-                        src={urlFor(blog.mainImage.asset._ref).url()}
+                        src={urlFor(blog.mainImage.asset.url).url()}
                         alt="blog img"
                         className="w-full h-full object-contain"
                       />
