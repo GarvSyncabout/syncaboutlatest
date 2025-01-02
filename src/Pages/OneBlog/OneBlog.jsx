@@ -83,7 +83,7 @@ const OneBlog = () => {
         </h3>
       ),
       h4: ({ children }) => (
-        <h4 className="font-Jost xl md:text-[30px] md:leading-[40px] mb-2 font-bold text-[#000000]">
+        <h4 className="font-Jost text-xl md:text-[30px] md:leading-[40px] mb-2 font-bold text-[#000000]">
           {children}
         </h4>
       ),
