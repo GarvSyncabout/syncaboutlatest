@@ -361,7 +361,7 @@ const OneBlog = () => {
                           key={toc.text}
                           className="hover:underline text-[#818181]"
                         >
-                          <td className="px-2 py-1 text-left text-base">
+                          <td className="px-2 py-2 text-left text-base">
                             <a
                               href={`#${toc.text}`}
                               className="hover:text-[#ef7f1a] cursor-pointer focus:text-[#ef7f1a] transition-colors duration-300"
