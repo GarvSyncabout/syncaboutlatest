@@ -188,6 +188,13 @@ const Navbar = () => {
           >
             Blogs
           </Link>
+
+          <Link
+            to={"/contactus"}
+            className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            ContactUs
+          </Link>
         </div>
 
         {/* Mobile Hamburger Icon */}
@@ -432,6 +439,18 @@ const Navbar = () => {
             className="block font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
           >
             Blogs
+          </Link>
+
+          <Link
+            onClick={() => {
+              setIsCompanyDropdownOpen(false);
+              setIsServicesDropdownOpen(false);
+              setIsMobileMenuOpen(false);
+            }}
+            to={"/contactus"}
+            className="font-Manrope text-lg leading-10 font-semibold text-[#000000] hover:text-[#ef7f1a]"
+          >
+            ContactUs
           </Link>
         </div>
       )}

@@ -1,0 +1,18 @@
+.contactus-bg {
+  position: relative;
+}
+
+.contactus-content-bottom {
+  content: "";
+  position: absolute;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  bottom: 0;
+  right: 0;
+}
+.inherent-content:before {
+  content: "\2193";
+  position: "absolute";
+  color: #ef7f1a;
+  font-size: 30px;
+}

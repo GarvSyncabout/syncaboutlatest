@@ -14,6 +14,7 @@ const OneBlog = () => {
   const [relatedData, setRelatedData] = useState(null);
   const [postData, setPostData] = useState(null);
   const builder = imageUrlBuilder(client);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const navigate = useNavigate();
 
   function urlFor(source) {
@@ -79,8 +80,8 @@ const OneBlog = () => {
         "authorImage": author->image,
         publishedAt,
         'toc': body[style == 'h3']{
-       'text': children[0].text,
-       'key' : children[0]._key
+        'text': children[0].text,
+        'key' : children[0]._key
         } 
        }`,
         { slug }
@@ -101,23 +102,35 @@ const OneBlog = () => {
   const components = {
     listItem: {
       bullet: ({ children }) => (
-        <li className="ml-7 mb-4 text-[#818181] list-disc">{children}</li>
+        <li className="ml-7 font-Manrope mb-4 text-[#818181] list-disc">
+          {children}
+        </li>
       ),
     },
 
     block: {
       h2: ({ children }) => (
-        <h2 className="font-Jost text-2xl  md:text-[43px] md:leading-[52px] mb-2 font-bold text-[#000000]">
+        <h2 className="font-Manrope text-2xl  md:text-[43px] md:leading-[52px] mb-2 font-bold text-[#000000]">
           {children}
         </h2>
       ),
-      h3: ({ children }) => (
-        <h3 className="font-Jost text-2xl md:text-[41px] md:leading-[40px] mb-2 font-bold text-[#000000]">
-          {children}
-        </h3>
-      ),
+      h3: ({ children }) => {
+        let key = postData?.toc?.map((value) => value.key);
+
+        console.log(key, "h3 - key");
+        {
+          return (
+            <h3
+              id={key[3]}
+              className="font-Manrope text-2xl md:text-[41px] md:leading-[50px] mb-2 font-bold text-[#000000]"
+            >
+              {children}
+            </h3>
+          );
+        }
+      },
       h4: ({ children }) => (
-        <h4 className="font-Jost text-xl md:text-[30px] md:leading-[40px] mb-2 font-bold text-[#000000]">
+        <h4 className="font-Manrope text-xl md:text-[30px] md:leading-[40px] mb-2 font-bold text-[#000000]">
           {children}
         </h4>
       ),
@@ -125,9 +138,6 @@ const OneBlog = () => {
         <p className="text-[#818181] text-[17px] text-justify mb-2 leading-[30px] font-Manrope font-medium">
           {children}
         </p>
-      ),
-      customHeading: ({ children }) => (
-        <h2 className="text-lg text-primary text-purple-700">{children}</h2>
       ),
     },
     marks: {
@@ -355,7 +365,8 @@ const OneBlog = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {postData?.toc?.map((toc) => {
+                    {postData?.toc?.map((toc, index) => {
+                      // console.log(toc.key, "key log---");
                       return (
                         <tr
                           key={toc.text}
@@ -363,7 +374,10 @@ const OneBlog = () => {
                         >
                           <td className="px-2 py-2 text-left text-base">
                             <a
-                              href={`#${toc.text}`}
+                              onClick={() => {
+                                setSelectedIndex(toc.key);
+                              }}
+                              href={`#${toc.key}`}
                               className="hover:text-[#ef7f1a] cursor-pointer focus:text-[#ef7f1a] transition-colors duration-300"
                             >
                               {toc.text}

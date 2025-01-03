@@ -59,10 +59,8 @@ const AllBlog = () => {
     <>
       <section className="w-full blog-bg bg-[url('/blog/blog.jpg')] bg-no-repeat bg-cover ">
         <div className="m-auto w-full max-w-7xl">
-          {/* About section hero page */}
-
           <div
-            id="seoservices-wrapper"
+            id="allblog-wrapper"
             className="gap-3 flex flex-wrap justify-start md:justify-between md:h-[57vh] items-center py-9 px-2 md:p-5"
           >
             <div>

@@ -17,6 +17,7 @@ import Graphics from "./Pages/GraphicsDesigning/Graphics";
 import Uiux from "./Pages/UiUx/Uiux";
 import AllBlog from "./Pages/AllBlog/AllBlog";
 import OneBlog from "./Pages/OneBlog/OneBlog";
+import ContactUs from "./Pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: "/:slug",
         element: <OneBlog />,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs />,
       },
     ],
   },
