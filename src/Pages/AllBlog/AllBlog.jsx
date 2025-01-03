@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./blog.css";
 import { Link } from "react-router-dom";
-import client from "../../SanityClient/client";
+import { client } from "../../SanityClient/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { format } from "date-fns";
 const AllBlog = () => {
@@ -43,6 +43,13 @@ const AllBlog = () => {
       })
       .catch(console.error);
   }, []);
+
+  if (!allPostsData)
+    return (
+      <div className="text-5xl h-[600px] text-[#000000] text-center">
+        LOADING...
+      </div>
+    );
 
   useEffect(() => {
     AOS.init();

@@ -1,6 +1,6 @@
-import client from "@sanity/client";
+import { createClient } from "@sanity/client";
 
-export default client({
+export const client = createClient({
   projectId: "5ri1ym64",
   dataset: "production",
   useCdn: true,

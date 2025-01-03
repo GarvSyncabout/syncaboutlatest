@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import client from "../../SanityClient/client";
+import { client } from "../../SanityClient/client";
 import { PortableText } from "@portabletext/react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "./oneblog.css";
