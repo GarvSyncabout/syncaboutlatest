@@ -35,7 +35,7 @@ const AllBlog = () => {
               url
              }
            },
-   _createdAt
+      publishedAt
     }`
       )
       .then((data) => {
@@ -107,7 +107,7 @@ const AllBlog = () => {
             {allPostsData &&
               allPostsData.map((blog) => {
                 const formattedDate = format(
-                  new Date(blog._createdAt),
+                  new Date(blog.publishedAt),
                   "MMMM dd, yyyy"
                 );
 

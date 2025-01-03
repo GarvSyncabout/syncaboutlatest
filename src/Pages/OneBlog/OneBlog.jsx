@@ -48,7 +48,7 @@ const OneBlog = () => {
                 url
                }
              },
-     _createdAt
+             publishedAt,
       }`
       )
       .then((data) => {
@@ -77,7 +77,7 @@ const OneBlog = () => {
          body,
         "name": author->name,
         "authorImage": author->image,
-        _createdAt,
+        publishedAt,
         'toc': body[style == 'h3']{
        'text': children[0].text,
        'key' : children[0]._key
@@ -238,14 +238,14 @@ const OneBlog = () => {
                       className="text-[17px] leading-[30px] font-medium font-Manrope text-[#666666] hover:text-[#ef7f1a] "
                     >
                       &#128197;
-                      {moment(postData._createdAt).format("LL")}
+                      {moment(postData.publishedAt).format("MMMM dd, yyyy")}
                     </span>
                     <span
                       id="time"
                       className="text-[17px] leading-[30px] font-medium font-Manrope text-[#666666] hover:text-[#ef7f1a] "
                     >
                       &#128337;
-                      {moment(postData._createdAt).format("LT")}
+                      {moment(postData.publishedAt).format("LT")}
                     </span>
                   </div>
 
@@ -290,7 +290,7 @@ const OneBlog = () => {
                   {relatedData
                     ? relatedData.map((relatedPost) => {
                         const formattedDate = format(
-                          new Date(relatedPost._createdAt),
+                          new Date(relatedPost.publishedAt),
                           "MMMM dd, yyyy"
                         );
                         return (
